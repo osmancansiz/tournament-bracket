@@ -4,8 +4,7 @@ import initialGroups from "../data/groups.json";
 
 export default function TournamentBrackets() {
   const [teams, setTeams] = useState(initialTeams);
-  //eslint-disable-next-line
-  const [groups, setGroups] = useState(initialGroups);
+  const [groups] = useState(initialGroups);
 
   const handleClick = (team) => {
     if (team.rank !== 0) return;
@@ -15,10 +14,11 @@ export default function TournamentBrackets() {
     const index = teams.findIndex((i) => i === team);
     if (highestRank > 4) return;
     teamsClone[index].rank = ++highestRank;
-    
+
     if (highestRank <= 2)
-      teamsClone[index].status = `${teamsClone[index].status.slice(0, 3)}${Number(teamsClone[index].status.slice(-2)) / 2
-        }`;
+      teamsClone[index].status = `${teamsClone[index].status.slice(0, 3)}${
+        Number(teamsClone[index].status.slice(-2)) / 2
+      }`;
 
     setTeams([...teamsClone]);
   };
@@ -34,7 +34,7 @@ export default function TournamentBrackets() {
         <div className="grid grid-cols-12 w-full h-3/4 pt-10 ">
           <div className="col-span-2 space-y-10 ">
             {groups.map((group, index) => {
-              if (group.side === 'right') return false
+              if (group.side === "right") return false;
               return (
                 <div
                   key={index}
@@ -46,22 +46,25 @@ export default function TournamentBrackets() {
 
                   {teams.map((team) => {
                     /*eslint-disable-next-line*/
-                    if (team.group !== group.id) return;
+                    if (team.group !== group.name) return;
                     return (
-                      <div key={team.id} onClick={() => handleClick(team)} className='pt-1 cursor-pointer hover:opacity-70'>
+                      <div
+                        key={team.id}
+                        onClick={() => handleClick(team)}
+                        className="pt-1 cursor-pointer hover:opacity-70"
+                      >
                         {team.name.toUpperCase()}
                       </div>
                     );
                   })}
                 </div>
-              )
-            }
-            )}
+              );
+            })}
           </div>
           <div className="col-span-8">10luk</div>
           <div className="col-span-2 space-y-10">
             {groups.map((group, index) => {
-              if (group.side === 'left') return false
+              if (group.side === "left") return false;
               return (
                 <div
                   key={index}
@@ -73,20 +76,21 @@ export default function TournamentBrackets() {
 
                   {teams.map((team) => {
                     /*eslint-disable-next-line*/
-                    if (team.group !== group.id) return;
+                    if (team.group !== group.name) return;
                     return (
-                      <div key={team.id} onClick={() => handleClick(team)} className='pt-1 cursor-pointer hover:opacity-70'>
+                      <div
+                        key={team.id}
+                        onClick={() => handleClick(team)}
+                        className="pt-1 cursor-pointer hover:opacity-70"
+                      >
                         {team.name.toUpperCase()}
                       </div>
                     );
                   })}
                 </div>
-              )
-            }
-            )}
-
+              );
+            })}
           </div>
-
         </div>
       </div>
     </div>
