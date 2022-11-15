@@ -38,7 +38,7 @@ export default function TournamentBrackets() {
               return (
                 <div
                   key={index}
-                  className={`border col-span-1 border-black text-center`}
+                  className="border-2 group-box overflow-hidden col-span-1 shadow-md border-black text-center"
                 >
                   <div key={index} className="bg-black text-white">
                     {group.name}
@@ -48,7 +48,7 @@ export default function TournamentBrackets() {
                     /*eslint-disable-next-line*/
                     if (team.group !== group.id) return;
                     return (
-                      <div key={team.id} onClick={() => handleClick(team)}>
+                      <div key={team.id} onClick={() => handleClick(team)} className='pt-1 cursor-pointer hover:opacity-70'>
                         {team.name.toUpperCase()}
                       </div>
                     );
@@ -65,7 +65,7 @@ export default function TournamentBrackets() {
               return (
                 <div
                   key={index}
-                  className={`border col-span-1 border-black text-center`}
+                  className="border-2 group-box overflow-hidden col-span-1 shadow-md border-black text-center"
                 >
                   <div key={index} className="bg-black text-white">
                     {group.name}
@@ -75,7 +75,7 @@ export default function TournamentBrackets() {
                     /*eslint-disable-next-line*/
                     if (team.group !== group.id) return;
                     return (
-                      <div key={team.id} onClick={() => handleClick(team)}>
+                      <div key={team.id} onClick={() => handleClick(team)} className='pt-1 cursor-pointer hover:opacity-70'>
                         {team.name.toUpperCase()}
                       </div>
                     );
