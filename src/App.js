@@ -1,8 +1,8 @@
 import "./App.css";
-import TournamentBracket from "./pages/TournamentBracket";
+import TournamentBrackets from "./pages/TournamentBrackets";
 
 function App() {
-  return <TournamentBracket />;
+  return <TournamentBrackets />;
 }
 
 export default App;
