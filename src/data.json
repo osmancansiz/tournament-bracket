@@ -5,7 +5,7 @@
     "side": "left",
     "group": "A",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "side": "left",
     "group": "A",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "side": "left",
     "group": "A",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "side": "left",
     "group": "A",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "side": "right",
     "group": "B",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "side": "right",
     "group": "B",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "side": "right",
     "group": "B",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "side": "right",
     "group": "B",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 9,
@@ -69,7 +69,7 @@
     "side": "left",
     "group": "C",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 10,
@@ -77,7 +77,7 @@
     "side": "left",
     "group": "C",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 11,
@@ -85,7 +85,7 @@
     "side": "left",
     "group": "C",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 12,
@@ -93,7 +93,7 @@
     "side": "left",
     "group": "C",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 13,
@@ -101,7 +101,7 @@
     "side": "right",
     "group": "D",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 14,
@@ -109,7 +109,7 @@
     "side": "right",
     "group": "D",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 15,
@@ -117,7 +117,7 @@
     "side": "right",
     "group": "D",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 16,
@@ -125,7 +125,7 @@
     "side": "right",
     "group": "D",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 17,
@@ -133,7 +133,7 @@
     "side": "left",
     "group": "E",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 18,
@@ -141,7 +141,7 @@
     "side": "left",
     "group": "E",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 19,
@@ -149,7 +149,7 @@
     "side": "left",
     "group": "E",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 20,
@@ -157,7 +157,7 @@
     "side": "left",
     "group": "E",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 21,
@@ -165,7 +165,7 @@
     "side": "right",
     "group": "F",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 22,
@@ -173,7 +173,7 @@
     "side": "right",
     "group": "F",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 23,
@@ -181,7 +181,7 @@
     "side": "right",
     "group": "F",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 24,
@@ -189,7 +189,7 @@
     "side": "right",
     "group": "F",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 25,
@@ -197,7 +197,7 @@
     "side": "left",
     "group": "G",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 26,
@@ -205,7 +205,7 @@
     "side": "left",
     "group": "G",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 27,
@@ -213,7 +213,7 @@
     "side": "left",
     "group": "G",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 28,
@@ -221,7 +221,7 @@
     "side": "left",
     "group": "G",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 29,
@@ -229,7 +229,7 @@
     "side": "right",
     "group": "H",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 30,
@@ -237,7 +237,7 @@
     "side": "right",
     "group": "H",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 31,
@@ -245,7 +245,7 @@
     "side": "right",
     "group": "H",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   },
   {
     "id": 32,
@@ -253,6 +253,6 @@
     "side": "right",
     "group": "H",
     "rank": 0,
-    "status": "top_32"
+    "status": "top32"
   }
 ]
