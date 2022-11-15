@@ -15,7 +15,7 @@ export default function TournamentBrackets() {
     const index = teams.findIndex((i) => i === team);
     if (highestRank > 4) return;
     teamsClone[index].rank = ++highestRank;
-
+    
     if (highestRank <= 2)
       teamsClone[index].status = `${teamsClone[index].status.slice(0, 3)}${Number(teamsClone[index].status.slice(-2)) / 2
         }`;
