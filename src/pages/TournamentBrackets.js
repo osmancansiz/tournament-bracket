@@ -53,111 +53,110 @@ export default function TournamentBrackets() {
               );
             })}
           </div>
-          <div className="col-span-1 space-y-16">
-            <div className="bg-lime-500 w-32 h-20">
-              {selectedTeams
-                .filter((i) => i.group === "A" && i.rank === 1)
-                .map((team) => (
-                  <div>{team.name}</div>
-                ))}
-              {selectedTeams
-                .filter((i) => i.group === "B" && i.rank === 2)
-                .map((team) => (
-                  <div>{team.name}</div>
-                ))}
-            </div>
+          <div className="col-span-1">
+            <div className="flex flex-col justify-around gap-10 h-full relative text-center">
+              <div className="h-12 ">
+                {selectedTeams
+                  .filter((i) => i.group === "A" && i.rank === 1)
+                  .map((team, index) => (
+                    <div key={index} className="my-2">{team.name}</div>
+                  ))}
 
-            <div className="bg-lime-500 w-32 h-20">
-              {selectedTeams
-                .filter((i) => i.group === "C" && i.rank === 1)
-                .map((team) => (
-                  <div>{team.name}</div>
-                ))}
-              {selectedTeams
-                .filter((i) => i.group === "D" && i.rank === 2)
-                .map((team) => (
-                  <div>{team.name}</div>
-                ))}
-            </div>
-
-            <div className="bg-lime-500 w-32 h-20">
-              {selectedTeams
-                .filter((i) => i.group === "E" && i.rank === 1)
-                .map((team) => (
-                  <div>{team.name}</div>
-                ))}
-              {selectedTeams
-                .filter((i) => i.group === "F" && i.rank === 2)
-                .map((team) => (
-                  <div>{team.name}</div>
-                ))}
-            </div>
-
-            <div className="bg-lime-500 w-32 h-20">
-              {selectedTeams
-                .filter((i) => i.group === "G" && i.rank === 1)
-                .map((team) => (
-                  <div>{team.name}</div>
-                ))}
-              {selectedTeams
-                .filter((i) => i.group === "H" && i.rank === 2)
-                .map((team) => (
-                  <div>{team.name}</div>
-                ))}
+                {selectedTeams
+                  .filter((i) => i.group === "B" && i.rank === 2)
+                  .map((team, index) => (
+                    <div key={index} className="my-2">{team.name}</div>
+                  ))}
+              </div>
+              <div className="h-12 ">
+                {selectedTeams
+                  .filter((i) => i.group === "C" && i.rank === 1)
+                  .map((team, index) => (
+                    <div key={index} className="my-2">{team.name}</div>
+                  ))}
+                {selectedTeams
+                  .filter((i) => i.group === "D" && i.rank === 2)
+                  .map((team, index) => (
+                    <div key={index} className="my-2">{team.name}</div>
+                  ))}
+              </div>
+              <div className="h-12 ">
+                {selectedTeams
+                  .filter((i) => i.group === "E" && i.rank === 1)
+                  .map((team, index) => (
+                    <div key={index} className="my-2">{team.name}</div>
+                  ))}
+                {selectedTeams
+                  .filter((i) => i.group === "F" && i.rank === 2)
+                  .map((team, index) => (
+                    <div key={index} className="my-2">{team.name}</div>
+                  ))}
+              </div>
+              <div className="h-12 ">
+                {selectedTeams
+                  .filter((i) => i.group === "G" && i.rank === 1)
+                  .map((team, index) => (
+                    <div key={index} className="my-2">{team.name}</div>
+                  ))}
+                {selectedTeams
+                  .filter((i) => i.group === "H" && i.rank === 2)
+                  .map((team, index) => (
+                    <div key={index} className="my-2">{team.name}</div>
+                  ))}
+              </div>
             </div>
           </div>
           <div className="col-span-6"></div>
           <div className="col-span-1 space-y-16">
-            <div className="bg-lime-500 w-32 h-20">
-              {selectedTeams
-                .filter((i) => i.group === "B" && i.rank === 1)
-                .map((team) => (
-                  <div>{team.name}</div>
-                ))}
-              {selectedTeams
-                .filter((i) => i.group === "A" && i.rank === 2)
-                .map((team) => (
-                  <div>{team.name}</div>
-                ))}
-            </div>
-
-            <div className="bg-lime-500 w-32 h-20">
-              {selectedTeams
-                .filter((i) => i.group === "D" && i.rank === 1)
-                .map((team) => (
-                  <div>{team.name}</div>
-                ))}
-              {selectedTeams
-                .filter((i) => i.group === "C" && i.rank === 2)
-                .map((team) => (
-                  <div>{team.name}</div>
-                ))}
-            </div>
-
-            <div className="bg-lime-500 w-32 h-20">
-              {selectedTeams
-                .filter((i) => i.group === "F" && i.rank === 1)
-                .map((team) => (
-                  <div>{team.name}</div>
-                ))}
-              {selectedTeams
-                .filter((i) => i.group === "E" && i.rank === 2)
-                .map((team) => (
-                  <div>{team.name}</div>
-                ))}
-            </div>
-
-            <div className="bg-lime-500 w-32 h-20">
-              {selectedTeams
-                .filter((i) => i.group === "H" && i.rank === 1)
-                .map((team) => (
-                  <div>{team.name}</div>
-                ))}
-              {selectedTeams
-                .filter((i) => i.group === "G" && i.rank === 2)
-                .map((team) => (
-                  <div>{team.name}</div>
-                ))}
+            <div className="flex flex-col justify-around gap-10 h-full relative text-center">
+              <div className="h-12 ">
+                {selectedTeams
+                  .filter((i) => i.group === "B" && i.rank === 1)
+                  .map((team) => (
+                    <div className="my-2">{team.name}</div>
+                  ))}
+                {selectedTeams
+                  .filter((i) => i.group === "A" && i.rank === 2)
+                  .map((team) => (
+                    <div className="my-2">{team.name}</div>
+                  ))}
+              </div>
+              <div className="h-12 ">
+                {selectedTeams
+                  .filter((i) => i.group === "D" && i.rank === 1)
+                  .map((team) => (
+                    <div className="my-2">{team.name}</div>
+                  ))}
+                {selectedTeams
+                  .filter((i) => i.group === "C" && i.rank === 2)
+                  .map((team) => (
+                    <div className="my-2">{team.name}</div>
+                  ))}
+              </div>
+              <div className="h-12 ">
+                {selectedTeams
+                  .filter((i) => i.group === "F" && i.rank === 1)
+                  .map((team) => (
+                    <div className="my-2">{team.name}</div>
+                  ))}
+                {selectedTeams
+                  .filter((i) => i.group === "E" && i.rank === 2)
+                  .map((team) => (
+                    <div className="my-2">{team.name}</div>
+                  ))}
+              </div>
+              <div className="h-12 ">
+                {selectedTeams
+                  .filter((i) => i.group === "H" && i.rank === 1)
+                  .map((team) => (
+                    <div className="my-2">{team.name}</div>
+                  ))}
+                {selectedTeams
+                  .filter((i) => i.group === "G" && i.rank === 2)
+                  .map((team) => (
+                    <div className="my-2">{team.name}</div>
+                  ))}
+              </div>
             </div>
           </div>
           <div className="col-span-2 space-y-10">
