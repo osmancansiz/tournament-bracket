@@ -3,29 +3,21 @@ import initialTeams from "../data/teams.json";
 import initialGroups from "../data/groups.json";
 
 export default function TournamentBrackets() {
-  const [teams, setTeams] = useState(initialTeams);
+  const [teams] = useState(initialTeams);
   const [groups] = useState(initialGroups);
+  const [selectedTeams, setSelectedTeams] = useState([]);
 
   const handleClick = (team) => {
-    if (team.rank !== 0) return;
-    const teamsClone = teams;
-    let highestRank = calculateHighestRankByGroup(team.group);
+    if (selectedTeams.findIndex((i) => i.id === team.id) !== -1) return;
+    const groupMember = selectedTeams.filter((i) => i.group === team.group);
 
-    const index = teams.findIndex((i) => i === team);
-    if (highestRank > 4) return;
-    teamsClone[index].rank = ++highestRank;
-
-    if (highestRank <= 2)
-      teamsClone[index].status = `${teamsClone[index].status.slice(0, 3)}${
-        Number(teamsClone[index].status.slice(-2)) / 2
-      }`;
-
-    setTeams([...teamsClone]);
-  };
-
-  const calculateHighestRankByGroup = (group) => {
-    const filteredGroup = teams.filter((i) => i.group === group);
-    return Math.max(...filteredGroup.map((i) => i.rank));
+    if (groupMember.length === 0) {
+      team.rank += 1;
+      setSelectedTeams([...selectedTeams, team]);
+    } else if (groupMember.length === 1) {
+      team.rank = groupMember[0].rank + 1;
+      setSelectedTeams([...selectedTeams, team]);
+    }
   };
 
   return (
@@ -61,7 +53,113 @@ export default function TournamentBrackets() {
               );
             })}
           </div>
-          <div className="col-span-8">10luk</div>
+          <div className="col-span-1 space-y-16">
+            <div className="bg-lime-500 w-32 h-20">
+              {selectedTeams
+                .filter((i) => i.group === "A" && i.rank === 1)
+                .map((team) => (
+                  <div>{team.name}</div>
+                ))}
+              {selectedTeams
+                .filter((i) => i.group === "B" && i.rank === 2)
+                .map((team) => (
+                  <div>{team.name}</div>
+                ))}
+            </div>
+
+            <div className="bg-lime-500 w-32 h-20">
+              {selectedTeams
+                .filter((i) => i.group === "C" && i.rank === 1)
+                .map((team) => (
+                  <div>{team.name}</div>
+                ))}
+              {selectedTeams
+                .filter((i) => i.group === "D" && i.rank === 2)
+                .map((team) => (
+                  <div>{team.name}</div>
+                ))}
+            </div>
+
+            <div className="bg-lime-500 w-32 h-20">
+              {selectedTeams
+                .filter((i) => i.group === "E" && i.rank === 1)
+                .map((team) => (
+                  <div>{team.name}</div>
+                ))}
+              {selectedTeams
+                .filter((i) => i.group === "F" && i.rank === 2)
+                .map((team) => (
+                  <div>{team.name}</div>
+                ))}
+            </div>
+
+            <div className="bg-lime-500 w-32 h-20">
+              {selectedTeams
+                .filter((i) => i.group === "G" && i.rank === 1)
+                .map((team) => (
+                  <div>{team.name}</div>
+                ))}
+              {selectedTeams
+                .filter((i) => i.group === "H" && i.rank === 2)
+                .map((team) => (
+                  <div>{team.name}</div>
+                ))}
+            </div>
+          </div>
+          <div className="col-span-6"></div>
+          <div className="col-span-1 space-y-16">
+            <div className="bg-lime-500 w-32 h-20">
+              {selectedTeams
+                .filter((i) => i.group === "B" && i.rank === 1)
+                .map((team) => (
+                  <div>{team.name}</div>
+                ))}
+              {selectedTeams
+                .filter((i) => i.group === "A" && i.rank === 2)
+                .map((team) => (
+                  <div>{team.name}</div>
+                ))}
+            </div>
+
+            <div className="bg-lime-500 w-32 h-20">
+              {selectedTeams
+                .filter((i) => i.group === "D" && i.rank === 1)
+                .map((team) => (
+                  <div>{team.name}</div>
+                ))}
+              {selectedTeams
+                .filter((i) => i.group === "C" && i.rank === 2)
+                .map((team) => (
+                  <div>{team.name}</div>
+                ))}
+            </div>
+
+            <div className="bg-lime-500 w-32 h-20">
+              {selectedTeams
+                .filter((i) => i.group === "F" && i.rank === 1)
+                .map((team) => (
+                  <div>{team.name}</div>
+                ))}
+              {selectedTeams
+                .filter((i) => i.group === "E" && i.rank === 2)
+                .map((team) => (
+                  <div>{team.name}</div>
+                ))}
+            </div>
+
+            <div className="bg-lime-500 w-32 h-20">
+              {selectedTeams
+                .filter((i) => i.group === "H" && i.rank === 1)
+                .map((team) => (
+                  <div>{team.name}</div>
+                ))}
+              {selectedTeams
+                .filter((i) => i.group === "G" && i.rank === 2)
+                .map((team) => (
+                  <div>{team.name}</div>
+                ))}
+            </div>
+          </div>
           <div className="col-span-2 space-y-10">
             {groups.map((group, index) => {
               if (group.side === "left") return false;
