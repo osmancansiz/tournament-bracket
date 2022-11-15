@@ -8,6 +8,7 @@ export default function TournamentBrackets() {
   const [selectedTeams, setSelectedTeams] = useState([]);
   const [quarterFinal, setQuarterFinal] = useState([]);
   const [semiFinal, setSemiFinal] = useState([]);
+  const [final, setFinal] = useState([]);
 
   const handleClick = (team) => {
     if (selectedTeams.findIndex((i) => i.id === team.id) !== -1) return;
@@ -34,12 +35,14 @@ export default function TournamentBrackets() {
 
   const setSemiFinalTeams = (team, side) => {
     if (semiFinal.findIndex((i) => i.id === team.id) !== -1) return;
-    const filteredTeams = quarterFinal.filter((i) => i.quarterSide === side);
+    const filteredTeams = quarterFinal.filter((i) => i.semiSide === side);
     if (filteredTeams.length === 0) {
-      team.quarterSide = side;
-      setQuarterFinal([...semiFinal, team]);
+      team.semiSide = side;
+      setSemiFinal([...semiFinal, team]);
     }
   };
+
+  console.log(semiFinal);
 
   return (
     <div className="bg-hero-pattern h-screen bg-center font-bold">
@@ -228,10 +231,45 @@ export default function TournamentBrackets() {
                 ))}
             </div>
           </div>
-          <div className="col-span-1 ml-10">sdfsdf</div>
+          <div className="col-span-1 flex flex-col h-full justify-around ml-4">
+            <div className="h-12">
+              {semiFinal
+                .filter((i) => i.semiSide === 1)
+                .map((team, index) => (
+                  <div key={index} className="my-2 cursor-pointer bg-red-500">
+                    {team.name}
+                  </div>
+                ))}
+              {semiFinal
+                .filter((i) => i.semiSide === 2)
+                .map((team, index) => (
+                  <div key={index} className="my-2 cursor-pointer bg-red-500">
+                    {team.name}
+                  </div>
+                ))}
+            </div>
+          </div>
 
           <div className="col-span-2"></div>
-          <div className="">sdfsdf</div>
+
+          <div className="col-span-1 flex flex-col h-full justify-around ml-4">
+            <div className="h-12">
+              {semiFinal
+                .filter((i) => i.semiSide === 3)
+                .map((team, index) => (
+                  <div key={index} className="my-2 cursor-pointer bg-red-500">
+                    {team.name}
+                  </div>
+                ))}
+              {semiFinal
+                .filter((i) => i.semiSide === 4)
+                .map((team, index) => (
+                  <div key={index} className="my-2 cursor-pointer bg-red-500">
+                    {team.name}
+                  </div>
+                ))}
+            </div>
+          </div>
           <div className="col-span-1 flex flex-col h-full justify-around mr-4">
             <div className="h-12">
               {quarterFinal
