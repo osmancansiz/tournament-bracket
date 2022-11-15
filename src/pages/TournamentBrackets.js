@@ -15,9 +15,8 @@ export default function TournamentBrackets() {
     teamsClone[index].rank = ++highestRank;
 
     if (highestRank <= 2)
-      teamsClone[index].status = `${teamsClone[index].status.slice(0, 3)}${
-        Number(teamsClone[index].status.slice(-2)) / 2
-      }`;
+      teamsClone[index].status = `${teamsClone[index].status.slice(0, 3)}${Number(teamsClone[index].status.slice(-2)) / 2
+        }`;
 
     setTeams([...teamsClone]);
   };
@@ -38,12 +37,12 @@ export default function TournamentBrackets() {
   }, []);
 
   return (
-    <div className="bg-hero-pattern h-screen bg-center">
+    <div className="bg-hero-pattern h-screen bg-center font-bold">
       <div className="container mx-auto">
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-2 gap-10 place-items-center h-3/4 pt-4">
           {groups.map((group, index) => (
-            <div key={index} className="border w-[150px] text-center">
-              <div key={index} className="bg-red-400">
+            <div key={index} className="border  border-black w-[250px] text-center">
+              <div key={index} className="bg-black text-white">
                 {group}
               </div>
               {teams.map((team) => {
@@ -51,7 +50,7 @@ export default function TournamentBrackets() {
                 if (team.group !== group) return;
                 return (
                   <div key={team.id} onClick={() => handleClick(team)}>
-                    {team.name}
+                    {team.name.toUpperCase()}
                   </div>
                 );
               })}
