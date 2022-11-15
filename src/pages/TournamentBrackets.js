@@ -4,7 +4,6 @@ import data from "../data.json";
 export default function TournamentBrackets() {
   const [teams, setTeams] = useState(data);
   const [groups, setGroups] = useState([]);
-
   const handleClick = (team) => {
     if (team.rank !== 0) return;
     const teamsClone = teams;
@@ -12,6 +11,10 @@ export default function TournamentBrackets() {
     const index = teams.findIndex((i) => i === team);
     if (highestRank > 4) return;
     teamsClone[index].rank = ++highestRank;
+    if (highestRank <= 2)
+      teamsClone[index].status = `${teamsClone[index].status.slice(0, 3)}${
+        Number(teamsClone[index].status.slice(-2)) / 2
+      }`;
     setTeams([...teamsClone]);
   };
 
@@ -30,8 +33,10 @@ export default function TournamentBrackets() {
       <div className="container mx-auto">
         <div className="grid grid-cols-2 gap-5">
           {groups.map((group, index) => (
-            <div key={index} className='border w-[150px] text-center'>
-              <div key={index} className='bg-red-400'>{group}</div>
+            <div key={index} className="border w-[150px] text-center">
+              <div key={index} className="bg-red-400">
+                {group}
+              </div>
               {teams.map((team) => {
                 /*eslint-disable-next-line*/
                 if (team.group !== group) return;
@@ -46,6 +51,5 @@ export default function TournamentBrackets() {
         </div>
       </div>
     </div>
-
   );
 }
