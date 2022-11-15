@@ -218,8 +218,7 @@ export default function TournamentBrackets() {
       <div className="grid grid-cols-2">
         {groups.map((group, index) => (
           <div key={index}>
-            <div key={index}>{group}</div>
-
+            <div>{group}</div>
             {teams.map((team) => {
               /*eslint-disable-next-line*/
               if (team.group !== group) return;
