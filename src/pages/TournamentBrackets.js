@@ -26,23 +26,26 @@ export default function TournamentBrackets() {
   }, []);
 
   return (
-    <div className="container mx-auto">
-      <div className="grid grid-cols-2">
-        {groups.map((group, index) => (
-          <div key={index}>
-            <div key={index}>{group}</div>
-            {teams.map((team) => {
-              /*eslint-disable-next-line*/
-              if (team.group !== group) return;
-              return (
-                <div key={team.id} onClick={() => handleClick(team)}>
-                  {team.name}
-                </div>
-              );
-            })}
-          </div>
-        ))}
+    <div className="bg-hero-pattern h-screen bg-center">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-2 gap-5">
+          {groups.map((group, index) => (
+            <div key={index} className='border w-[150px] text-center'>
+              <div key={index} className='bg-red-400'>{group}</div>
+              {teams.map((team) => {
+                /*eslint-disable-next-line*/
+                if (team.group !== group) return;
+                return (
+                  <div key={team.id} onClick={() => handleClick(team)}>
+                    {team.name}
+                  </div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
+
   );
 }
