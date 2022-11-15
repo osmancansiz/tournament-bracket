@@ -4,18 +4,27 @@ import data from "../data.json";
 export default function TournamentBrackets() {
   const [teams, setTeams] = useState(data);
   const [groups, setGroups] = useState([]);
+
   const handleClick = (team) => {
     if (team.rank !== 0) return;
     const teamsClone = teams;
-    let highestRank = Math.max(...teamsClone.map((i) => i.rank));
+    let highestRank = calculateHighestRankByGroup(team.group);
+
     const index = teams.findIndex((i) => i === team);
     if (highestRank > 4) return;
     teamsClone[index].rank = ++highestRank;
+
     if (highestRank <= 2)
       teamsClone[index].status = `${teamsClone[index].status.slice(0, 3)}${
         Number(teamsClone[index].status.slice(-2)) / 2
       }`;
+
     setTeams([...teamsClone]);
+  };
+
+  const calculateHighestRankByGroup = (group) => {
+    const filteredGroup = teams.filter((i) => i.group === group);
+    return Math.max(...filteredGroup.map((i) => i.rank));
   };
 
   useEffect(() => {
