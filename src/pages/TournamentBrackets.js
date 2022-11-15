@@ -17,9 +17,8 @@ export default function TournamentBrackets() {
     teamsClone[index].rank = ++highestRank;
 
     if (highestRank <= 2)
-      teamsClone[index].status = `${teamsClone[index].status.slice(0, 3)}${
-        Number(teamsClone[index].status.slice(-2)) / 2
-      }`;
+      teamsClone[index].status = `${teamsClone[index].status.slice(0, 3)}${Number(teamsClone[index].status.slice(-2)) / 2
+        }`;
 
     setTeams([...teamsClone]);
   };
@@ -32,26 +31,62 @@ export default function TournamentBrackets() {
   return (
     <div className="bg-hero-pattern h-screen bg-center font-bold">
       <div className="container mx-auto">
-        <div className="grid grid-cols-2 gap-10 place-items-center h-3/4 pt-4">
-          {groups.map((group, index) => (
-            <div
-              key={index}
-              className="border  border-black w-[250px] text-center"
-            >
-              <div key={index} className="bg-black text-white">
-                {group.name}
-              </div>
-              {teams.map((team) => {
-                /*eslint-disable-next-line*/
-                if (team.group !== group.id) return;
-                return (
-                  <div key={team.id} onClick={() => handleClick(team)}>
-                    {team.name.toUpperCase()}
+        <div className="grid grid-cols-12 w-full h-3/4 pt-10 ">
+          <div className="col-span-2 space-y-10 ">
+            {groups.map((group, index) => {
+              if (group.side === 'right') return false
+              return (
+                <div
+                  key={index}
+                  className={`border col-span-1 border-black text-center`}
+                >
+                  <div key={index} className="bg-black text-white">
+                    {group.name}
                   </div>
-                );
-              })}
-            </div>
-          ))}
+
+                  {teams.map((team) => {
+                    /*eslint-disable-next-line*/
+                    if (team.group !== group.id) return;
+                    return (
+                      <div key={team.id} onClick={() => handleClick(team)}>
+                        {team.name.toUpperCase()}
+                      </div>
+                    );
+                  })}
+                </div>
+              )
+            }
+            )}
+          </div>
+          <div className="col-span-8">10luk</div>
+          <div className="col-span-2 space-y-10">
+            {groups.map((group, index) => {
+              if (group.side === 'left') return false
+              return (
+                <div
+                  key={index}
+                  className={`border col-span-1 border-black text-center`}
+                >
+                  <div key={index} className="bg-black text-white">
+                    {group.name}
+                  </div>
+
+                  {teams.map((team) => {
+                    /*eslint-disable-next-line*/
+                    if (team.group !== group.id) return;
+                    return (
+                      <div key={team.id} onClick={() => handleClick(team)}>
+                        {team.name.toUpperCase()}
+                      </div>
+                    );
+                  })}
+                </div>
+              )
+            }
+            )}
+
+          </div>
+
         </div>
       </div>
     </div>
