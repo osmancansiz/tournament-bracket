@@ -35,7 +35,7 @@ export default function TournamentBrackets() {
 
   const setSemiFinalTeams = (team, side) => {
     if (semiFinal.findIndex((i) => i.id === team.id) !== -1) return;
-    const filteredTeams = quarterFinal.filter((i) => i.semiSide === side);
+    const filteredTeams = semiFinal.filter((i) => i.semiSide === side);
     if (filteredTeams.length === 0) {
       team.semiSide = side;
       setSemiFinal([...semiFinal, team]);
