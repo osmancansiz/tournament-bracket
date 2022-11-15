@@ -9,6 +9,7 @@ export default function TournamentBrackets() {
   const [quarterFinal, setQuarterFinal] = useState([]);
   const [semiFinal, setSemiFinal] = useState([]);
   const [final, setFinal] = useState([]);
+  const [winner, setWinner] = useState({});
 
   const handleClick = (team) => {
     if (selectedTeams.findIndex((i) => i.id === team.id) !== -1) return;
@@ -42,12 +43,23 @@ export default function TournamentBrackets() {
     }
   };
 
-  console.log(semiFinal);
+  const setFinalTeams = (team, side) => {
+    if (final.findIndex((i) => i.id === team.id) !== -1) return;
+    const filteredTeams = final.filter((i) => i.finalSide === side);
+    if (filteredTeams.length === 0) {
+      team.finalSide = side;
+      setFinal([...final, team]);
+    }
+  };
+
+  const setWinnerTeam = (team) => {
+    setWinner(team);
+  };
 
   return (
     <div className="bg-hero-pattern h-screen bg-center font-bold">
       <div className="container mx-auto">
-        <div className="grid grid-cols-12 w-full h-3/4 pt-10 ">
+        <div className="grid grid-cols-12 w-full h-full pt-10 ">
           <div className="col-span-2 space-y-10 ">
             {groups.map((group, index) => {
               if (group.side === "right") return false;
@@ -236,35 +248,80 @@ export default function TournamentBrackets() {
               {semiFinal
                 .filter((i) => i.semiSide === 1)
                 .map((team, index) => (
-                  <div key={index} className="my-2 cursor-pointer bg-red-500">
+                  <div
+                    key={index}
+                    className="my-2 cursor-pointer bg-red-500"
+                    onClick={() => setFinalTeams(team, 1)}
+                  >
                     {team.name}
                   </div>
                 ))}
               {semiFinal
                 .filter((i) => i.semiSide === 2)
                 .map((team, index) => (
-                  <div key={index} className="my-2 cursor-pointer bg-red-500">
+                  <div
+                    key={index}
+                    className="my-2 cursor-pointer bg-red-500"
+                    onClick={() => setFinalTeams(team, 1)}
+                  >
                     {team.name}
                   </div>
                 ))}
             </div>
           </div>
 
-          <div className="col-span-2"></div>
+          <div className="col-span-2">
+            <div className="w-1/2 h-12 inline-block pr-2">
+              {final
+                .filter((i) => i.finalSide === 1)
+                .map((team, index) => (
+                  <div
+                    key={index}
+                    className="my-2 cursor-pointer bg-red-500"
+                    onClick={() => setWinnerTeam(team)}
+                  >
+                    {team.name}
+                  </div>
+                ))}
+            </div>
+            <div className="w-1/2 h-12 inline-block pl-2">
+              {final
+                .filter((i) => i.finalSide === 2)
+                .map((team, index) => (
+                  <div
+                    key={index}
+                    className="my-2 cursor-pointer bg-red-500"
+                    onClick={() => setWinnerTeam(team)}
+                  >
+                    {team.name}
+                  </div>
+                ))}
+            </div>
+
+            <div className="text-center">{winner.name}</div>
+          </div>
 
           <div className="col-span-1 flex flex-col h-full justify-around ml-4">
             <div className="h-12">
               {semiFinal
                 .filter((i) => i.semiSide === 3)
                 .map((team, index) => (
-                  <div key={index} className="my-2 cursor-pointer bg-red-500">
+                  <div
+                    key={index}
+                    className="my-2 cursor-pointer bg-red-500"
+                    onClick={() => setFinalTeams(team, 2)}
+                  >
                     {team.name}
                   </div>
                 ))}
               {semiFinal
                 .filter((i) => i.semiSide === 4)
                 .map((team, index) => (
-                  <div key={index} className="my-2 cursor-pointer bg-red-500">
+                  <div
+                    key={index}
+                    className="my-2 cursor-pointer bg-red-500"
+                    onClick={() => setFinalTeams(team, 2)}
+                  >
                     {team.name}
                   </div>
                 ))}
