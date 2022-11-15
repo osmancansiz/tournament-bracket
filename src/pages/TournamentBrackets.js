@@ -33,7 +33,12 @@ export default function TournamentBrackets() {
   };
 
   const setSemiFinalTeams = (team, side) => {
-    console.log(team, side);
+    if (semiFinal.findIndex((i) => i.id === team.id) !== -1) return;
+    const filteredTeams = quarterFinal.filter((i) => i.quarterSide === side);
+    if (filteredTeams.length === 0) {
+      team.quarterSide = side;
+      setQuarterFinal([...semiFinal, team]);
+    }
   };
 
   return (
@@ -74,15 +79,23 @@ export default function TournamentBrackets() {
               <div className="h-12">
                 {selectedTeams
                   .filter((i) => i.group === "A" && i.rank === 1)
-                  .map((team) => (
-                    <div onClick={() => setQuarterFinalTeams(team, 1)} className="my-2">
+                  .map((team, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setQuarterFinalTeams(team, 1)}
+                      className="my-2 cursor-pointer"
+                    >
                       {team.name}
                     </div>
                   ))}
                 {selectedTeams
                   .filter((i) => i.group === "B" && i.rank === 2)
-                  .map((team) => (
-                    <div onClick={() => setQuarterFinalTeams(team, 1)} className="my-2">
+                  .map((team, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setQuarterFinalTeams(team, 1)}
+                      className="my-2 cursor-pointer"
+                    >
                       {team.name}
                     </div>
                   ))}
@@ -91,15 +104,23 @@ export default function TournamentBrackets() {
               <div className=" h-12">
                 {selectedTeams
                   .filter((i) => i.group === "C" && i.rank === 1)
-                  .map((team) => (
-                    <div onClick={() => setQuarterFinalTeams(team, 2)} className="my-2">
+                  .map((team, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setQuarterFinalTeams(team, 2)}
+                      className="my-2 cursor-pointer"
+                    >
                       {team.name}
                     </div>
                   ))}
                 {selectedTeams
                   .filter((i) => i.group === "D" && i.rank === 2)
-                  .map((team) => (
-                    <div onClick={() => setQuarterFinalTeams(team, 2)} className="my-2">
+                  .map((team, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setQuarterFinalTeams(team, 2)}
+                      className="my-2 cursor-pointer"
+                    >
                       {team.name}
                     </div>
                   ))}
@@ -108,15 +129,23 @@ export default function TournamentBrackets() {
               <div className="h-12">
                 {selectedTeams
                   .filter((i) => i.group === "E" && i.rank === 1)
-                  .map((team) => (
-                    <div onClick={() => setQuarterFinalTeams(team, 3)} className="my-2">
+                  .map((team, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setQuarterFinalTeams(team, 3)}
+                      className="my-2 cursor-pointer"
+                    >
                       {team.name}
                     </div>
                   ))}
                 {selectedTeams
                   .filter((i) => i.group === "F" && i.rank === 2)
-                  .map((team) => (
-                    <div onClick={() => setQuarterFinalTeams(team, 3)} className="my-2">
+                  .map((team, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setQuarterFinalTeams(team, 3)}
+                      className="my-2 cursor-pointer"
+                    >
                       {team.name}
                     </div>
                   ))}
@@ -125,149 +154,237 @@ export default function TournamentBrackets() {
               <div className="h-12">
                 {selectedTeams
                   .filter((i) => i.group === "G" && i.rank === 1)
-                  .map((team) => (
-                    <div onClick={() => setQuarterFinalTeams(team, 4)} className="my-2">
+                  .map((team, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setQuarterFinalTeams(team, 4)}
+                      className="my-2 cursor-pointer"
+                    >
                       {team.name}
                     </div>
                   ))}
                 {selectedTeams
                   .filter((i) => i.group === "H" && i.rank === 2)
-                  .map((team) => (
-                    <div onClick={() => setQuarterFinalTeams(team, 4)} className="my-2">
+                  .map((team, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setQuarterFinalTeams(team, 4)}
+                      className="my-2 cursor-pointer"
+                    >
                       {team.name}
                     </div>
                   ))}
               </div>
             </div>
           </div>
-          <div className="col-span-1 space-y-16 ml-5">
-            <div className="bg-lime-500 w-32 h-20 mt-20">
+          <div className="col-span-1 flex flex-col h-full justify-around ml-4">
+            <div className="h-12">
               {quarterFinal
                 .filter((i) => i.side === 1)
-                .map((team) => (
-                  <div onClick={() => setSemiFinalTeams(team)}>{team.name}</div>
+                .map((team, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setSemiFinalTeams(team, 1)}
+                    className="my-2 cursor-pointer"
+                  >
+                    {team.name}
+                  </div>
                 ))}
               {quarterFinal
                 .filter((i) => i.side === 2)
-                .map((team) => (
-                  <div onClick={() => setSemiFinalTeams(team)}>{team.name}</div>
+                .map((team, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setSemiFinalTeams(team, 1)}
+                    className="my-2 cursor-pointer"
+                  >
+                    {team.name}
+                  </div>
                 ))}
             </div>
 
-            <div className="bg-lime-500 w-32 h-20 mt-20">
+            <div className="h-12 pt-5">
               {quarterFinal
                 .filter((i) => i.side === 3)
-                .map((team) => (
-                  <div onClick={() => setSemiFinalTeams(team)}>{team.name}</div>
+                .map((team, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setSemiFinalTeams(team, 2)}
+                    className="my-2 cursor-pointer"
+                  >
+                    {team.name}
+                  </div>
                 ))}
               {quarterFinal
                 .filter((i) => i.side === 4)
-                .map((team) => (
-                  <div onClick={() => setSemiFinalTeams(team)}>{team.name}</div>
+                .map((team, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setSemiFinalTeams(team, 2)}
+                    className="my-2 cursor-pointer"
+                  >
+                    {team.name}
+                  </div>
                 ))}
             </div>
           </div>
+          <div className="col-span-1 ml-10">sdfsdf</div>
 
-          <div className="col-span-4"></div>
-
-          <div className="col-span-1 space-y-16 mr-20">
-            <div className="bg-lime-500 w-32 h-20 mt-20">
+          <div className="col-span-2"></div>
+          <div className="">sdfsdf</div>
+          <div className="col-span-1 flex flex-col h-full justify-around mr-4">
+            <div className="h-12">
               {quarterFinal
                 .filter((i) => i.side === 5)
-                .map((team) => (
-                  <div onClick={() => setSemiFinalTeams(team)}>{team.name}</div>
+                .map((team, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setSemiFinalTeams(team, 3)}
+                    className="my-2 cursor-pointer"
+                  >
+                    {team.name}
+                  </div>
                 ))}
               {quarterFinal
                 .filter((i) => i.side === 6)
-                .map((team) => (
-                  <div onClick={() => setSemiFinalTeams(team)}>{team.name}</div>
+                .map((team, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setSemiFinalTeams(team, 3)}
+                    className="my-2 cursor-pointer"
+                  >
+                    {team.name}
+                  </div>
                 ))}
             </div>
 
-            <div className="bg-lime-500 w-32 h-20 mt-20">
+            <div className="h-12 pt-5">
               {quarterFinal
                 .filter((i) => i.side === 7)
-                .map((team) => (
-                  <div onClick={() => setSemiFinalTeams(team)}>{team.name}</div>
+                .map((team, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setSemiFinalTeams(team, 4)}
+                    className="my-2 cursor-pointer"
+                  >
+                    {team.name}
+                  </div>
                 ))}
               {quarterFinal
                 .filter((i) => i.side === 8)
-                .map((team) => (
-                  <div onClick={() => setSemiFinalTeams(team)}>{team.name}</div>
+                .map((team, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setSemiFinalTeams(team, 4)}
+                    className="my-2 cursor-pointer"
+                  >
+                    {team.name}
+                  </div>
                 ))}
             </div>
           </div>
           <div className="col-span-1">
             <div className="flex flex-col justify-around gap-10 h-full relative text-center">
-            <div className="h-12">
-              {selectedTeams
-                .filter((i) => i.group === "B" && i.rank === 1)
-                .map((team) => (
-                  <div onClick={() => setQuarterFinalTeams(team, 5)} className="my-2">
-                    {team.name}
-                  </div>
-                ))}
-              {selectedTeams
-                .filter((i) => i.group === "A" && i.rank === 2)
-                .map((team) => (
-                  <div onClick={() => setQuarterFinalTeams(team, 5)} className="my-2">
-                    {team.name}
-                  </div>
-                ))}
-            </div>
+              <div className="h-12">
+                {selectedTeams
+                  .filter((i) => i.group === "B" && i.rank === 1)
+                  .map((team, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setQuarterFinalTeams(team, 5)}
+                      className="my-2 cursor-pointer"
+                    >
+                      {team.name}
+                    </div>
+                  ))}
+                {selectedTeams
+                  .filter((i) => i.group === "A" && i.rank === 2)
+                  .map((team, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setQuarterFinalTeams(team, 5)}
+                      className="my-2 cursor-pointer"
+                    >
+                      {team.name}
+                    </div>
+                  ))}
+              </div>
 
-            <div className="h-12">
-              {selectedTeams
-                .filter((i) => i.group === "D" && i.rank === 1)
-                .map((team) => (
-                  <div onClick={() => setQuarterFinalTeams(team, 6)} className="my-2">
-                    {team.name}
-                  </div>
-                ))}
-              {selectedTeams
-                .filter((i) => i.group === "C" && i.rank === 2)
-                .map((team) => (
-                  <div onClick={() => setQuarterFinalTeams(team, 6)} className="my-2">
-                    {team.name}
-                  </div>
-                ))}
-            </div>
+              <div className="h-12">
+                {selectedTeams
+                  .filter((i) => i.group === "D" && i.rank === 1)
+                  .map((team, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setQuarterFinalTeams(team, 6)}
+                      className="my-2 cursor-pointer"
+                    >
+                      {team.name}
+                    </div>
+                  ))}
+                {selectedTeams
+                  .filter((i) => i.group === "C" && i.rank === 2)
+                  .map((team, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setQuarterFinalTeams(team, 6)}
+                      className="my-2 cursor-pointer"
+                    >
+                      {team.name}
+                    </div>
+                  ))}
+              </div>
 
-            <div className="h-12">
-              {selectedTeams
-                .filter((i) => i.group === "F" && i.rank === 1)
-                .map((team) => (
-                  <div onClick={() => setQuarterFinalTeams(team, 7)} className="my-2">
-                    {team.name}
-                  </div>
-                ))}
-              {selectedTeams
-                .filter((i) => i.group === "E" && i.rank === 2)
-                .map((team) => (
-                  <div onClick={() => setQuarterFinalTeams(team, 7)} className="my-2">
-                    {team.name}
-                  </div>
-                ))}
-            </div>
+              <div className="h-12">
+                {selectedTeams
+                  .filter((i) => i.group === "F" && i.rank === 1)
+                  .map((team, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setQuarterFinalTeams(team, 7)}
+                      className="my-2 cursor-pointer"
+                    >
+                      {team.name}
+                    </div>
+                  ))}
+                {selectedTeams
+                  .filter((i) => i.group === "E" && i.rank === 2)
+                  .map((team, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setQuarterFinalTeams(team, 7)}
+                      className="my-2 cursor-pointer"
+                    >
+                      {team.name}
+                    </div>
+                  ))}
+              </div>
 
-            <div className="h-12">
-              {selectedTeams
-                .filter((i) => i.group === "H" && i.rank === 1)
-                .map((team) => (
-                  <div onClick={() => setQuarterFinalTeams(team, 8)} className="my-2">
-                    {team.name}
-                  </div>
-                ))}
-              {selectedTeams
-                .filter((i) => i.group === "G" && i.rank === 2)
-                .map((team) => (
-                  <div onClick={() => setQuarterFinalTeams(team, 8)} className="my-2">
-                    {team.name}
-                  </div>
-                ))}
+              <div className="h-12">
+                {selectedTeams
+                  .filter((i) => i.group === "H" && i.rank === 1)
+                  .map((team, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setQuarterFinalTeams(team, 8)}
+                      className="my-2 cursor-pointer"
+                    >
+                      {team.name}
+                    </div>
+                  ))}
+                {selectedTeams
+                  .filter((i) => i.group === "G" && i.rank === 2)
+                  .map((team, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setQuarterFinalTeams(team, 8)}
+                      className="my-2 cursor-pointer"
+                    >
+                      {team.name}
+                    </div>
+                  ))}
+              </div>
             </div>
-            </div>
-            
           </div>
           <div className="col-span-2 space-y-10">
             {groups.map((group, index) => {
