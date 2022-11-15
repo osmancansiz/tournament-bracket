@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
-import data from "../data.json";
+import React, { useState } from "react";
+import initialTeams from "../data/teams.json";
+import initialGroups from "../data/groups.json";
 
 export default function TournamentBrackets() {
-  const [teams, setTeams] = useState(data);
-  const [groups, setGroups] = useState([]);
+  const [teams, setTeams] = useState(initialTeams);
+  //eslint-disable-next-line
+  const [groups, setGroups] = useState(initialGroups);
 
   const handleClick = (team) => {
     if (team.rank !== 0) return;
@@ -15,8 +17,9 @@ export default function TournamentBrackets() {
     teamsClone[index].rank = ++highestRank;
 
     if (highestRank <= 2)
-      teamsClone[index].status = `${teamsClone[index].status.slice(0, 3)}${Number(teamsClone[index].status.slice(-2)) / 2
-        }`;
+      teamsClone[index].status = `${teamsClone[index].status.slice(0, 3)}${
+        Number(teamsClone[index].status.slice(-2)) / 2
+      }`;
 
     setTeams([...teamsClone]);
   };
@@ -26,28 +29,21 @@ export default function TournamentBrackets() {
     return Math.max(...filteredGroup.map((i) => i.rank));
   };
 
-  useEffect(() => {
-    const groups = [];
-    teams.forEach((team) => {
-      if (groups.includes(team.group)) return;
-      groups.push(team.group);
-    });
-    setGroups([...groups]);
-    //eslint-disable-next-line
-  }, []);
-
   return (
     <div className="bg-hero-pattern h-screen bg-center font-bold">
       <div className="container mx-auto">
         <div className="grid grid-cols-2 gap-10 place-items-center h-3/4 pt-4">
           {groups.map((group, index) => (
-            <div key={index} className="border  border-black w-[250px] text-center">
+            <div
+              key={index}
+              className="border  border-black w-[250px] text-center"
+            >
               <div key={index} className="bg-black text-white">
-                {group}
+                {group.name}
               </div>
               {teams.map((team) => {
                 /*eslint-disable-next-line*/
-                if (team.group !== group) return;
+                if (team.group !== group.id) return;
                 return (
                   <div key={team.id} onClick={() => handleClick(team)}>
                     {team.name.toUpperCase()}
