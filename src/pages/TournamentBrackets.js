@@ -63,7 +63,7 @@ export default function TournamentBrackets() {
   };
 
   return (
-    <div className="font-bold bg-hero-pattern bg-center pt-10 pb-[177px] bg-cover ">
+    <div className="font-bold bg-hero-pattern bg-center pt-10 p-48 bg-cover ">
       <div className="mx-8">
         <div className="grid grid-cols-12 w-full h-3/4 pt-10">
           <div className="col-span-2 space-y-10 ">
