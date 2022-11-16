@@ -63,8 +63,8 @@ export default function TournamentBrackets() {
   };
 
   return (
-    <div className="font-bold bg-hero-pattern bg-center pt-10 p-48 bg-cover ">
-      <div className="mx-8">
+    <div className="font-bold bg-hero-pattern h-screen lg:h-auto bg-center md:pt-2 md:p-10 bg-cover text-xs lg:text-base">
+      <div className="lg:mx-8 mx-1">
         <div className="grid grid-cols-12 w-full h-3/4 pt-10">
           <div className="col-span-2 space-y-10 ">
             {groups.map((group, index) => {
@@ -72,7 +72,7 @@ export default function TournamentBrackets() {
               return (
                 <div
                   key={index}
-                  className="border-2 group-box overflow-hidden col-span-1 shadow-md border-black text-center"
+                  className="border-2 group-box overflow-hidden col-span-1 shadow-md border-black text-center text-xs lg:text-base"
                 >
                   <div key={index} className="bg-black text-white">
                     {group.name} GRUBU
@@ -85,16 +85,9 @@ export default function TournamentBrackets() {
                       <div
                         key={team.id}
                         onClick={() => handleClick(team)}
-                        className="pt-1 cursor-pointer hover:opacity-70"
+                        className="pt-1 cursor-pointer hover:opacity-70 text-[8px] lg:text-base"
                       >
                         {team.name}
-                        {team.rank > 0 ? (
-                          <span className="absolute text-xs">
-                            {"#" + team.rank}
-                          </span>
-                        ) : (
-                          ""
-                        )}
                       </div>
                     );
                   })}
@@ -102,8 +95,8 @@ export default function TournamentBrackets() {
               );
             })}
           </div>
-          <div className="col-span-1">
-            <div className="flex flex-col justify-around gap-10 h-full relative text-center ml-2">
+          <div className="col-span-1 ml-5 lg:ml-0">
+            <div className="flex flex-col justify-between lg:justify-around gap-10 h-full relative text-center ml-2">
               <div className="group-box flex flex-col justify-between items-center py-1">
                 {selectedTeams.filter((i) => i.group === "A" && i.rank === 1)
                   .length === 0 ? (
@@ -299,7 +292,7 @@ export default function TournamentBrackets() {
               </div>
             </div>
           </div>
-          <div className="col-span-1 text-center flex flex-col h-full justify-around ml-4">
+          <div className="col-span-1 text-center flex flex-col h-full justify-around ml-[54px] lg:ml-4">
             <div className=" group-box flex flex-col justify-between items-center py-1">
               <div className="hexagon">
                 {quarterFinal
@@ -360,7 +353,7 @@ export default function TournamentBrackets() {
               </div>
             </div>
           </div>
-          <div className="col-span-1 text-center flex flex-col h-full justify-around ml-4">
+          <div className="col-span-1 text-center flex flex-col h-full justify-around lg:ml-4 ml-8">
             <div className=" group-box flex flex-col justify-between items-center py-1">
               <div className="hexagon">
                 {semiFinal
@@ -393,9 +386,12 @@ export default function TournamentBrackets() {
           </div>
 
           <div className="col-span-2 text-center flex items-center h-full">
-            <div className="flex flex-col w-full h-full justify-around">
-              <div className="text-xl">Final</div>
-              <div className=" group-box flex flex-col justify-center py-1 text-center items-center w-1/2 mx-auto">
+            <div className="flex flex-col w-full h-full md:justify-around justify-between">
+              <div className=" text-[14px] lg:text-lg">Final
+                <div className="h-4 hidden"></div>
+              </div>
+
+              <div className=" group-box flex flex-col justify-between lg:justify-center py-1 text-center items-center w-1/2 mx-auto h-40">
                 <div className="hexagon">
                   {final
                     .filter((i) => i.finalSide === 1)
@@ -424,15 +420,16 @@ export default function TournamentBrackets() {
                     ))}
                 </div>
               </div>
-              <div
-                className={`${winner.name && "text-xl underline"} text-center `}
+              {winner.name ? <div
+                className={`text-[14px] lg:text-lg text-center`}
               >
                 Winner: {winner.name}
-              </div>
+              </div> : <div className="h-8"></div>}
+
             </div>
           </div>
 
-          <div className="col-span-1 text-center flex flex-col h-full justify-around mr-4">
+          <div className="col-span-1 text-center flex flex-col h-full justify-around lg:mr-4 mr-8">
             <div className=" group-box flex flex-col justify-between items-center py-1">
               <div className="hexagon">
                 {semiFinal
@@ -463,7 +460,7 @@ export default function TournamentBrackets() {
               </div>
             </div>
           </div>
-          <div className="col-span-1 flex text-center flex-col h-full justify-around mr-4">
+          <div className="col-span-1 flex text-center flex-col h-full justify-around -ml-16 lg:mr-4 lg:ml-0">
             <div className=" group-box flex flex-col justify-between items-center py-1">
               <div className="hexagon">
                 {quarterFinal
@@ -524,8 +521,8 @@ export default function TournamentBrackets() {
               </div>
             </div>
           </div>
-          <div className="col-span-1">
-            <div className="flex flex-col justify-around gap-10 h-full relative text-center mr-2">
+          <div className="col-span-1 mr-4 lg:mr-0">
+            <div className="flex flex-col justify-between lg:justify-around gap-10 h-full relative text-center mr-2">
               <div className=" group-box flex flex-col justify-between items-center py-1">
                 {selectedTeams.filter((i) => i.group === "B" && i.rank === 1)
                   .length === 0 ? (
@@ -738,16 +735,9 @@ export default function TournamentBrackets() {
                       <div
                         key={team.id}
                         onClick={() => handleClick(team)}
-                        className="pt-1 cursor-pointer hover:opacity-70"
+                        className="pt-1 cursor-pointer hover:opacity-70 text-[8px] lg:text-base"
                       >
                         {team.name}
-                        {team.rank > 0 ? (
-                          <span className="absolute text-xs">
-                            {"#" + team.rank}
-                          </span>
-                        ) : (
-                          ""
-                        )}
                       </div>
                     );
                   })}
