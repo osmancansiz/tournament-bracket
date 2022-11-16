@@ -82,6 +82,7 @@ export default function TournamentBrackets() {
                         className="pt-1 cursor-pointer hover:opacity-70"
                       >
                         {team.name.toUpperCase()}
+                        {team.rank > 0 ? <span className="absolute text-xs">{"#" + team.rank}</span> : ""}
                       </div>
                     );
                   })}
@@ -93,7 +94,8 @@ export default function TournamentBrackets() {
             <div className="flex flex-col justify-around gap-10 h-full relative text-center ml-2">
               <div className="h-20 border-2 border-black border-opacity-25 group-box flex flex-col justify-between py-1">
                 {selectedTeams
-                  .filter((i) => i.group === "A" && i.rank === 1)
+                  .filter((i) =>
+                    i.group === "A" && i.rank === 1)
                   .map((team, index) => (
                     <div
                       key={index}
@@ -522,6 +524,7 @@ export default function TournamentBrackets() {
                         className="pt-1 cursor-pointer hover:opacity-70"
                       >
                         {team.name.toUpperCase()}
+                        {team.rank > 0 ? <span className="absolute text-xs">{"#" + team.rank}</span> : ""}
                       </div>
                     );
                   })}
