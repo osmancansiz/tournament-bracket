@@ -402,7 +402,7 @@ export default function TournamentBrackets() {
                     .map((team, index) => (
                       <div
                         key={index}
-                        className="w-full relative"
+                        className="w-full h-full relative flex items-center justify-center"
                         onClick={() => setWinnerTeam(team)}
                       >
                         {team.name}
