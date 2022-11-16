@@ -1,14 +1,14 @@
 .hexagon {
-  width: 100px;
-  height: 40px;
+  width: 110px;
+  height: 34px;
   background-color: black;
   position: relative;
   cursor: pointer;
 }
 .hexagon:before {
-  content: '';
-  width: 96px;
-  height: 20px;
+  content: "";
+  width: 106px;
+  height: 30px;
   background: rgb(255, 172, 22);
   display: block;
   position: absolute;
