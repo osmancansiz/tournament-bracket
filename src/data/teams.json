@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Katar",
+    "name": "KATAR",
     "group": "A",
     "rank": 0,
     "status": "top32",
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "name": "Ekvador",
+    "name": "EKVADOR",
     "group": "A",
     "rank": 0,
     "status": "top32",
@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "name": "Senegal",
+    "name": "SENEGAL",
     "group": "A",
     "rank": 0,
     "status": "top32",
@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "name": "Hollanda",
+    "name": "HOLLANDA",
     "group": "A",
     "rank": 0,
     "status": "top32",
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "name": "İngiltere",
+    "name": "İNGİLTERE",
     "group": "B",
     "rank": 0,
     "status": "top32",
@@ -41,7 +41,7 @@
   },
   {
     "id": 6,
-    "name": "İran",
+    "name": "İRAN",
     "group": "B",
     "rank": 0,
     "status": "top32",
@@ -57,7 +57,7 @@
   },
   {
     "id": 8,
-    "name": "Galler",
+    "name": "GALLER",
     "group": "B",
     "rank": 0,
     "status": "top32",
@@ -65,7 +65,7 @@
   },
   {
     "id": 9,
-    "name": "Arjantin",
+    "name": "ARJANTİN",
     "group": "C",
     "rank": 0,
     "status": "top32",
@@ -73,7 +73,7 @@
   },
   {
     "id": 10,
-    "name": "S. Arabistan",
+    "name": "S.ARABİSTAN",
     "group": "C",
     "rank": 0,
     "status": "top32",
@@ -81,7 +81,7 @@
   },
   {
     "id": 11,
-    "name": "Meksika",
+    "name": "MEKSİKA",
     "group": "C",
     "rank": 0,
     "status": "top32",
@@ -89,7 +89,7 @@
   },
   {
     "id": 12,
-    "name": "Polonya",
+    "name": "POLONYA",
     "group": "C",
     "rank": 0,
     "status": "top32",
@@ -97,7 +97,7 @@
   },
   {
     "id": 13,
-    "name": "Fransa",
+    "name": "FRANSA",
     "group": "D",
     "rank": 0,
     "status": "top32",
@@ -105,7 +105,7 @@
   },
   {
     "id": 14,
-    "name": "Avustralya",
+    "name": "AVUSTRALYA",
     "group": "D",
     "rank": 0,
     "status": "top32",
@@ -113,7 +113,7 @@
   },
   {
     "id": 15,
-    "name": "Danimarka",
+    "name": "DANİMARKA",
     "group": "D",
     "rank": 0,
     "status": "top32",
@@ -121,7 +121,7 @@
   },
   {
     "id": 16,
-    "name": "Tunus",
+    "name": "TUNUS",
     "group": "D",
     "rank": 0,
     "status": "top32",
@@ -129,7 +129,7 @@
   },
   {
     "id": 17,
-    "name": "İspanya",
+    "name": "İSPANYA",
     "group": "E",
     "rank": 0,
     "status": "top32",
@@ -137,7 +137,7 @@
   },
   {
     "id": 18,
-    "name": "Kosta Rika",
+    "name": "KOSTA RİKA",
     "group": "E",
     "rank": 0,
     "status": "top32",
@@ -145,7 +145,7 @@
   },
   {
     "id": 19,
-    "name": "Almanya",
+    "name": "ALMANYA",
     "group": "E",
     "rank": 0,
     "status": "top32",
@@ -153,7 +153,7 @@
   },
   {
     "id": 20,
-    "name": "Japonya",
+    "name": "JAPONYA",
     "group": "E",
     "rank": 0,
     "status": "top32",
@@ -161,7 +161,7 @@
   },
   {
     "id": 21,
-    "name": "Belçika",
+    "name": "BELÇİKA",
     "group": "F",
     "rank": 0,
     "status": "top32",
@@ -169,7 +169,7 @@
   },
   {
     "id": 22,
-    "name": "Kanada",
+    "name": "KANADA",
     "group": "F",
     "rank": 0,
     "status": "top32",
@@ -177,7 +177,7 @@
   },
   {
     "id": 23,
-    "name": "Fas",
+    "name": "FAS",
     "group": "F",
     "rank": 0,
     "status": "top32",
@@ -185,7 +185,7 @@
   },
   {
     "id": 24,
-    "name": "Hırvatistan",
+    "name": "HIRVATİSTAN",
     "group": "F",
     "rank": 0,
     "status": "top32",
@@ -193,7 +193,7 @@
   },
   {
     "id": 25,
-    "name": "Brezilya",
+    "name": "BREZİLYA",
     "group": "G",
     "rank": 0,
     "status": "top32",
@@ -201,7 +201,7 @@
   },
   {
     "id": 26,
-    "name": "Sırbistan",
+    "name": "SIRBİSTAN",
     "group": "G",
     "rank": 0,
     "status": "top32",
@@ -209,7 +209,7 @@
   },
   {
     "id": 27,
-    "name": "İsviçre",
+    "name": "İSVİÇRE",
     "group": "G",
     "rank": 0,
     "status": "top32",
@@ -217,7 +217,7 @@
   },
   {
     "id": 28,
-    "name": "Kamerun",
+    "name": "KAMERUN",
     "group": "G",
     "rank": 0,
     "status": "top32",
@@ -225,7 +225,7 @@
   },
   {
     "id": 29,
-    "name": "Portekiz",
+    "name": "PORTEKİZ",
     "group": "H",
     "rank": 0,
     "status": "top32",
@@ -233,7 +233,7 @@
   },
   {
     "id": 30,
-    "name": "Gana",
+    "name": "GANA",
     "group": "H",
     "rank": 0,
     "status": "top32",
@@ -241,7 +241,7 @@
   },
   {
     "id": 31,
-    "name": "Uruguay",
+    "name": "URUGUAY",
     "group": "H",
     "rank": 0,
     "status": "top32",
@@ -249,7 +249,7 @@
   },
   {
     "id": 32,
-    "name": "Güney Kore",
+    "name": "GÜNEY KORE",
     "group": "H",
     "rank": 0,
     "status": "top32",
