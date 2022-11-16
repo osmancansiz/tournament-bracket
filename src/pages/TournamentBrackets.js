@@ -26,6 +26,8 @@ export default function TournamentBrackets() {
 
   const setQuarterFinalTeams = (team, side) => {
     if (quarterFinal.findIndex((i) => i.id === team.id) !== -1) return;
+    if (selectedTeams.length < 16)
+      return alert("En az 16 takım seçmeniz gerekiyor.");
 
     const filteredTeams = quarterFinal.filter((i) => i.side === side);
     if (filteredTeams.length === 0) {
@@ -36,6 +38,8 @@ export default function TournamentBrackets() {
 
   const setSemiFinalTeams = (team, side) => {
     if (semiFinal.findIndex((i) => i.id === team.id) !== -1) return;
+    if (quarterFinal.length < 8)
+      return alert("En az 8 takım seçmeniz gerekiyor.");
     const filteredTeams = semiFinal.filter((i) => i.semiSide === side);
     if (filteredTeams.length === 0) {
       team.semiSide = side;
@@ -45,6 +49,7 @@ export default function TournamentBrackets() {
 
   const setFinalTeams = (team, side) => {
     if (final.findIndex((i) => i.id === team.id) !== -1) return;
+    if (semiFinal.length < 4) return alert("En az 4 takım seçmeniz gerekiyor.");
     const filteredTeams = final.filter((i) => i.finalSide === side);
     if (filteredTeams.length === 0) {
       team.finalSide = side;
@@ -53,11 +58,12 @@ export default function TournamentBrackets() {
   };
 
   const setWinnerTeam = (team) => {
+    if (final.length < 2) return alert("En az 2 takım seçmeniz gerekiyor.");
     setWinner(team);
   };
 
   return (
-    <div className=" h-screen font-bold bg-hero-pattern bg-center">
+    <div className="font-bold bg-hero-pattern bg-center pt-10 pb-[177px] bg-cover ">
       <div className="mx-8">
         <div className="grid grid-cols-12 w-full h-3/4 pt-10">
           <div className="col-span-2 space-y-10 ">
@@ -82,7 +88,13 @@ export default function TournamentBrackets() {
                         className="pt-1 cursor-pointer hover:opacity-70"
                       >
                         {team.name.toUpperCase()}
-                        {team.rank > 0 ? <span className="absolute text-xs">{"#" + team.rank}</span> : ""}
+                        {team.rank > 0 ? (
+                          <span className="absolute text-xs">
+                            {"#" + team.rank}
+                          </span>
+                        ) : (
+                          ""
+                        )}
                       </div>
                     );
                   })}
@@ -93,150 +105,181 @@ export default function TournamentBrackets() {
           <div className="col-span-1">
             <div className="flex flex-col justify-around gap-10 h-full relative text-center ml-2">
               <div className="h-20 group-box flex flex-col justify-between items-center py-1">
-                {selectedTeams
-                  .filter((i) =>
-                    i.group === "A" && i.rank === 1).length === 0 ? <div className="hexagon"><span className="relative">A1</span> </div> : <div className="hexagon">
-                  {selectedTeams
-                    .filter((i) =>
-                      i.group === "A" && i.rank === 1)
-                    .map((team, index) => (
-                      <div
-                        key={index}
-                        onClick={() => setQuarterFinalTeams(team, 1)}
-                        className="relative cursor-pointer"
-                      >
-                        {team.name}
-                      </div>
-                    ))}
-                </div>}
+                {selectedTeams.filter((i) => i.group === "A" && i.rank === 1)
+                  .length === 0 ? (
+                  <div className="hexagon">
+                    <span className="relative">A1</span>{" "}
+                  </div>
+                ) : (
+                  <div className="hexagon">
+                    {selectedTeams
+                      .filter((i) => i.group === "A" && i.rank === 1)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          onClick={() => setQuarterFinalTeams(team, 1)}
+                          className="relative cursor-pointer"
+                        >
+                          {team.name}
+                        </div>
+                      ))}
+                  </div>
+                )}
 
                 <div className="opacity-25">vs</div>
 
-                {selectedTeams
-                  .filter((i) =>
-                    i.group === "B" && i.rank === 2).length === 0 ? <div className="hexagon"><span className="relative">B2</span> </div> : <div className="hexagon">
-                  {selectedTeams
-                    .filter((i) =>
-                      i.group === "B" && i.rank === 2)
-                    .map((team, index) => (
-                      <div
-                        key={index}
-                        onClick={() => setQuarterFinalTeams(team, 1)}
-                        className="relative cursor-pointer"
-                      >
-                        {team.name}
-                      </div>
-                    ))}
-                </div>}
-
+                {selectedTeams.filter((i) => i.group === "B" && i.rank === 2)
+                  .length === 0 ? (
+                  <div className="hexagon">
+                    <span className="relative">B2</span>{" "}
+                  </div>
+                ) : (
+                  <div className="hexagon">
+                    {selectedTeams
+                      .filter((i) => i.group === "B" && i.rank === 2)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          onClick={() => setQuarterFinalTeams(team, 1)}
+                          className="relative cursor-pointer"
+                        >
+                          {team.name}
+                        </div>
+                      ))}
+                  </div>
+                )}
               </div>
 
               <div className=" h-20 group-box flex flex-col justify-between items-center py-1">
-                {selectedTeams
-                  .filter((i) =>
-                    i.group === "C" && i.rank === 1).length === 0 ? <div className="hexagon"><span className="relative">C1</span> </div> : <div className="hexagon">
-                  {selectedTeams
-                    .filter((i) =>
-                      i.group === "C" && i.rank === 1)
-                    .map((team, index) => (
-                      <div
-                        key={index}
-                        onClick={() => setQuarterFinalTeams(team, 2)}
-                        className="relative cursor-pointer"
-                      >
-                        {team.name}
-                      </div>
-                    ))}
-                </div>}
+                {selectedTeams.filter((i) => i.group === "C" && i.rank === 1)
+                  .length === 0 ? (
+                  <div className="hexagon">
+                    <span className="relative">C1</span>{" "}
+                  </div>
+                ) : (
+                  <div className="hexagon">
+                    {selectedTeams
+                      .filter((i) => i.group === "C" && i.rank === 1)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          onClick={() => setQuarterFinalTeams(team, 2)}
+                          className="relative cursor-pointer"
+                        >
+                          {team.name}
+                        </div>
+                      ))}
+                  </div>
+                )}
                 <div className="opacity-25">vs</div>
-                {selectedTeams
-                  .filter((i) =>
-                    i.group === "D" && i.rank === 2).length === 0 ? <div className="hexagon"><span className="relative">D2</span> </div> : <div className="hexagon">
-                  {selectedTeams
-                    .filter((i) =>
-                      i.group === "D" && i.rank === 2)
-                    .map((team, index) => (
-                      <div
-                        key={index}
-                        onClick={() => setQuarterFinalTeams(team, 2)}
-                        className="relative cursor-pointer"
-                      >
-                        {team.name}
-                      </div>
-                    ))}
-                </div>}
+                {selectedTeams.filter((i) => i.group === "D" && i.rank === 2)
+                  .length === 0 ? (
+                  <div className="hexagon">
+                    <span className="relative">D2</span>{" "}
+                  </div>
+                ) : (
+                  <div className="hexagon">
+                    {selectedTeams
+                      .filter((i) => i.group === "D" && i.rank === 2)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          onClick={() => setQuarterFinalTeams(team, 2)}
+                          className="relative cursor-pointer"
+                        >
+                          {team.name}
+                        </div>
+                      ))}
+                  </div>
+                )}
               </div>
 
               <div className="h-20 group-box flex flex-col justify-between items-center py-1">
-                {selectedTeams
-                  .filter((i) =>
-                    i.group === "E" && i.rank === 1).length === 0 ? <div className="hexagon"><span className="relative">E1</span> </div> : <div className="hexagon">
-                  {selectedTeams
-                    .filter((i) =>
-                      i.group === "E" && i.rank === 1)
-                    .map((team, index) => (
-                      <div
-                        key={index}
-                        onClick={() => setQuarterFinalTeams(team, 3)}
-                        className="relative cursor-pointer"
-                      >
-                        {team.name}
-                      </div>
-                    ))}
-                </div>}
+                {selectedTeams.filter((i) => i.group === "E" && i.rank === 1)
+                  .length === 0 ? (
+                  <div className="hexagon">
+                    <span className="relative">E1</span>{" "}
+                  </div>
+                ) : (
+                  <div className="hexagon">
+                    {selectedTeams
+                      .filter((i) => i.group === "E" && i.rank === 1)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          onClick={() => setQuarterFinalTeams(team, 3)}
+                          className="relative cursor-pointer"
+                        >
+                          {team.name}
+                        </div>
+                      ))}
+                  </div>
+                )}
                 <div className="opacity-25">vs</div>
-                {selectedTeams
-                  .filter((i) =>
-                    i.group === "F" && i.rank === 2).length === 0 ? <div className="hexagon"><span className="relative">F2</span> </div> : <div className="hexagon">
-                  {selectedTeams
-                    .filter((i) =>
-                      i.group === "F" && i.rank === 2)
-                    .map((team, index) => (
-                      <div
-                        key={index}
-                        onClick={() => setQuarterFinalTeams(team, 3)}
-                        className="relative cursor-pointer"
-                      >
-                        {team.name}
-                      </div>
-                    ))}
-                </div>}
+                {selectedTeams.filter((i) => i.group === "F" && i.rank === 2)
+                  .length === 0 ? (
+                  <div className="hexagon">
+                    <span className="relative">F2</span>{" "}
+                  </div>
+                ) : (
+                  <div className="hexagon">
+                    {selectedTeams
+                      .filter((i) => i.group === "F" && i.rank === 2)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          onClick={() => setQuarterFinalTeams(team, 3)}
+                          className="relative cursor-pointer"
+                        >
+                          {team.name}
+                        </div>
+                      ))}
+                  </div>
+                )}
               </div>
 
               <div className="h-20 group-box flex flex-col justify-between items-center py-1">
-                {selectedTeams
-                  .filter((i) =>
-                    i.group === "G" && i.rank === 1).length === 0 ? <div className="hexagon"><span className="relative">G1</span> </div> : <div className="hexagon">
-                  {selectedTeams
-                    .filter((i) =>
-                      i.group === "G" && i.rank === 1)
-                    .map((team, index) => (
-                      <div
-                        key={index}
-                        onClick={() => setQuarterFinalTeams(team, 4)}
-                        className="relative cursor-pointer"
-                      >
-                        {team.name}
-                      </div>
-                    ))}
-                </div>}
+                {selectedTeams.filter((i) => i.group === "G" && i.rank === 1)
+                  .length === 0 ? (
+                  <div className="hexagon">
+                    <span className="relative">G1</span>{" "}
+                  </div>
+                ) : (
+                  <div className="hexagon">
+                    {selectedTeams
+                      .filter((i) => i.group === "G" && i.rank === 1)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          onClick={() => setQuarterFinalTeams(team, 4)}
+                          className="relative cursor-pointer"
+                        >
+                          {team.name}
+                        </div>
+                      ))}
+                  </div>
+                )}
                 <div className="opacity-25">vs</div>
-                {selectedTeams
-                  .filter((i) =>
-                    i.group === "H" && i.rank === 2).length === 0 ? <div className="hexagon"><span className="relative">F2</span> </div> : <div className="hexagon">
-                  {selectedTeams
-                    .filter((i) =>
-                      i.group === "H" && i.rank === 2)
-                    .map((team, index) => (
-                      <div
-                        key={index}
-                        onClick={() => setQuarterFinalTeams(team, 4)}
-                        className="relative cursor-pointer"
-                      >
-                        {team.name}
-                      </div>
-                    ))}
-                </div>}
+                {selectedTeams.filter((i) => i.group === "H" && i.rank === 2)
+                  .length === 0 ? (
+                  <div className="hexagon">
+                    <span className="relative">H2</span>{" "}
+                  </div>
+                ) : (
+                  <div className="hexagon">
+                    {selectedTeams
+                      .filter((i) => i.group === "H" && i.rank === 2)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          onClick={() => setQuarterFinalTeams(team, 4)}
+                          className="relative cursor-pointer"
+                        >
+                          {team.name}
+                        </div>
+                      ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -363,10 +406,13 @@ export default function TournamentBrackets() {
                         {team.name}
                       </div>
                     ))}
-
                 </div>
               </div>
-              <div className={`${winner.name && "text-xl underline"} text-center `}>Winner: {winner.name?.toUpperCase()}</div>
+              <div
+                className={`${winner.name && "text-xl underline"} text-center `}
+              >
+                Winner: {winner.name?.toUpperCase()}
+              </div>
             </div>
           </div>
 
@@ -465,147 +511,179 @@ export default function TournamentBrackets() {
           <div className="col-span-1">
             <div className="flex flex-col justify-around gap-10 h-full relative text-center mr-2">
               <div className="h-20 group-box flex flex-col justify-between items-center py-1">
-                {selectedTeams
-                  .filter((i) =>
-                    i.group === "B" && i.rank === 1).length === 0 ? <div className="hexagon"><span className="relative">B1</span> </div> : <div className="hexagon">
-                  {selectedTeams
-                    .filter((i) =>
-                      i.group === "B" && i.rank === 1)
-                    .map((team, index) => (
-                      <div
-                        key={index}
-                        onClick={() => setQuarterFinalTeams(team, 5)}
-                        className="relative cursor-pointer"
-                      >
-                        {team.name}
-                      </div>
-                    ))}
-                </div>}
+                {selectedTeams.filter((i) => i.group === "B" && i.rank === 1)
+                  .length === 0 ? (
+                  <div className="hexagon">
+                    <span className="relative">B1</span>{" "}
+                  </div>
+                ) : (
+                  <div className="hexagon">
+                    {selectedTeams
+                      .filter((i) => i.group === "B" && i.rank === 1)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          onClick={() => setQuarterFinalTeams(team, 5)}
+                          className="relative cursor-pointer"
+                        >
+                          {team.name}
+                        </div>
+                      ))}
+                  </div>
+                )}
                 <div className="opacity-25">vs</div>
-                {selectedTeams
-                  .filter((i) =>
-                    i.group === "A" && i.rank === 2).length === 0 ? <div className="hexagon"><span className="relative">A2</span> </div> : <div className="hexagon">
-                  {selectedTeams
-                    .filter((i) =>
-                      i.group === "A" && i.rank === 2)
-                    .map((team, index) => (
-                      <div
-                        key={index}
-                        onClick={() => setQuarterFinalTeams(team, 5)}
-                        className="relative cursor-pointer"
-                      >
-                        {team.name}
-                      </div>
-                    ))}
-                </div>}
+                {selectedTeams.filter((i) => i.group === "A" && i.rank === 2)
+                  .length === 0 ? (
+                  <div className="hexagon">
+                    <span className="relative">A2</span>{" "}
+                  </div>
+                ) : (
+                  <div className="hexagon">
+                    {selectedTeams
+                      .filter((i) => i.group === "A" && i.rank === 2)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          onClick={() => setQuarterFinalTeams(team, 5)}
+                          className="relative cursor-pointer"
+                        >
+                          {team.name}
+                        </div>
+                      ))}
+                  </div>
+                )}
               </div>
 
               <div className="h-20 group-box flex flex-col justify-between items-center py-1">
-                {selectedTeams
-                  .filter((i) =>
-                    i.group === "D" && i.rank === 1).length === 0 ? <div className="hexagon"><span className="relative">D1</span> </div> : <div className="hexagon">
-                  {selectedTeams
-                    .filter((i) =>
-                      i.group === "D" && i.rank === 1)
-                    .map((team, index) => (
-                      <div
-                        key={index}
-                        onClick={() => setQuarterFinalTeams(team, 6)}
-                        className="relative cursor-pointer"
-                      >
-                        {team.name}
-                      </div>
-                    ))}
-                </div>}
+                {selectedTeams.filter((i) => i.group === "D" && i.rank === 1)
+                  .length === 0 ? (
+                  <div className="hexagon">
+                    <span className="relative">D1</span>{" "}
+                  </div>
+                ) : (
+                  <div className="hexagon">
+                    {selectedTeams
+                      .filter((i) => i.group === "D" && i.rank === 1)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          onClick={() => setQuarterFinalTeams(team, 6)}
+                          className="relative cursor-pointer"
+                        >
+                          {team.name}
+                        </div>
+                      ))}
+                  </div>
+                )}
                 <div className="opacity-25">vs</div>
-                {selectedTeams
-                  .filter((i) =>
-                    i.group === "C" && i.rank === 2).length === 0 ? <div className="hexagon"><span className="relative">C2</span> </div> : <div className="hexagon">
-                  {selectedTeams
-                    .filter((i) =>
-                      i.group === "C" && i.rank === 2)
-                    .map((team, index) => (
-                      <div
-                        key={index}
-                        onClick={() => setQuarterFinalTeams(team, 6)}
-                        className="relative cursor-pointer"
-                      >
-                        {team.name}
-                      </div>
-                    ))}
-                </div>}
+                {selectedTeams.filter((i) => i.group === "C" && i.rank === 2)
+                  .length === 0 ? (
+                  <div className="hexagon">
+                    <span className="relative">C2</span>{" "}
+                  </div>
+                ) : (
+                  <div className="hexagon">
+                    {selectedTeams
+                      .filter((i) => i.group === "C" && i.rank === 2)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          onClick={() => setQuarterFinalTeams(team, 6)}
+                          className="relative cursor-pointer"
+                        >
+                          {team.name}
+                        </div>
+                      ))}
+                  </div>
+                )}
               </div>
 
               <div className="h-20 group-box flex flex-col justify-between items-center py-1">
-                {selectedTeams
-                  .filter((i) =>
-                    i.group === "F" && i.rank === 1).length === 0 ? <div className="hexagon"><span className="relative">F1</span> </div> : <div className="hexagon">
-                  {selectedTeams
-                    .filter((i) =>
-                      i.group === "F" && i.rank === 1)
-                    .map((team, index) => (
-                      <div
-                        key={index}
-                        onClick={() => setQuarterFinalTeams(team, 7)}
-                        className="relative cursor-pointer"
-                      >
-                        {team.name}
-                      </div>
-                    ))}
-                </div>}
+                {selectedTeams.filter((i) => i.group === "F" && i.rank === 1)
+                  .length === 0 ? (
+                  <div className="hexagon">
+                    <span className="relative">F1</span>{" "}
+                  </div>
+                ) : (
+                  <div className="hexagon">
+                    {selectedTeams
+                      .filter((i) => i.group === "F" && i.rank === 1)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          onClick={() => setQuarterFinalTeams(team, 7)}
+                          className="relative cursor-pointer"
+                        >
+                          {team.name}
+                        </div>
+                      ))}
+                  </div>
+                )}
                 <div className="opacity-25">vs</div>
-                {selectedTeams
-                  .filter((i) =>
-                    i.group === "E" && i.rank === 2).length === 0 ? <div className="hexagon"><span className="relative">E2</span> </div> : <div className="hexagon">
-                  {selectedTeams
-                    .filter((i) =>
-                      i.group === "E" && i.rank === 2)
-                    .map((team, index) => (
-                      <div
-                        key={index}
-                        onClick={() => setQuarterFinalTeams(team, 7)}
-                        className="relative cursor-pointer"
-                      >
-                        {team.name}
-                      </div>
-                    ))}
-                </div>}
+                {selectedTeams.filter((i) => i.group === "E" && i.rank === 2)
+                  .length === 0 ? (
+                  <div className="hexagon">
+                    <span className="relative">E2</span>{" "}
+                  </div>
+                ) : (
+                  <div className="hexagon">
+                    {selectedTeams
+                      .filter((i) => i.group === "E" && i.rank === 2)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          onClick={() => setQuarterFinalTeams(team, 7)}
+                          className="relative cursor-pointer"
+                        >
+                          {team.name}
+                        </div>
+                      ))}
+                  </div>
+                )}
               </div>
 
               <div className="h-20 group-box flex flex-col justify-between items-center py-1">
-                {selectedTeams
-                  .filter((i) =>
-                    i.group === "H" && i.rank === 1).length === 0 ? <div className="hexagon"><span className="relative">H1</span> </div> : <div className="hexagon">
-                  {selectedTeams
-                    .filter((i) =>
-                      i.group === "H" && i.rank === 1)
-                    .map((team, index) => (
-                      <div
-                        key={index}
-                        onClick={() => setQuarterFinalTeams(team, 8)}
-                        className="relative cursor-pointer"
-                      >
-                        {team.name}
-                      </div>
-                    ))}
-                </div>}
+                {selectedTeams.filter((i) => i.group === "H" && i.rank === 1)
+                  .length === 0 ? (
+                  <div className="hexagon">
+                    <span className="relative">H1</span>{" "}
+                  </div>
+                ) : (
+                  <div className="hexagon">
+                    {selectedTeams
+                      .filter((i) => i.group === "H" && i.rank === 1)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          onClick={() => setQuarterFinalTeams(team, 8)}
+                          className="relative cursor-pointer"
+                        >
+                          {team.name}
+                        </div>
+                      ))}
+                  </div>
+                )}
                 <div className="opacity-25">vs</div>
-                {selectedTeams
-                  .filter((i) =>
-                    i.group === "G" && i.rank === 2).length === 0 ? <div className="hexagon"><span className="relative">G2</span> </div> : <div className="hexagon">
-                  {selectedTeams
-                    .filter((i) =>
-                      i.group === "G" && i.rank === 2)
-                    .map((team, index) => (
-                      <div
-                        key={index}
-                        onClick={() => setQuarterFinalTeams(team, 8)}
-                        className="relative cursor-pointer"
-                      >
-                        {team.name}
-                      </div>
-                    ))}
-                </div>}
+                {selectedTeams.filter((i) => i.group === "G" && i.rank === 2)
+                  .length === 0 ? (
+                  <div className="hexagon">
+                    <span className="relative">G2</span>{" "}
+                  </div>
+                ) : (
+                  <div className="hexagon">
+                    {selectedTeams
+                      .filter((i) => i.group === "G" && i.rank === 2)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          onClick={() => setQuarterFinalTeams(team, 8)}
+                          className="relative cursor-pointer"
+                        >
+                          {team.name}
+                        </div>
+                      ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -631,7 +709,13 @@ export default function TournamentBrackets() {
                         className="pt-1 cursor-pointer hover:opacity-70"
                       >
                         {team.name.toUpperCase()}
-                        {team.rank > 0 ? <span className="absolute text-xs">{"#" + team.rank}</span> : ""}
+                        {team.rank > 0 ? (
+                          <span className="absolute text-xs">
+                            {"#" + team.rank}
+                          </span>
+                        ) : (
+                          ""
+                        )}
                       </div>
                     );
                   })}
