@@ -1,13 +1,29 @@
-body {
-  background-image: './assets/bg.jpeg';
-}
 .hexagon {
-  clip-path: polygon(15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
-  background: rgb(255, 172, 22);
-  /* background: red; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100px;
+  height: 40px;
+  background-color: black;
+  position: relative;
   cursor: pointer;
-  padding: 10px 0;
+}
+.hexagon:before {
+  content: '';
+  width: 96px;
+  height: 20px;
+  background: rgb(255, 172, 22);
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.hexagon,
+.hexagon:before {
+  -webkit-clip-path: polygon(
+    15% 0%,
+    85% 0%,
+    100% 50%,
+    85% 100%,
+    15% 100%,
+    0% 50%
+  );
+  clip-path: polygon(15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
 }

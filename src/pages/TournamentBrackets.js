@@ -57,11 +57,9 @@ export default function TournamentBrackets() {
   };
 
   return (
-    <div className="bg-hero-pattern h-screen bg-center font-bold">
-
+    <div className=" h-screen font-bold bg-hero-pattern bg-center">
       <div className="mx-8">
-        <div className="grid grid-cols-12 w-full h-3/4 pt-10 ">
-
+        <div className="grid grid-cols-12 w-full h-3/4 pt-10">
           <div className="col-span-2 space-y-10 ">
             {groups.map((group, index) => {
               if (group.side === "right") return false;
@@ -94,8 +92,10 @@ export default function TournamentBrackets() {
           </div>
           <div className="col-span-1">
             <div className="flex flex-col justify-around gap-10 h-full relative text-center ml-2">
-              <div className="h-20 group-box flex flex-col justify-between py-1">
-                <div className="hexagon">
+              <div className="h-20 group-box flex flex-col justify-between items-center py-1">
+                {selectedTeams
+                  .filter((i) =>
+                    i.group === "A" && i.rank === 1).length === 0 ? <div className="hexagon"><span className="relative">A1</span> </div> : <div className="hexagon">
                   {selectedTeams
                     .filter((i) =>
                       i.group === "A" && i.rank === 1)
@@ -103,121 +103,145 @@ export default function TournamentBrackets() {
                       <div
                         key={index}
                         onClick={() => setQuarterFinalTeams(team, 1)}
-                        className=""
+                        className="relative cursor-pointer"
                       >
                         {team.name}
                       </div>
                     ))}
-                </div>
+                </div>}
+
                 <div className="opacity-25">vs</div>
-                <div className="hexagon">
+
+                {selectedTeams
+                  .filter((i) =>
+                    i.group === "B" && i.rank === 2).length === 0 ? <div className="hexagon"><span className="relative">B2</span> </div> : <div className="hexagon">
                   {selectedTeams
-                    .filter((i) => i.group === "B" && i.rank === 2)
+                    .filter((i) =>
+                      i.group === "B" && i.rank === 2)
                     .map((team, index) => (
                       <div
                         key={index}
                         onClick={() => setQuarterFinalTeams(team, 1)}
-                        className=""
+                        className="relative cursor-pointer"
                       >
                         {team.name}
                       </div>
                     ))}
-                </div>
+                </div>}
+
               </div>
 
-              <div className=" h-20 group-box flex flex-col justify-between py-1">
-                <div className="hexagon">
+              <div className=" h-20 group-box flex flex-col justify-between items-center py-1">
+                {selectedTeams
+                  .filter((i) =>
+                    i.group === "C" && i.rank === 1).length === 0 ? <div className="hexagon"><span className="relative">C1</span> </div> : <div className="hexagon">
                   {selectedTeams
-                    .filter((i) => i.group === "C" && i.rank === 1)
+                    .filter((i) =>
+                      i.group === "C" && i.rank === 1)
                     .map((team, index) => (
                       <div
                         key={index}
                         onClick={() => setQuarterFinalTeams(team, 2)}
-                        className=""
+                        className="relative cursor-pointer"
                       >
                         {team.name}
                       </div>
                     ))}
-                </div>
+                </div>}
                 <div className="opacity-25">vs</div>
-                <div className="hexagon">
+                {selectedTeams
+                  .filter((i) =>
+                    i.group === "D" && i.rank === 2).length === 0 ? <div className="hexagon"><span className="relative">D2</span> </div> : <div className="hexagon">
                   {selectedTeams
-                    .filter((i) => i.group === "D" && i.rank === 2)
+                    .filter((i) =>
+                      i.group === "D" && i.rank === 2)
                     .map((team, index) => (
                       <div
                         key={index}
                         onClick={() => setQuarterFinalTeams(team, 2)}
-                        className=""
+                        className="relative cursor-pointer"
                       >
                         {team.name}
                       </div>
                     ))}
-                </div>
+                </div>}
               </div>
 
-              <div className="h-20 group-box flex flex-col justify-between py-1">
-                <div className="hexagon">
+              <div className="h-20 group-box flex flex-col justify-between items-center py-1">
+                {selectedTeams
+                  .filter((i) =>
+                    i.group === "E" && i.rank === 1).length === 0 ? <div className="hexagon"><span className="relative">E1</span> </div> : <div className="hexagon">
                   {selectedTeams
-                    .filter((i) => i.group === "E" && i.rank === 1)
+                    .filter((i) =>
+                      i.group === "E" && i.rank === 1)
                     .map((team, index) => (
                       <div
                         key={index}
                         onClick={() => setQuarterFinalTeams(team, 3)}
-                        className=""
+                        className="relative cursor-pointer"
                       >
                         {team.name}
                       </div>
                     ))}
-                </div>
+                </div>}
                 <div className="opacity-25">vs</div>
-                <div className="hexagon">
+                {selectedTeams
+                  .filter((i) =>
+                    i.group === "F" && i.rank === 2).length === 0 ? <div className="hexagon"><span className="relative">F2</span> </div> : <div className="hexagon">
                   {selectedTeams
-                    .filter((i) => i.group === "F" && i.rank === 2)
+                    .filter((i) =>
+                      i.group === "F" && i.rank === 2)
                     .map((team, index) => (
                       <div
                         key={index}
                         onClick={() => setQuarterFinalTeams(team, 3)}
-                        className=""
+                        className="relative cursor-pointer"
                       >
                         {team.name}
                       </div>
                     ))}
-                </div>
+                </div>}
               </div>
 
-              <div className="h-20 group-box flex flex-col justify-between py-1">
-                <div className="hexagon">
+              <div className="h-20 group-box flex flex-col justify-between items-center py-1">
+                {selectedTeams
+                  .filter((i) =>
+                    i.group === "G" && i.rank === 1).length === 0 ? <div className="hexagon"><span className="relative">G1</span> </div> : <div className="hexagon">
                   {selectedTeams
-                    .filter((i) => i.group === "G" && i.rank === 1)
+                    .filter((i) =>
+                      i.group === "G" && i.rank === 1)
                     .map((team, index) => (
                       <div
                         key={index}
                         onClick={() => setQuarterFinalTeams(team, 4)}
-                        className=""
+                        className="relative cursor-pointer"
                       >
                         {team.name}
                       </div>
                     ))}
-                </div>
+                </div>}
                 <div className="opacity-25">vs</div>
-                <div className="hexagon">
+                {selectedTeams
+                  .filter((i) =>
+                    i.group === "H" && i.rank === 2).length === 0 ? <div className="hexagon"><span className="relative">F2</span> </div> : <div className="hexagon">
                   {selectedTeams
-                    .filter((i) => i.group === "H" && i.rank === 2)
+                    .filter((i) =>
+                      i.group === "H" && i.rank === 2)
                     .map((team, index) => (
                       <div
                         key={index}
                         onClick={() => setQuarterFinalTeams(team, 4)}
-                        className=""
+                        className="relative cursor-pointer"
                       >
                         {team.name}
                       </div>
                     ))}
-                </div>
+                </div>}
               </div>
             </div>
           </div>
           <div className="col-span-1 text-center flex flex-col h-full justify-around ml-4">
-            <div className="h-20 group-box flex flex-col justify-between py-1">
+            <div className="h-20 group-box flex flex-col justify-between items-center py-1">
               <div className="hexagon">
                 {quarterFinal
                   .filter((i) => i.side === 1)
@@ -225,7 +249,7 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 1)}
-                      className=""
+                      className="relative cursor-pointer"
                     >
                       {team.name}
                     </div>
@@ -239,7 +263,7 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 1)}
-                      className=""
+                      className="relative cursor-pointer"
                     >
                       {team.name}
                     </div>
@@ -247,7 +271,7 @@ export default function TournamentBrackets() {
               </div>
             </div>
 
-            <div className="h-20 group-box flex flex-col justify-between py-1 mt-5">
+            <div className="h-20 group-box flex flex-col justify-between items-center py-1 mt-5">
               <div className="hexagon">
                 {quarterFinal
                   .filter((i) => i.side === 3)
@@ -255,7 +279,7 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 2)}
-                      className="hexagon px-2 py-1"
+                      className="relative"
                     >
                       {team.name}
                     </div>
@@ -269,7 +293,7 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 2)}
-                      className=""
+                      className="relative"
                     >
                       {team.name}
                     </div>
@@ -278,14 +302,14 @@ export default function TournamentBrackets() {
             </div>
           </div>
           <div className="col-span-1 text-center flex flex-col h-full justify-around ml-4">
-            <div className="h-20 group-box flex flex-col justify-between py-1">
+            <div className="h-20 group-box flex flex-col justify-between items-center py-1">
               <div className="hexagon">
                 {semiFinal
                   .filter((i) => i.semiSide === 1)
                   .map((team, index) => (
                     <div
                       key={index}
-                      className=""
+                      className="relative"
                       onClick={() => setFinalTeams(team, 1)}
                     >
                       {team.name}
@@ -299,7 +323,7 @@ export default function TournamentBrackets() {
                   .map((team, index) => (
                     <div
                       key={index}
-                      className=""
+                      className="relative"
                       onClick={() => setFinalTeams(team, 1)}
                     >
                       {team.name}
@@ -311,15 +335,15 @@ export default function TournamentBrackets() {
 
           <div className="col-span-2 text-center flex items-center h-full">
             <div className="flex flex-col w-full h-full justify-around">
-              <div>Final</div>
-              <div className="h-20 group-box flex flex-col justify-center py-1 text-center w-1/2 mx-auto">
+              <div className="text-xl">Final</div>
+              <div className="h-20 group-box flex flex-col justify-center py-1 text-center items-center w-1/2 mx-auto">
                 <div className="hexagon">
                   {final
                     .filter((i) => i.finalSide === 1)
                     .map((team, index) => (
                       <div
                         key={index}
-                        className="w-full"
+                        className="w-full relative"
                         onClick={() => setWinnerTeam(team)}
                       >
                         {team.name}
@@ -333,7 +357,7 @@ export default function TournamentBrackets() {
                     .map((team, index) => (
                       <div
                         key={index}
-                        className=""
+                        className="relative"
                         onClick={() => setWinnerTeam(team)}
                       >
                         {team.name}
@@ -342,19 +366,19 @@ export default function TournamentBrackets() {
 
                 </div>
               </div>
-              <div className="text-center">Winner: {winner.name}</div>
+              <div className={`${winner.name && "text-xl underline"} text-center `}>Winner: {winner.name?.toUpperCase()}</div>
             </div>
           </div>
 
           <div className="col-span-1 text-center flex flex-col h-full justify-around mr-4">
-            <div className="h-20 group-box flex flex-col justify-between py-1">
+            <div className="h-20 group-box flex flex-col justify-between items-center py-1">
               <div className="hexagon">
                 {semiFinal
                   .filter((i) => i.semiSide === 3)
                   .map((team, index) => (
                     <div
                       key={index}
-                      className=""
+                      className="relative"
                       onClick={() => setFinalTeams(team, 2)}
                     >
                       {team.name}
@@ -368,7 +392,7 @@ export default function TournamentBrackets() {
                   .map((team, index) => (
                     <div
                       key={index}
-                      className=""
+                      className="relative"
                       onClick={() => setFinalTeams(team, 2)}
                     >
                       {team.name}
@@ -378,7 +402,7 @@ export default function TournamentBrackets() {
             </div>
           </div>
           <div className="col-span-1 flex text-center flex-col h-full justify-around mr-4">
-            <div className="h-20 group-box flex flex-col justify-between py-1">
+            <div className="h-20 group-box flex flex-col justify-between items-center py-1">
               <div className="hexagon">
                 {quarterFinal
                   .filter((i) => i.side === 5)
@@ -386,7 +410,7 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 3)}
-                      className=""
+                      className="relative"
                     >
                       {team.name}
                     </div>
@@ -400,7 +424,7 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 3)}
-                      className=""
+                      className="relative"
                     >
                       {team.name}
                     </div>
@@ -408,7 +432,7 @@ export default function TournamentBrackets() {
               </div>
             </div>
 
-            <div className="h-20 group-box flex flex-col justify-between py-1">
+            <div className="h-20 group-box flex flex-col justify-between items-center py-1">
               <div className="hexagon">
                 {quarterFinal
                   .filter((i) => i.side === 7)
@@ -416,7 +440,7 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 4)}
-                      className=""
+                      className="relative"
                     >
                       {team.name}
                     </div>
@@ -430,7 +454,7 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 4)}
-                      className=""
+                      className="relative"
                     >
                       {team.name}
                     </div>
@@ -440,124 +464,148 @@ export default function TournamentBrackets() {
           </div>
           <div className="col-span-1">
             <div className="flex flex-col justify-around gap-10 h-full relative text-center mr-2">
-              <div className="h-20 group-box flex flex-col justify-between py-1">
-                <div className="hexagon">
+              <div className="h-20 group-box flex flex-col justify-between items-center py-1">
+                {selectedTeams
+                  .filter((i) =>
+                    i.group === "B" && i.rank === 1).length === 0 ? <div className="hexagon"><span className="relative">B1</span> </div> : <div className="hexagon">
                   {selectedTeams
-                    .filter((i) => i.group === "B" && i.rank === 1)
+                    .filter((i) =>
+                      i.group === "B" && i.rank === 1)
                     .map((team, index) => (
                       <div
                         key={index}
                         onClick={() => setQuarterFinalTeams(team, 5)}
-                        className=""
+                        className="relative cursor-pointer"
                       >
                         {team.name}
                       </div>
                     ))}
-                </div>
+                </div>}
                 <div className="opacity-25">vs</div>
-                <div className="hexagon">
+                {selectedTeams
+                  .filter((i) =>
+                    i.group === "A" && i.rank === 2).length === 0 ? <div className="hexagon"><span className="relative">A2</span> </div> : <div className="hexagon">
                   {selectedTeams
-                    .filter((i) => i.group === "A" && i.rank === 2)
+                    .filter((i) =>
+                      i.group === "A" && i.rank === 2)
                     .map((team, index) => (
                       <div
                         key={index}
                         onClick={() => setQuarterFinalTeams(team, 5)}
-                        className=""
+                        className="relative cursor-pointer"
                       >
                         {team.name}
                       </div>
                     ))}
-                </div>
+                </div>}
               </div>
 
-              <div className="h-20 group-box flex flex-col justify-between py-1">
-                <div className="hexagon">
+              <div className="h-20 group-box flex flex-col justify-between items-center py-1">
+                {selectedTeams
+                  .filter((i) =>
+                    i.group === "D" && i.rank === 1).length === 0 ? <div className="hexagon"><span className="relative">D1</span> </div> : <div className="hexagon">
                   {selectedTeams
-                    .filter((i) => i.group === "D" && i.rank === 1)
+                    .filter((i) =>
+                      i.group === "D" && i.rank === 1)
                     .map((team, index) => (
                       <div
                         key={index}
                         onClick={() => setQuarterFinalTeams(team, 6)}
-                        className=""
+                        className="relative cursor-pointer"
                       >
                         {team.name}
                       </div>
                     ))}
-                </div>
+                </div>}
                 <div className="opacity-25">vs</div>
-                <div className="hexagon">
+                {selectedTeams
+                  .filter((i) =>
+                    i.group === "C" && i.rank === 2).length === 0 ? <div className="hexagon"><span className="relative">C2</span> </div> : <div className="hexagon">
                   {selectedTeams
-                    .filter((i) => i.group === "C" && i.rank === 2)
+                    .filter((i) =>
+                      i.group === "C" && i.rank === 2)
                     .map((team, index) => (
                       <div
                         key={index}
                         onClick={() => setQuarterFinalTeams(team, 6)}
-                        className=""
+                        className="relative cursor-pointer"
                       >
                         {team.name}
                       </div>
                     ))}
-                </div>
+                </div>}
               </div>
 
-              <div className="h-20 group-box flex flex-col justify-between py-1">
-                <div className="hexagon">
+              <div className="h-20 group-box flex flex-col justify-between items-center py-1">
+                {selectedTeams
+                  .filter((i) =>
+                    i.group === "F" && i.rank === 1).length === 0 ? <div className="hexagon"><span className="relative">F1</span> </div> : <div className="hexagon">
                   {selectedTeams
-                    .filter((i) => i.group === "F" && i.rank === 1)
+                    .filter((i) =>
+                      i.group === "F" && i.rank === 1)
                     .map((team, index) => (
                       <div
                         key={index}
                         onClick={() => setQuarterFinalTeams(team, 7)}
-                        className=""
+                        className="relative cursor-pointer"
                       >
                         {team.name}
                       </div>
                     ))}
-                </div>
+                </div>}
                 <div className="opacity-25">vs</div>
-                <div className="hexagon">
+                {selectedTeams
+                  .filter((i) =>
+                    i.group === "E" && i.rank === 2).length === 0 ? <div className="hexagon"><span className="relative">E2</span> </div> : <div className="hexagon">
                   {selectedTeams
-                    .filter((i) => i.group === "E" && i.rank === 2)
+                    .filter((i) =>
+                      i.group === "E" && i.rank === 2)
                     .map((team, index) => (
                       <div
                         key={index}
                         onClick={() => setQuarterFinalTeams(team, 7)}
-                        className=""
+                        className="relative cursor-pointer"
                       >
                         {team.name}
                       </div>
                     ))}
-                </div>
+                </div>}
               </div>
 
-              <div className="h-20 group-box flex flex-col justify-between py-1">
-                <div className="hexagon">
+              <div className="h-20 group-box flex flex-col justify-between items-center py-1">
+                {selectedTeams
+                  .filter((i) =>
+                    i.group === "H" && i.rank === 1).length === 0 ? <div className="hexagon"><span className="relative">H1</span> </div> : <div className="hexagon">
                   {selectedTeams
-                    .filter((i) => i.group === "H" && i.rank === 1)
+                    .filter((i) =>
+                      i.group === "H" && i.rank === 1)
                     .map((team, index) => (
                       <div
                         key={index}
                         onClick={() => setQuarterFinalTeams(team, 8)}
-                        className=""
+                        className="relative cursor-pointer"
                       >
                         {team.name}
                       </div>
                     ))}
-                </div>
+                </div>}
                 <div className="opacity-25">vs</div>
-                <div className="hexagon">
+                {selectedTeams
+                  .filter((i) =>
+                    i.group === "G" && i.rank === 2).length === 0 ? <div className="hexagon"><span className="relative">G2</span> </div> : <div className="hexagon">
                   {selectedTeams
-                    .filter((i) => i.group === "G" && i.rank === 2)
+                    .filter((i) =>
+                      i.group === "G" && i.rank === 2)
                     .map((team, index) => (
                       <div
                         key={index}
                         onClick={() => setQuarterFinalTeams(team, 8)}
-                        className=""
+                        className="relative cursor-pointer"
                       >
                         {team.name}
                       </div>
                     ))}
-                </div>
+                </div>}
               </div>
             </div>
           </div>
