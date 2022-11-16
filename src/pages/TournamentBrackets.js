@@ -277,39 +277,43 @@ export default function TournamentBrackets() {
             </div>
           </div>
 
-          <div className="col-span-2">
-            <div className="w-1/2 h-12 inline-block pr-2">
-              {final
-                .filter((i) => i.finalSide === 1)
-                .map((team, index) => (
-                  <div
-                    key={index}
-                    className="cursor-pointer bg-green-400"
-                    onClick={() => setWinnerTeam(team)}
-                  >
-                    {team.name}
+          <div className="col-span-2 text-center flex items-center h-full">
+            <div className="flex flex-col w-full h-full justify-around">
+              <div>Final</div>
+              <div className="h-20 border-2 border-black border-opacity-25 group-box flex flex-col justify-between py-1 text-center w-1/2 mx-auto">
+                <div className="cursor-pointer">
+                  {final
+                    .filter((i) => i.finalSide === 1)
+                    .map((team, index) => (
+                      <div
+                        key={index}
+                        className="cursor-pointertext-center w-full"
+                        onClick={() => setWinnerTeam(team)}
+                      >
+                        {team.name}
+                      </div>
+                    ))}
+                  <div className="opacity-25">vs</div>
+                  <div className="cursor-pointer">
+                    {final
+                      .filter((i) => i.finalSide === 2)
+                      .map((team, index) => (
+                        <div
+                          key={index}
+                          className="cursor-pointer"
+                          onClick={() => setWinnerTeam(team)}
+                        >
+                          {team.name}
+                        </div>
+                      ))}
                   </div>
-                ))}
+                </div>
+              </div>
+              <div className="text-center">Winner: {winner.name}</div>
             </div>
-
-            <div className="w-1/2 h-12 inline-block pl-2">
-              {final
-                .filter((i) => i.finalSide === 2)
-                .map((team, index) => (
-                  <div
-                    key={index}
-                    className="cursor-pointer bg-red-500"
-                    onClick={() => setWinnerTeam(team)}
-                  >
-                    {team.name}
-                  </div>
-                ))}
-            </div>
-
-            <div className="text-center">{winner.name}</div>
           </div>
 
-          <div className="col-span-1 text-center flex flex-col h-full justify-around ml-4">
+          <div className="col-span-1 text-center flex flex-col h-full justify-around mr-4">
             <div className="h-20 border-2 border-black border-opacity-25 group-box flex flex-col justify-between py-1">
               {semiFinal
                 .filter((i) => i.semiSide === 3)
