@@ -740,11 +740,31 @@ export default function TournamentBrackets() {
                   .map((team, index) => (
                     <div
                       key={index}
-                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                        final.some((i) => i.name === team.name)
-                          ? "bg-green-500"
-                          : "bg-transparent hover:opacity-70"
-                      }`}
+                      disabled={final.some(
+                        (i) => i.semiSide === 1 || i.semiSide === 2
+                      )}
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !final.some(
+                              (i) => i.semiSide === 1 || i.semiSide === 2
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            final.some(
+                              (i) => i.semiSide === 1 || i.semiSide === 2
+                            ) &&
+                            final.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            final.some(
+                              (i) => i.semiSide === 1 || i.semiSide === 2
+                            ) &&
+                            !final.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                       onClick={() => setFinalTeams(team, 1)}
                     >
                       {team.name}
@@ -758,11 +778,31 @@ export default function TournamentBrackets() {
                   .map((team, index) => (
                     <div
                       key={index}
-                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                        final.some((i) => i.name === team.name)
-                          ? "bg-green-500"
-                          : "bg-transparent hover:opacity-70"
-                      }`}
+                      disabled={final.some(
+                        (i) => i.semiSide === 1 || i.semiSide === 2
+                      )}
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !final.some(
+                              (i) => i.semiSide === 1 || i.semiSide === 2
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            final.some(
+                              (i) => i.semiSide === 1 || i.semiSide === 2
+                            ) &&
+                            final.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            final.some(
+                              (i) => i.semiSide === 1 || i.semiSide === 2
+                            ) &&
+                            !final.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                       onClick={() => setFinalTeams(team, 1)}
                     >
                       {team.name}
@@ -786,11 +826,27 @@ export default function TournamentBrackets() {
                     .map((team, index) => (
                       <div
                         key={index}
-                        className={`w-full h-full relative flex items-center justify-center ${
-                          winner.name === team.name
-                            ? "bg-green-500"
-                            : "bg-transparent hover:opacity-70"
-                        }`}
+                        disabled={
+                          winner.finalSide === 1 || winner.finalSide === 2
+                        }
+                        className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                          ${
+                            !(
+                              winner.finalSide === 1 || winner.finalSide === 2
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            (winner.finalSide === 1 ||
+                              winner.finalSide === 2) &&
+                            winner.name === team.name &&
+                            "bg-green-500"
+                          }
+                          ${
+                            (winner.finalSide === 1 ||
+                              winner.finalSide === 2) &&
+                            winner.name !== team.name &&
+                            "bg-red-500"
+                          }`}
                         onClick={() => setWinnerTeam(team)}
                       >
                         {team.name}
@@ -804,11 +860,27 @@ export default function TournamentBrackets() {
                     .map((team, index) => (
                       <div
                         key={index}
-                        className={`w-full h-full relative flex items-center justify-center ${
-                          winner.name === team.name
-                            ? "bg-green-500"
-                            : "bg-transparent hover:opacity-70"
-                        }`}
+                        disabled={
+                          winner.finalSide === 1 || winner.finalSide === 2
+                        }
+                        className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                          ${
+                            !(
+                              winner.finalSide === 1 || winner.finalSide === 2
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            (winner.finalSide === 1 ||
+                              winner.finalSide === 2) &&
+                            winner.name === team.name &&
+                            "bg-green-500"
+                          }
+                          ${
+                            (winner.finalSide === 1 ||
+                              winner.finalSide === 2) &&
+                            winner.name !== team.name &&
+                            "bg-red-500"
+                          }`}
                         onClick={() => setWinnerTeam(team)}
                       >
                         {team.name}
@@ -834,11 +906,31 @@ export default function TournamentBrackets() {
                   .map((team, index) => (
                     <div
                       key={index}
-                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                        final.some((i) => i.name === team.name)
-                          ? "bg-green-500"
-                          : "bg-transparent hover:opacity-70"
-                      }`}
+                      disabled={final.some(
+                        (i) => i.semiSide === 3 || i.semiSide === 4
+                      )}
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !final.some(
+                              (i) => i.semiSide === 3 || i.semiSide === 4
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            final.some(
+                              (i) => i.semiSide === 3 || i.semiSide === 4
+                            ) &&
+                            final.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            final.some(
+                              (i) => i.semiSide === 3 || i.semiSide === 4
+                            ) &&
+                            !final.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                       onClick={() => setFinalTeams(team, 2)}
                     >
                       {team.name}
@@ -852,11 +944,31 @@ export default function TournamentBrackets() {
                   .map((team, index) => (
                     <div
                       key={index}
-                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                        final.some((i) => i.name === team.name)
-                          ? "bg-green-500"
-                          : "bg-transparent hover:opacity-70"
-                      }`}
+                      disabled={final.some(
+                        (i) => i.semiSide === 3 || i.semiSide === 4
+                      )}
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !final.some(
+                              (i) => i.semiSide === 3 || i.semiSide === 4
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            final.some(
+                              (i) => i.semiSide === 3 || i.semiSide === 4
+                            ) &&
+                            final.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            final.some(
+                              (i) => i.semiSide === 3 || i.semiSide === 4
+                            ) &&
+                            !final.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                       onClick={() => setFinalTeams(team, 2)}
                     >
                       {team.name}
