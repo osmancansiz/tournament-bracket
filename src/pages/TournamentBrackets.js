@@ -560,10 +560,29 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 1)}
-                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${semiFinal.some((i) => i.name === team.name)
-                        ? "bg-green-500"
-                        : "bg-transparent hover:opacity-70"
-                        }`}
+                      disabled={semiFinal.some(i => i.side === 1 || i.side === 2)}
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${!semiFinal.some(
+                            (i) =>
+                              (i.side === 1 || i.side === 2) 
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${semiFinal.some(
+                              (i) =>
+                              (i.side === 1 || i.side === 2) 
+                            ) &&
+                            semiFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                            }
+                          ${semiFinal.some(
+                              (i) =>
+                              (i.side === 1 || i.side === 2) 
+                            ) &&
+                            !semiFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                            }
+                          `}
                     >
                       {team.name}
                     </div>
@@ -577,10 +596,29 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 1)}
-                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${semiFinal.some((i) => i.name === team.name)
-                        ? "bg-green-500"
-                        : "bg-transparent hover:opacity-70"
-                        }`}
+                      disabled={semiFinal.some(i => i.side === 1 || i.side === 2)}
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${!semiFinal.some(
+                            (i) =>
+                              (i.side === 1 || i.side === 2) 
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${semiFinal.some(
+                              (i) =>
+                              (i.side === 1 || i.side === 2) 
+                            ) &&
+                            semiFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                            }
+                          ${semiFinal.some(
+                              (i) =>
+                              (i.side === 1 || i.side === 2) 
+                            ) &&
+                            !semiFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                            }
+                          `}
                     >
                       {team.name}
                     </div>
@@ -596,10 +634,29 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 2)}
-                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${semiFinal.some((i) => i.name === team.name)
-                        ? "bg-green-500"
-                        : "bg-transparent hover:opacity-70"
-                        }`}
+                      disabled={semiFinal.some(i => i.side === 3 || i.side === 4)}
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${!semiFinal.some(
+                            (i) =>
+                              (i.side === 3 || i.side === 4) 
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${semiFinal.some(
+                              (i) =>
+                              (i.side === 3 || i.side === 4) 
+                            ) &&
+                            semiFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                            }
+                          ${semiFinal.some(
+                              (i) =>
+                              (i.side === 3 || i.side === 4) 
+                            ) &&
+                            !semiFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                            }
+                          `}
                     >
                       {team.name}
                     </div>
@@ -613,10 +670,29 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 2)}
-                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${semiFinal.some((i) => i.name === team.name)
-                        ? "bg-green-500"
-                        : "bg-transparent hover:opacity-70"
-                        }`}
+                      disabled={semiFinal.some(i => i.side === 3 || i.side === 4)}
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${!semiFinal.some(
+                            (i) =>
+                              (i.side === 3 || i.side === 4) 
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${semiFinal.some(
+                              (i) =>
+                              (i.side === 3 || i.side === 4) 
+                            ) &&
+                            semiFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                            }
+                          ${semiFinal.some(
+                              (i) =>
+                              (i.side === 3 || i.side === 4) 
+                            ) &&
+                            !semiFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                            }
+                          `}
                     >
                       {team.name}
                     </div>
@@ -760,10 +836,29 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 3)}
-                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${semiFinal.some((i) => i.name === team.name)
-                        ? "bg-green-500"
-                        : "bg-transparent hover:opacity-70"
-                        }`}
+                      disabled={semiFinal.some(i => i.side === 5 || i.side === 6)}
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${!semiFinal.some(
+                            (i) =>
+                              (i.side === 5 || i.side === 6) 
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${semiFinal.some(
+                              (i) =>
+                              (i.side === 5 || i.side === 6) 
+                            ) &&
+                            semiFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                            }
+                          ${semiFinal.some(
+                              (i) =>
+                              (i.side === 5 || i.side === 6) 
+                            ) &&
+                            !semiFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                            }
+                          `}
                     >
                       {team.name}
                     </div>
@@ -777,10 +872,29 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 3)}
-                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${semiFinal.some((i) => i.name === team.name)
-                        ? "bg-green-500"
-                        : "bg-transparent hover:opacity-70"
-                        }`}
+                      disabled={semiFinal.some(i => i.side === 5|| i.side === 6)}
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${!semiFinal.some(
+                            (i) =>
+                              (i.side === 5 || i.side === 6) 
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${semiFinal.some(
+                              (i) =>
+                              (i.side === 5 || i.side === 6) 
+                            ) &&
+                            semiFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                            }
+                          ${semiFinal.some(
+                              (i) =>
+                              (i.side === 5 || i.side === 6) 
+                            ) &&
+                            !semiFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                            }
+                          `}
                     >
                       {team.name}
                     </div>
@@ -796,10 +910,29 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 4)}
-                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${semiFinal.some((i) => i.name === team.name)
-                        ? "bg-green-500"
-                        : "bg-transparent hover:opacity-70"
-                        }`}
+                      disabled={semiFinal.some(i => i.side === 7 || i.side === 8)}
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${!semiFinal.some(
+                            (i) =>
+                              (i.side === 7 || i.side === 8) 
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${semiFinal.some(
+                              (i) =>
+                              (i.side === 7 || i.side === 8) 
+                            ) &&
+                            semiFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                            }
+                          ${semiFinal.some(
+                              (i) =>
+                              (i.side === 7 || i.side === 8) 
+                            ) &&
+                            !semiFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                            }
+                          `}
                     >
                       {team.name}
                     </div>
@@ -813,10 +946,29 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 4)}
-                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${semiFinal.some((i) => i.name === team.name)
-                        ? "bg-green-500"
-                        : "bg-transparent hover:opacity-70"
-                        }`}
+                      disabled={semiFinal.some(i => i.side === 3 || i.side === 4)}
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${!semiFinal.some(
+                            (i) =>
+                              (i.side === 7 || i.side === 8) 
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${semiFinal.some(
+                              (i) =>
+                              (i.side === 7 || i.side === 8) 
+                            ) &&
+                            semiFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                            }
+                          ${semiFinal.some(
+                              (i) =>
+                              (i.side === 7 || i.side === 8) 
+                            ) &&
+                            !semiFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                            }
+                          `}
                     >
                       {team.name}
                     </div>
