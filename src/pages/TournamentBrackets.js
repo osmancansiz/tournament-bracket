@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import initialTeams from "../data/teams.json";
 import initialGroups from "../data/groups.json";
+import * as htmlToImage from 'html-to-image';
+import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 
 export default function TournamentBrackets() {
   const [teams, setTeams] = useState(initialTeams);
@@ -10,6 +12,7 @@ export default function TournamentBrackets() {
   const [semiFinal, setSemiFinal] = useState([]);
   const [final, setFinal] = useState([]);
   const [winner, setWinner] = useState({});
+  const [ss, setSs] = useState(null)
 
   const handleClick = (team) => {
     if (selectedTeams.findIndex((i) => i.id === team.id) !== -1) return;
@@ -72,10 +75,22 @@ export default function TournamentBrackets() {
     if (final.length < 2) return alert("En az 2 takım seçmeniz gerekiyor.");
     setWinner(team);
   };
+  const share = () => {
+
+    htmlToImage.toJpeg(document.getElementById('hero'), { quality: 0.95 })
+      .then(function (dataUrl) {
+        var link = document.createElement('a');
+        link.download = 'my-image-name.jpeg';
+        link.href = dataUrl;
+        link.click();
+      });
+
+  }
 
   return (
     <div className="font-bold bg-hero-pattern h-screen overflow-auto bg-cover bg-bottom sm:bg-center   md:pt-2 md:p-10  text-xs lg:text-base">
-      <div className="lg:mx-8 mx-1 pt-8 md:pt-20 pb-20 md:pb-40">
+      <button onClick={share} className="border absolute">capture</button>
+      <div id="hero" className="lg:mx-8 mx-1 pt-8 md:pt-20 pb-20 md:pb-40">
         <div className="md:grid md:grid-cols-12 flex w-full h-3/4 ">
           <div className="md:col-span-2 space-y-10">
             {groups.map((group, index) => {
