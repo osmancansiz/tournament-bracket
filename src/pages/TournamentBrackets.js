@@ -74,9 +74,9 @@ export default function TournamentBrackets() {
   };
 
   return (
-    <div className="font-bold bg-hero-pattern h-screen lg:h-auto overflow-auto bg-center md:pt-2 md:p-10 bg-cover text-xs lg:text-base">
-      <div className="lg:mx-8 mx-1">
-        <div className="md:grid md:grid-cols-12 flex w-full h-3/4 pt-10">
+    <div className="font-bold bg-hero-pattern h-screen  lg:h-auto overflow-auto bg-top md:pt-2 md:p-10  text-xs lg:text-base">
+      <div className="lg:mx-8 mx-1 pt-20 pb-40">
+        <div className="md:grid md:grid-cols-12 flex w-full h-3/4 ">
           <div className="md:col-span-2 space-y-10">
             {groups.map((group, index) => {
               if (group.side === "right") return false;
@@ -625,7 +625,7 @@ export default function TournamentBrackets() {
             </div>
           </div>
           <div className="md:col-span-1 text-center flex flex-col justify-around lg:ml-4">
-            <div className=" group-box flex flex-col justify-between items-center py-1">
+            <div className=" group-box flex flex-col justify-between items-center py-1  h-44">
               <div className="hexagon">
                 {semiFinal
                   .filter((i) => i.semiSide === 1)
@@ -662,14 +662,14 @@ export default function TournamentBrackets() {
             </div>
           </div>
 
-          <div className="md:col-span-2 text-center flex items-center h-full">
+          <div className="md:col-span-2 text-center flex items-center">
             <div className="flex flex-col w-full h-full md:justify-around justify-between">
               <div className=" text-[14px] lg:text-lg">
-                Final
-                <div className="h-4 hidden"></div>
+                FIFA World Cup Qatar 2022
+                <div className="h-4"></div>
               </div>
 
-              <div className=" group-box flex flex-col justify-between lg:justify-center py-1 text-center items-center w-1/2 mx-auto h-40">
+              <div className=" group-box flex lg:justify-center text-center items-center gap-2  mx-auto h-40">
                 <div className="hexagon">
                   {final
                     .filter((i) => i.finalSide === 1)
@@ -715,7 +715,7 @@ export default function TournamentBrackets() {
           </div>
 
           <div className="md:col-span-1 text-center flex flex-col justify-around lg:mr-4">
-            <div className=" group-box flex flex-col justify-between items-center py-1">
+            <div className=" group-box flex flex-col justify-between items-center py-1  h-44">
               <div className="hexagon">
                 {semiFinal
                   .filter((i) => i.semiSide === 3)
