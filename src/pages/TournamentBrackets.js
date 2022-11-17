@@ -139,11 +139,39 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 1)}
-                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                            quarterFinal.some((i) => i.name === team.name)
-                              ? "bg-green-500"
-                              : "bg-transparent hover:opacity-70"
-                          }`}
+                          disabled={quarterFinal.some(
+                            (i) =>
+                              (i.group === "A" && i.rank === 1) ||
+                              (i.group === "B" && i.rank === 2)
+                          )}
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !quarterFinal.some(
+                              (i) =>
+                                (i.group === "A" && i.rank === 1) ||
+                                (i.group === "B" && i.rank === 2)
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "A" && i.rank === 1) ||
+                                (i.group === "B" && i.rank === 2)
+                            ) &&
+                            quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "A" && i.rank === 1) ||
+                                (i.group === "B" && i.rank === 2)
+                            ) &&
+                            !quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                         >
                           {team.name}
                         </div>
@@ -168,11 +196,39 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 1)}
-                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                            quarterFinal.some((i) => i.name === team.name)
-                              ? "bg-green-500"
-                              : "bg-transparent hover:opacity-70"
-                          }`}
+                          disabled={quarterFinal.some(
+                            (i) =>
+                              (i.group === "A" && i.rank === 1) ||
+                              (i.group === "B" && i.rank === 2)
+                          )}
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !quarterFinal.some(
+                              (i) =>
+                                (i.group === "A" && i.rank === 1) ||
+                                (i.group === "B" && i.rank === 2)
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "A" && i.rank === 1) ||
+                                (i.group === "B" && i.rank === 2)
+                            ) &&
+                            quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "A" && i.rank === 1) ||
+                                (i.group === "B" && i.rank === 2)
+                            ) &&
+                            !quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                         >
                           {team.name}
                         </div>
@@ -197,11 +253,39 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 2)}
-                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                            quarterFinal.some((i) => i.name === team.name)
-                              ? "bg-green-500"
-                              : "bg-transparent hover:opacity-70"
-                          }`}
+                          disabled={quarterFinal.some(
+                            (i) =>
+                              (i.group === "C" && i.rank === 1) ||
+                              (i.group === "D" && i.rank === 2)
+                          )}
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !quarterFinal.some(
+                              (i) =>
+                                (i.group === "C" && i.rank === 1) ||
+                                (i.group === "D" && i.rank === 2)
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "C" && i.rank === 1) ||
+                                (i.group === "D" && i.rank === 2)
+                            ) &&
+                            quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "C" && i.rank === 1) ||
+                                (i.group === "D" && i.rank === 2)
+                            ) &&
+                            !quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                         >
                           {team.name}
                         </div>
@@ -224,11 +308,39 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 2)}
-                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                            quarterFinal.some((i) => i.name === team.name)
-                              ? "bg-green-500"
-                              : "bg-transparent hover:opacity-70"
-                          }`}
+                          disabled={quarterFinal.some(
+                            (i) =>
+                              (i.group === "C" && i.rank === 1) ||
+                              (i.group === "D" && i.rank === 2)
+                          )}
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !quarterFinal.some(
+                              (i) =>
+                                (i.group === "C" && i.rank === 1) ||
+                                (i.group === "D" && i.rank === 2)
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "C" && i.rank === 1) ||
+                                (i.group === "D" && i.rank === 2)
+                            ) &&
+                            quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "C" && i.rank === 1) ||
+                                (i.group === "D" && i.rank === 2)
+                            ) &&
+                            !quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                         >
                           {team.name}
                         </div>
@@ -253,11 +365,39 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 3)}
-                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                            quarterFinal.some((i) => i.name === team.name)
-                              ? "bg-green-500"
-                              : "bg-transparent hover:opacity-70"
-                          }`}
+                          disabled={quarterFinal.some(
+                            (i) =>
+                              (i.group === "E" && i.rank === 1) ||
+                              (i.group === "F" && i.rank === 2)
+                          )}
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !quarterFinal.some(
+                              (i) =>
+                                (i.group === "E" && i.rank === 1) ||
+                                (i.group === "F" && i.rank === 2)
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "E" && i.rank === 1) ||
+                                (i.group === "F" && i.rank === 2)
+                            ) &&
+                            quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "E" && i.rank === 1) ||
+                                (i.group === "F" && i.rank === 2)
+                            ) &&
+                            !quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                         >
                           {team.name}
                         </div>
@@ -280,11 +420,39 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 3)}
-                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                            quarterFinal.some((i) => i.name === team.name)
-                              ? "bg-green-500"
-                              : "bg-transparent hover:opacity-70"
-                          }`}
+                          disabled={quarterFinal.some(
+                            (i) =>
+                              (i.group === "E" && i.rank === 1) ||
+                              (i.group === "F" && i.rank === 2)
+                          )}
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !quarterFinal.some(
+                              (i) =>
+                                (i.group === "E" && i.rank === 1) ||
+                                (i.group === "F" && i.rank === 2)
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "E" && i.rank === 1) ||
+                                (i.group === "F" && i.rank === 2)
+                            ) &&
+                            quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "E" && i.rank === 1) ||
+                                (i.group === "F" && i.rank === 2)
+                            ) &&
+                            !quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                         >
                           {team.name}
                         </div>
@@ -309,11 +477,39 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 4)}
-                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                            quarterFinal.some((i) => i.name === team.name)
-                              ? "bg-green-500"
-                              : "bg-transparent hover:opacity-70"
-                          }`}
+                          disabled={quarterFinal.some(
+                            (i) =>
+                              (i.group === "G" && i.rank === 1) ||
+                              (i.group === "H" && i.rank === 2)
+                          )}
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !quarterFinal.some(
+                              (i) =>
+                                (i.group === "G" && i.rank === 1) ||
+                                (i.group === "H" && i.rank === 2)
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "G" && i.rank === 1) ||
+                                (i.group === "H" && i.rank === 2)
+                            ) &&
+                            quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "G" && i.rank === 1) ||
+                                (i.group === "H" && i.rank === 2)
+                            ) &&
+                            !quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                         >
                           {team.name}
                         </div>
@@ -336,11 +532,39 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 4)}
-                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                            quarterFinal.some((i) => i.name === team.name)
-                              ? "bg-green-500"
-                              : "bg-transparent hover:opacity-70"
-                          }`}
+                          disabled={quarterFinal.some(
+                            (i) =>
+                              (i.group === "G" && i.rank === 1) ||
+                              (i.group === "H" && i.rank === 2)
+                          )}
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !quarterFinal.some(
+                              (i) =>
+                                (i.group === "G" && i.rank === 1) ||
+                                (i.group === "H" && i.rank === 2)
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "G" && i.rank === 1) ||
+                                (i.group === "H" && i.rank === 2)
+                            ) &&
+                            quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "G" && i.rank === 1) ||
+                                (i.group === "H" && i.rank === 2)
+                            ) &&
+                            !quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                         >
                           {team.name}
                         </div>
@@ -655,11 +879,39 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 5)}
-                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                            quarterFinal.some((i) => i.name === team.name)
-                              ? "bg-green-500"
-                              : "bg-transparent hover:opacity-70"
-                          }`}
+                          disabled={quarterFinal.some(
+                            (i) =>
+                              (i.group === "B" && i.rank === 1) ||
+                              (i.group === "A" && i.rank === 2)
+                          )}
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !quarterFinal.some(
+                              (i) =>
+                                (i.group === "B" && i.rank === 1) ||
+                                (i.group === "A" && i.rank === 2)
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "B" && i.rank === 1) ||
+                                (i.group === "A" && i.rank === 2)
+                            ) &&
+                            quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "B" && i.rank === 1) ||
+                                (i.group === "A" && i.rank === 2)
+                            ) &&
+                            !quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                         >
                           {team.name}
                         </div>
@@ -682,11 +934,39 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 5)}
-                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                            quarterFinal.some((i) => i.name === team.name)
-                              ? "bg-green-500"
-                              : "bg-transparent hover:opacity-70"
-                          }`}
+                          disabled={quarterFinal.some(
+                            (i) =>
+                              (i.group === "B" && i.rank === 1) ||
+                              (i.group === "A" && i.rank === 2)
+                          )}
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !quarterFinal.some(
+                              (i) =>
+                                (i.group === "B" && i.rank === 1) ||
+                                (i.group === "A" && i.rank === 2)
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "B" && i.rank === 1) ||
+                                (i.group === "A" && i.rank === 2)
+                            ) &&
+                            quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "B" && i.rank === 1) ||
+                                (i.group === "A" && i.rank === 2)
+                            ) &&
+                            !quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                         >
                           {team.name}
                         </div>
@@ -711,11 +991,39 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 6)}
-                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                            quarterFinal.some((i) => i.name === team.name)
-                              ? "bg-green-500"
-                              : "bg-transparent hover:opacity-70"
-                          }`}
+                          disabled={quarterFinal.some(
+                            (i) =>
+                              (i.group === "D" && i.rank === 1) ||
+                              (i.group === "C" && i.rank === 2)
+                          )}
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !quarterFinal.some(
+                              (i) =>
+                                (i.group === "D" && i.rank === 1) ||
+                                (i.group === "C" && i.rank === 2)
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "D" && i.rank === 1) ||
+                                (i.group === "C" && i.rank === 2)
+                            ) &&
+                            quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "D" && i.rank === 1) ||
+                                (i.group === "C" && i.rank === 2)
+                            ) &&
+                            !quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                         >
                           {team.name}
                         </div>
@@ -738,11 +1046,39 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 6)}
-                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                            quarterFinal.some((i) => i.name === team.name)
-                              ? "bg-green-500"
-                              : "bg-transparent hover:opacity-70"
-                          }`}
+                          disabled={quarterFinal.some(
+                            (i) =>
+                              (i.group === "D" && i.rank === 1) ||
+                              (i.group === "C" && i.rank === 2)
+                          )}
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !quarterFinal.some(
+                              (i) =>
+                                (i.group === "D" && i.rank === 1) ||
+                                (i.group === "C" && i.rank === 2)
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "D" && i.rank === 1) ||
+                                (i.group === "C" && i.rank === 2)
+                            ) &&
+                            quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "D" && i.rank === 1) ||
+                                (i.group === "C" && i.rank === 2)
+                            ) &&
+                            !quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                         >
                           {team.name}
                         </div>
@@ -767,11 +1103,39 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 7)}
-                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                            quarterFinal.some((i) => i.name === team.name)
-                              ? "bg-green-500"
-                              : "bg-transparent hover:opacity-70"
-                          }`}
+                          disabled={quarterFinal.some(
+                            (i) =>
+                              (i.group === "F" && i.rank === 1) ||
+                              (i.group === "E" && i.rank === 2)
+                          )}
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !quarterFinal.some(
+                              (i) =>
+                                (i.group === "F" && i.rank === 1) ||
+                                (i.group === "E" && i.rank === 2)
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "F" && i.rank === 1) ||
+                                (i.group === "E" && i.rank === 2)
+                            ) &&
+                            quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "F" && i.rank === 1) ||
+                                (i.group === "E" && i.rank === 2)
+                            ) &&
+                            !quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                         >
                           {team.name}
                         </div>
@@ -794,11 +1158,39 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 7)}
-                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                            quarterFinal.some((i) => i.name === team.name)
-                              ? "bg-green-500"
-                              : "bg-transparent hover:opacity-70"
-                          }`}
+                          disabled={quarterFinal.some(
+                            (i) =>
+                              (i.group === "F" && i.rank === 1) ||
+                              (i.group === "E" && i.rank === 2)
+                          )}
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !quarterFinal.some(
+                              (i) =>
+                                (i.group === "F" && i.rank === 1) ||
+                                (i.group === "E" && i.rank === 2)
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "F" && i.rank === 1) ||
+                                (i.group === "E" && i.rank === 2)
+                            ) &&
+                            quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "F" && i.rank === 1) ||
+                                (i.group === "E" && i.rank === 2)
+                            ) &&
+                            !quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                         >
                           {team.name}
                         </div>
@@ -823,11 +1215,39 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 8)}
-                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                            quarterFinal.some((i) => i.name === team.name)
-                              ? "bg-green-500"
-                              : "bg-transparent hover:opacity-70"
-                          }`}
+                          disabled={quarterFinal.some(
+                            (i) =>
+                              (i.group === "H" && i.rank === 1) ||
+                              (i.group === "G" && i.rank === 2)
+                          )}
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !quarterFinal.some(
+                              (i) =>
+                                (i.group === "H" && i.rank === 1) ||
+                                (i.group === "G" && i.rank === 2)
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "H" && i.rank === 1) ||
+                                (i.group === "G" && i.rank === 2)
+                            ) &&
+                            quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "H" && i.rank === 1) ||
+                                (i.group === "G" && i.rank === 2)
+                            ) &&
+                            !quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                         >
                           {team.name}
                         </div>
@@ -850,11 +1270,39 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 8)}
-                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
-                            quarterFinal.some((i) => i.name === team.name)
-                              ? "bg-green-500"
-                              : "bg-transparent hover:opacity-70"
-                          }`}
+                          disabled={quarterFinal.some(
+                            (i) =>
+                              (i.group === "H" && i.rank === 1) ||
+                              (i.group === "G" && i.rank === 2)
+                          )}
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full 
+                        
+                          ${
+                            !quarterFinal.some(
+                              (i) =>
+                                (i.group === "H" && i.rank === 1) ||
+                                (i.group === "G" && i.rank === 2)
+                            ) && "bg-transparent hover:opacity-70"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "H" && i.rank === 1) ||
+                                (i.group === "G" && i.rank === 2)
+                            ) &&
+                            quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-green-500"
+                          }
+                          ${
+                            quarterFinal.some(
+                              (i) =>
+                                (i.group === "H" && i.rank === 1) ||
+                                (i.group === "G" && i.rank === 2)
+                            ) &&
+                            !quarterFinal.some((i) => i.name === team.name) &&
+                            "bg-red-500"
+                          }
+                          `}
                         >
                           {team.name}
                         </div>
