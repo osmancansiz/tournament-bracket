@@ -45,8 +45,10 @@ body {
   .hexagon {
     width: 60px;
     font-size: 8px;
+    height: 24px;
   }
   .hexagon:before {
     width: 56px;
+    height: 20px;
   }
 }
