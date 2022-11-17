@@ -122,9 +122,9 @@ export default function TournamentBrackets() {
               );
             })}
           </div>
-          <div className="md:col-span-1 ml-5 lg:ml-0">
-            <div className="flex flex-col space-y-12 lg:justify-around gap-10 h-full relative text-center ml-2">
-              <div className="group-box flex flex-col justify-between items-center py-1">
+          <div className="md:col-span-1 ml-2 lg:ml-0">
+            <div className="flex flex-col space-y-11 h-full lg:justify-around lg:h-full relative text-center lg:ml-2">
+              <div className=" h-[112px]   flex flex-col justify-center items-center ">
                 {selectedTeams.filter((i) => i.group === "A" && i.rank === 1)
                   .length === 0 ? (
                   <div className="hexagon">
@@ -147,31 +147,28 @@ export default function TournamentBrackets() {
                           )}
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
-                              (i) =>
-                                (i.group === "A" && i.rank === 1) ||
-                                (i.group === "B" && i.rank === 2)
-                            ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
+                          ${!quarterFinal.some(
+                            (i) =>
+                              (i.group === "A" && i.rank === 1) ||
+                              (i.group === "B" && i.rank === 2)
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "A" && i.rank === 1) ||
                                 (i.group === "B" && i.rank === 2)
                             ) &&
                             quarterFinal.some((i) => i.name === team.name) &&
                             "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "A" && i.rank === 1) ||
                                 (i.group === "B" && i.rank === 2)
                             ) &&
                             !quarterFinal.some((i) => i.name === team.name) &&
                             "bg-red-500"
-                          }
+                            }
                           `}
                         >
                           {team.name}
@@ -204,31 +201,28 @@ export default function TournamentBrackets() {
                           )}
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
-                              (i) =>
-                                (i.group === "A" && i.rank === 1) ||
-                                (i.group === "B" && i.rank === 2)
-                            ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
+                          ${!quarterFinal.some(
+                            (i) =>
+                              (i.group === "A" && i.rank === 1) ||
+                              (i.group === "B" && i.rank === 2)
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "A" && i.rank === 1) ||
                                 (i.group === "B" && i.rank === 2)
                             ) &&
                             quarterFinal.some((i) => i.name === team.name) &&
                             "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "A" && i.rank === 1) ||
                                 (i.group === "B" && i.rank === 2)
                             ) &&
                             !quarterFinal.some((i) => i.name === team.name) &&
                             "bg-red-500"
-                          }
+                            }
                           `}
                         >
                           {team.name}
@@ -238,7 +232,7 @@ export default function TournamentBrackets() {
                 )}
               </div>
 
-              <div className="  group-box flex flex-col justify-between items-center py-1">
+              <div className=" h-[112px]  flex flex-col justify-center items-center ">
                 {selectedTeams.filter((i) => i.group === "C" && i.rank === 1)
                   .length === 0 ? (
                   <div className="hexagon">
@@ -261,31 +255,28 @@ export default function TournamentBrackets() {
                           )}
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
-                              (i) =>
-                                (i.group === "C" && i.rank === 1) ||
-                                (i.group === "D" && i.rank === 2)
-                            ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
+                          ${!quarterFinal.some(
+                            (i) =>
+                              (i.group === "C" && i.rank === 1) ||
+                              (i.group === "D" && i.rank === 2)
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "C" && i.rank === 1) ||
                                 (i.group === "D" && i.rank === 2)
                             ) &&
                             quarterFinal.some((i) => i.name === team.name) &&
                             "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "C" && i.rank === 1) ||
                                 (i.group === "D" && i.rank === 2)
                             ) &&
                             !quarterFinal.some((i) => i.name === team.name) &&
                             "bg-red-500"
-                          }
+                            }
                           `}
                         >
                           {team.name}
@@ -316,31 +307,28 @@ export default function TournamentBrackets() {
                           )}
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
-                              (i) =>
-                                (i.group === "C" && i.rank === 1) ||
-                                (i.group === "D" && i.rank === 2)
-                            ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
+                          ${!quarterFinal.some(
+                            (i) =>
+                              (i.group === "C" && i.rank === 1) ||
+                              (i.group === "D" && i.rank === 2)
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "C" && i.rank === 1) ||
                                 (i.group === "D" && i.rank === 2)
                             ) &&
                             quarterFinal.some((i) => i.name === team.name) &&
                             "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "C" && i.rank === 1) ||
                                 (i.group === "D" && i.rank === 2)
                             ) &&
                             !quarterFinal.some((i) => i.name === team.name) &&
                             "bg-red-500"
-                          }
+                            }
                           `}
                         >
                           {team.name}
@@ -350,7 +338,7 @@ export default function TournamentBrackets() {
                 )}
               </div>
 
-              <div className=" group-box flex flex-col justify-between items-center py-1">
+              <div className=" h-[112px]  flex flex-col justify-center items-center ">
                 {selectedTeams.filter((i) => i.group === "E" && i.rank === 1)
                   .length === 0 ? (
                   <div className="hexagon">
@@ -373,31 +361,28 @@ export default function TournamentBrackets() {
                           )}
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
-                              (i) =>
-                                (i.group === "E" && i.rank === 1) ||
-                                (i.group === "F" && i.rank === 2)
-                            ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
+                          ${!quarterFinal.some(
+                            (i) =>
+                              (i.group === "E" && i.rank === 1) ||
+                              (i.group === "F" && i.rank === 2)
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "E" && i.rank === 1) ||
                                 (i.group === "F" && i.rank === 2)
                             ) &&
                             quarterFinal.some((i) => i.name === team.name) &&
                             "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "E" && i.rank === 1) ||
                                 (i.group === "F" && i.rank === 2)
                             ) &&
                             !quarterFinal.some((i) => i.name === team.name) &&
                             "bg-red-500"
-                          }
+                            }
                           `}
                         >
                           {team.name}
@@ -428,31 +413,28 @@ export default function TournamentBrackets() {
                           )}
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
-                              (i) =>
-                                (i.group === "E" && i.rank === 1) ||
-                                (i.group === "F" && i.rank === 2)
-                            ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
+                          ${!quarterFinal.some(
+                            (i) =>
+                              (i.group === "E" && i.rank === 1) ||
+                              (i.group === "F" && i.rank === 2)
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "E" && i.rank === 1) ||
                                 (i.group === "F" && i.rank === 2)
                             ) &&
                             quarterFinal.some((i) => i.name === team.name) &&
                             "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "E" && i.rank === 1) ||
                                 (i.group === "F" && i.rank === 2)
                             ) &&
                             !quarterFinal.some((i) => i.name === team.name) &&
                             "bg-red-500"
-                          }
+                            }
                           `}
                         >
                           {team.name}
@@ -462,7 +444,7 @@ export default function TournamentBrackets() {
                 )}
               </div>
 
-              <div className=" group-box flex flex-col justify-between items-center py-1">
+              <div className=" h-[112px]  flex flex-col justify-center items-center ">
                 {selectedTeams.filter((i) => i.group === "G" && i.rank === 1)
                   .length === 0 ? (
                   <div className="hexagon">
@@ -485,31 +467,28 @@ export default function TournamentBrackets() {
                           )}
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
-                              (i) =>
-                                (i.group === "G" && i.rank === 1) ||
-                                (i.group === "H" && i.rank === 2)
-                            ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
+                          ${!quarterFinal.some(
+                            (i) =>
+                              (i.group === "G" && i.rank === 1) ||
+                              (i.group === "H" && i.rank === 2)
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "G" && i.rank === 1) ||
                                 (i.group === "H" && i.rank === 2)
                             ) &&
                             quarterFinal.some((i) => i.name === team.name) &&
                             "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "G" && i.rank === 1) ||
                                 (i.group === "H" && i.rank === 2)
                             ) &&
                             !quarterFinal.some((i) => i.name === team.name) &&
                             "bg-red-500"
-                          }
+                            }
                           `}
                         >
                           {team.name}
@@ -540,31 +519,28 @@ export default function TournamentBrackets() {
                           )}
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
-                              (i) =>
-                                (i.group === "G" && i.rank === 1) ||
-                                (i.group === "H" && i.rank === 2)
-                            ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
+                          ${!quarterFinal.some(
+                            (i) =>
+                              (i.group === "G" && i.rank === 1) ||
+                              (i.group === "H" && i.rank === 2)
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "G" && i.rank === 1) ||
                                 (i.group === "H" && i.rank === 2)
                             ) &&
                             quarterFinal.some((i) => i.name === team.name) &&
                             "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "G" && i.rank === 1) ||
                                 (i.group === "H" && i.rank === 2)
                             ) &&
                             !quarterFinal.some((i) => i.name === team.name) &&
                             "bg-red-500"
-                          }
+                            }
                           `}
                         >
                           {team.name}
@@ -575,7 +551,7 @@ export default function TournamentBrackets() {
               </div>
             </div>
           </div>
-          <div className="col-span-1 text-center flex flex-col h-full justify-around ml-[54px] lg:ml-4">
+          <div className="md:col-span-1 text-center flex flex-col justify-around lg:ml-4">
             <div className=" group-box flex flex-col justify-between items-center py-1">
               <div className="hexagon">
                 {quarterFinal
@@ -648,7 +624,7 @@ export default function TournamentBrackets() {
               </div>
             </div>
           </div>
-          <div className="col-span-1 text-center flex flex-col h-full justify-around lg:ml-4 ml-8">
+          <div className="md:col-span-1 text-center flex flex-col justify-around lg:ml-4">
             <div className=" group-box flex flex-col justify-between items-center py-1">
               <div className="hexagon">
                 {semiFinal
@@ -686,7 +662,7 @@ export default function TournamentBrackets() {
             </div>
           </div>
 
-          <div className="col-span-2 text-center flex items-center h-full">
+          <div className="md:col-span-2 text-center flex items-center h-full">
             <div className="flex flex-col w-full h-full md:justify-around justify-between">
               <div className=" text-[14px] lg:text-lg">
                 Final
@@ -738,7 +714,7 @@ export default function TournamentBrackets() {
             </div>
           </div>
 
-          <div className="col-span-1 text-center flex flex-col h-full justify-around lg:mr-4 mr-8">
+          <div className="md:col-span-1 text-center flex flex-col justify-around lg:mr-4">
             <div className=" group-box flex flex-col justify-between items-center py-1">
               <div className="hexagon">
                 {semiFinal
@@ -775,7 +751,7 @@ export default function TournamentBrackets() {
               </div>
             </div>
           </div>
-          <div className="col-span-1 flex text-center flex-col h-full justify-around -ml-16 lg:mr-4 lg:ml-0">
+          <div className="md:col-span-1 text-center flex flex-col justify-around lg:mr-4">
             <div className=" group-box flex flex-col justify-between items-center py-1">
               <div className="hexagon">
                 {quarterFinal
@@ -848,9 +824,9 @@ export default function TournamentBrackets() {
               </div>
             </div>
           </div>
-          <div className="col-span-1 mr-4 lg:mr-0">
-            <div className="flex flex-col justify-between lg:justify-around gap-10 h-full relative text-center mr-2">
-              <div className=" group-box flex flex-col justify-between items-center py-1">
+          <div className="md:col-span-1 mr-2 lg:mr-0">
+            <div className="flex flex-col space-y-11 h-full lg:justify-around lg:h-full relative text-center lg:mr-2">
+              <div className=" h-[112px]   flex flex-col justify-center items-center ">
                 {selectedTeams.filter((i) => i.group === "B" && i.rank === 1)
                   .length === 0 ? (
                   <div className="hexagon">
@@ -873,31 +849,28 @@ export default function TournamentBrackets() {
                           )}
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
-                              (i) =>
-                                (i.group === "B" && i.rank === 1) ||
-                                (i.group === "A" && i.rank === 2)
-                            ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
+                          ${!quarterFinal.some(
+                            (i) =>
+                              (i.group === "B" && i.rank === 1) ||
+                              (i.group === "A" && i.rank === 2)
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "B" && i.rank === 1) ||
                                 (i.group === "A" && i.rank === 2)
                             ) &&
                             quarterFinal.some((i) => i.name === team.name) &&
                             "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "B" && i.rank === 1) ||
                                 (i.group === "A" && i.rank === 2)
                             ) &&
                             !quarterFinal.some((i) => i.name === team.name) &&
                             "bg-red-500"
-                          }
+                            }
                           `}
                         >
                           {team.name}
@@ -928,31 +901,28 @@ export default function TournamentBrackets() {
                           )}
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
-                              (i) =>
-                                (i.group === "B" && i.rank === 1) ||
-                                (i.group === "A" && i.rank === 2)
-                            ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
+                          ${!quarterFinal.some(
+                            (i) =>
+                              (i.group === "B" && i.rank === 1) ||
+                              (i.group === "A" && i.rank === 2)
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "B" && i.rank === 1) ||
                                 (i.group === "A" && i.rank === 2)
                             ) &&
                             quarterFinal.some((i) => i.name === team.name) &&
                             "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "B" && i.rank === 1) ||
                                 (i.group === "A" && i.rank === 2)
                             ) &&
                             !quarterFinal.some((i) => i.name === team.name) &&
                             "bg-red-500"
-                          }
+                            }
                           `}
                         >
                           {team.name}
@@ -962,7 +932,7 @@ export default function TournamentBrackets() {
                 )}
               </div>
 
-              <div className=" group-box flex flex-col justify-between items-center py-1">
+              <div className=" h-[112px]   flex flex-col justify-center items-center ">
                 {selectedTeams.filter((i) => i.group === "D" && i.rank === 1)
                   .length === 0 ? (
                   <div className="hexagon">
@@ -985,31 +955,28 @@ export default function TournamentBrackets() {
                           )}
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
-                              (i) =>
-                                (i.group === "D" && i.rank === 1) ||
-                                (i.group === "C" && i.rank === 2)
-                            ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
+                          ${!quarterFinal.some(
+                            (i) =>
+                              (i.group === "D" && i.rank === 1) ||
+                              (i.group === "C" && i.rank === 2)
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "D" && i.rank === 1) ||
                                 (i.group === "C" && i.rank === 2)
                             ) &&
                             quarterFinal.some((i) => i.name === team.name) &&
                             "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "D" && i.rank === 1) ||
                                 (i.group === "C" && i.rank === 2)
                             ) &&
                             !quarterFinal.some((i) => i.name === team.name) &&
                             "bg-red-500"
-                          }
+                            }
                           `}
                         >
                           {team.name}
@@ -1040,31 +1007,28 @@ export default function TournamentBrackets() {
                           )}
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
-                              (i) =>
-                                (i.group === "D" && i.rank === 1) ||
-                                (i.group === "C" && i.rank === 2)
-                            ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
+                          ${!quarterFinal.some(
+                            (i) =>
+                              (i.group === "D" && i.rank === 1) ||
+                              (i.group === "C" && i.rank === 2)
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "D" && i.rank === 1) ||
                                 (i.group === "C" && i.rank === 2)
                             ) &&
                             quarterFinal.some((i) => i.name === team.name) &&
                             "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "D" && i.rank === 1) ||
                                 (i.group === "C" && i.rank === 2)
                             ) &&
                             !quarterFinal.some((i) => i.name === team.name) &&
                             "bg-red-500"
-                          }
+                            }
                           `}
                         >
                           {team.name}
@@ -1074,7 +1038,7 @@ export default function TournamentBrackets() {
                 )}
               </div>
 
-              <div className=" group-box flex flex-col justify-between items-center py-1">
+              <div className=" h-[112px]   flex flex-col justify-center items-center ">
                 {selectedTeams.filter((i) => i.group === "F" && i.rank === 1)
                   .length === 0 ? (
                   <div className="hexagon">
@@ -1097,31 +1061,28 @@ export default function TournamentBrackets() {
                           )}
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
-                              (i) =>
-                                (i.group === "F" && i.rank === 1) ||
-                                (i.group === "E" && i.rank === 2)
-                            ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
+                          ${!quarterFinal.some(
+                            (i) =>
+                              (i.group === "F" && i.rank === 1) ||
+                              (i.group === "E" && i.rank === 2)
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "F" && i.rank === 1) ||
                                 (i.group === "E" && i.rank === 2)
                             ) &&
                             quarterFinal.some((i) => i.name === team.name) &&
                             "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "F" && i.rank === 1) ||
                                 (i.group === "E" && i.rank === 2)
                             ) &&
                             !quarterFinal.some((i) => i.name === team.name) &&
                             "bg-red-500"
-                          }
+                            }
                           `}
                         >
                           {team.name}
@@ -1152,31 +1113,28 @@ export default function TournamentBrackets() {
                           )}
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
-                              (i) =>
-                                (i.group === "F" && i.rank === 1) ||
-                                (i.group === "E" && i.rank === 2)
-                            ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
+                          ${!quarterFinal.some(
+                            (i) =>
+                              (i.group === "F" && i.rank === 1) ||
+                              (i.group === "E" && i.rank === 2)
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "F" && i.rank === 1) ||
                                 (i.group === "E" && i.rank === 2)
                             ) &&
                             quarterFinal.some((i) => i.name === team.name) &&
                             "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "F" && i.rank === 1) ||
                                 (i.group === "E" && i.rank === 2)
                             ) &&
                             !quarterFinal.some((i) => i.name === team.name) &&
                             "bg-red-500"
-                          }
+                            }
                           `}
                         >
                           {team.name}
@@ -1186,7 +1144,7 @@ export default function TournamentBrackets() {
                 )}
               </div>
 
-              <div className=" group-box flex flex-col justify-between items-center py-1">
+              <div className=" h-[112px]   flex flex-col justify-center items-center ">
                 {selectedTeams.filter((i) => i.group === "H" && i.rank === 1)
                   .length === 0 ? (
                   <div className="hexagon">
@@ -1209,31 +1167,28 @@ export default function TournamentBrackets() {
                           )}
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
-                              (i) =>
-                                (i.group === "H" && i.rank === 1) ||
-                                (i.group === "G" && i.rank === 2)
-                            ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
+                          ${!quarterFinal.some(
+                            (i) =>
+                              (i.group === "H" && i.rank === 1) ||
+                              (i.group === "G" && i.rank === 2)
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "H" && i.rank === 1) ||
                                 (i.group === "G" && i.rank === 2)
                             ) &&
                             quarterFinal.some((i) => i.name === team.name) &&
                             "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "H" && i.rank === 1) ||
                                 (i.group === "G" && i.rank === 2)
                             ) &&
                             !quarterFinal.some((i) => i.name === team.name) &&
                             "bg-red-500"
-                          }
+                            }
                           `}
                         >
                           {team.name}
@@ -1264,31 +1219,28 @@ export default function TournamentBrackets() {
                           )}
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
-                              (i) =>
-                                (i.group === "H" && i.rank === 1) ||
-                                (i.group === "G" && i.rank === 2)
-                            ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
+                          ${!quarterFinal.some(
+                            (i) =>
+                              (i.group === "H" && i.rank === 1) ||
+                              (i.group === "G" && i.rank === 2)
+                          ) && "bg-transparent hover:opacity-70"
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "H" && i.rank === 1) ||
                                 (i.group === "G" && i.rank === 2)
                             ) &&
                             quarterFinal.some((i) => i.name === team.name) &&
                             "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
+                            }
+                          ${quarterFinal.some(
                               (i) =>
                                 (i.group === "H" && i.rank === 1) ||
                                 (i.group === "G" && i.rank === 2)
                             ) &&
                             !quarterFinal.some((i) => i.name === team.name) &&
                             "bg-red-500"
-                          }
+                            }
                           `}
                         >
                           {team.name}
