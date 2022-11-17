@@ -74,8 +74,8 @@ export default function TournamentBrackets() {
   };
 
   return (
-    <div className="font-bold bg-hero-pattern h-screen  lg:h-auto overflow-auto sm:bg-top bg-center md:pt-2 md:p-10  text-xs lg:text-base">
-      <div className="lg:mx-8 mx-1 pt-20 pb-40">
+    <div className="font-bold bg-hero-pattern h-screen overflow-auto bg-cover bg-bottom sm:bg-center   md:pt-2 md:p-10  text-xs lg:text-base">
+      <div className="lg:mx-8 mx-1 pt-8 md:pt-20 pb-20 md:pb-40">
         <div className="md:grid md:grid-cols-12 flex w-full h-3/4 ">
           <div className="md:col-span-2 space-y-10">
             {groups.map((group, index) => {
