@@ -88,7 +88,7 @@ export default function TournamentBrackets() {
   return (
     <>
       {winner.name && (
-        <div className="absolute bottom-6 lg:bottom-32 flex w-full justify-around font-bold">
+        <div className="absolute bottom-6 lg:top-6 lg:bottom-32 flex w-full justify-around font-bold">
           <button
             onClick={() =>
               window.open(
@@ -811,11 +811,11 @@ export default function TournamentBrackets() {
             </div>
 
             <div className="md:col-span-2 text-center flex items-center" id="heroMobile">
-              <div className="flex flex-col w-full h-full md:justify-around justify-between">
-                <div className="font-bold text-[14px] lg:text-[30px] lg:h-20">
+              <div className="flex flex-col w-full h-full ">
+                <div className="font-bold flex-1 text-[14px] lg:text-[30px] lg:h-20">
                   TURNUVA AĞACI
                 </div>
-                <div className="flex  items-center gap-1 mx-auto h-80">
+                <div className="flex flex-1  items-center gap-1 mx-auto h-80">
                   <div className="hexagon">
                     {final
                       .filter((i) => i.finalSide === 1)
@@ -878,7 +878,7 @@ export default function TournamentBrackets() {
                       ))}
                   </div>
                 </div>
-                <div className=" text-[14px] lg:text-lg lg:h-20">
+                <div className=" text-[14px] flex-1 lg:text-lg lg:h-20">
                   {winner.name ? (
                     <div className={`text-[14px] lg:text-lg text-center flex flex-col items-center`}>
                       Şampiyon: {winner.name}
