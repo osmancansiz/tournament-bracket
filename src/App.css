@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 body {
   overflow: hidden;
   background-color: black;
+  font-family: 'Anton', sans-serif;
 }
 
 .group-box {

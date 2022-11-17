@@ -88,7 +88,7 @@ export default function TournamentBrackets() {
   return (
     <>
       {winner.name && (
-        <div className="absolute bottom-32 left-1/2 -translate-x-1/2 space-x-5 font-bold">
+        <div className="absolute bottom-32 flex w-full justify-around font-bold">
           <button
             onClick={() =>
               window.open(
@@ -106,13 +106,13 @@ export default function TournamentBrackets() {
             className=" bg-black text-white rounded-md w-40 h-10"
             onClick={() => downloadImage()}
           >
-            İndir
+            Görseli İndir
           </button>
         </div>
       )}
 
       <div
-        className="font-bold bg-hero-pattern h-screen overflow-auto bg-cover bg-bottom sm:bg-center   md:pt-2 md:p-10  text-xs lg:text-base"
+        className="bg-hero-pattern h-screen overflow-auto bg-cover bg-bottom sm:bg-center   md:pt-2 md:p-10  text-xs lg:text-base"
         id="hero"
       >
         <div className="lg:mx-8 mx-1 pt-8 md:pt-20 pb-20 md:pb-40">
@@ -139,12 +139,10 @@ export default function TournamentBrackets() {
                           onClick={() => handleClick(team)}
                           className={`flex w-full items-center pt-1 cursor-pointer  text-[8px] lg:text-base lg:flex justify-between px-4 
                         ${team.rank === 0 && "bg-transparent hover:opacity-70"}
-                        ${
-                          (team.rank === 1 || team.rank === 2) && "bg-green-500"
-                        }
-                        ${
-                          (team.rank === 3 || team.rank === 4) && "bg-red-500"
-                        } `}
+                        ${(team.rank === 1 || team.rank === 2) && "bg-green-500"
+                            }
+                        ${(team.rank === 3 || team.rank === 4) && "bg-red-500"
+                            } `}
                         >
                           <div className="flex w-4 h-5 lg:w-6 lg:h-6 justify-center items-center">
                             <img
@@ -189,31 +187,28 @@ export default function TournamentBrackets() {
                             )}
                             className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
+                          ${!quarterFinal.some(
                               (i) =>
                                 (i.group === "A" && i.rank === 1) ||
                                 (i.group === "B" && i.rank === 2)
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "A" && i.rank === 1) ||
-                                (i.group === "B" && i.rank === 2)
-                            ) &&
-                            quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "A" && i.rank === 1) ||
-                                (i.group === "B" && i.rank === 2)
-                            ) &&
-                            !quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
-                          }
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "A" && i.rank === 1) ||
+                                  (i.group === "B" && i.rank === 2)
+                              ) &&
+                              quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-green-500"
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "A" && i.rank === 1) ||
+                                  (i.group === "B" && i.rank === 2)
+                              ) &&
+                              !quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-red-500"
+                              }
                           `}
                           >
                             {team.name}
@@ -246,31 +241,28 @@ export default function TournamentBrackets() {
                             )}
                             className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
+                          ${!quarterFinal.some(
                               (i) =>
                                 (i.group === "A" && i.rank === 1) ||
                                 (i.group === "B" && i.rank === 2)
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "A" && i.rank === 1) ||
-                                (i.group === "B" && i.rank === 2)
-                            ) &&
-                            quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "A" && i.rank === 1) ||
-                                (i.group === "B" && i.rank === 2)
-                            ) &&
-                            !quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
-                          }
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "A" && i.rank === 1) ||
+                                  (i.group === "B" && i.rank === 2)
+                              ) &&
+                              quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-green-500"
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "A" && i.rank === 1) ||
+                                  (i.group === "B" && i.rank === 2)
+                              ) &&
+                              !quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-red-500"
+                              }
                           `}
                           >
                             {team.name}
@@ -303,31 +295,28 @@ export default function TournamentBrackets() {
                             )}
                             className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
+                          ${!quarterFinal.some(
                               (i) =>
                                 (i.group === "C" && i.rank === 1) ||
                                 (i.group === "D" && i.rank === 2)
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "C" && i.rank === 1) ||
-                                (i.group === "D" && i.rank === 2)
-                            ) &&
-                            quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "C" && i.rank === 1) ||
-                                (i.group === "D" && i.rank === 2)
-                            ) &&
-                            !quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
-                          }
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "C" && i.rank === 1) ||
+                                  (i.group === "D" && i.rank === 2)
+                              ) &&
+                              quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-green-500"
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "C" && i.rank === 1) ||
+                                  (i.group === "D" && i.rank === 2)
+                              ) &&
+                              !quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-red-500"
+                              }
                           `}
                           >
                             {team.name}
@@ -358,31 +347,28 @@ export default function TournamentBrackets() {
                             )}
                             className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
+                          ${!quarterFinal.some(
                               (i) =>
                                 (i.group === "C" && i.rank === 1) ||
                                 (i.group === "D" && i.rank === 2)
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "C" && i.rank === 1) ||
-                                (i.group === "D" && i.rank === 2)
-                            ) &&
-                            quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "C" && i.rank === 1) ||
-                                (i.group === "D" && i.rank === 2)
-                            ) &&
-                            !quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
-                          }
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "C" && i.rank === 1) ||
+                                  (i.group === "D" && i.rank === 2)
+                              ) &&
+                              quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-green-500"
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "C" && i.rank === 1) ||
+                                  (i.group === "D" && i.rank === 2)
+                              ) &&
+                              !quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-red-500"
+                              }
                           `}
                           >
                             {team.name}
@@ -415,31 +401,28 @@ export default function TournamentBrackets() {
                             )}
                             className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
+                          ${!quarterFinal.some(
                               (i) =>
                                 (i.group === "E" && i.rank === 1) ||
                                 (i.group === "F" && i.rank === 2)
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "E" && i.rank === 1) ||
-                                (i.group === "F" && i.rank === 2)
-                            ) &&
-                            quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "E" && i.rank === 1) ||
-                                (i.group === "F" && i.rank === 2)
-                            ) &&
-                            !quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
-                          }
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "E" && i.rank === 1) ||
+                                  (i.group === "F" && i.rank === 2)
+                              ) &&
+                              quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-green-500"
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "E" && i.rank === 1) ||
+                                  (i.group === "F" && i.rank === 2)
+                              ) &&
+                              !quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-red-500"
+                              }
                           `}
                           >
                             {team.name}
@@ -470,31 +453,28 @@ export default function TournamentBrackets() {
                             )}
                             className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
+                          ${!quarterFinal.some(
                               (i) =>
                                 (i.group === "E" && i.rank === 1) ||
                                 (i.group === "F" && i.rank === 2)
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "E" && i.rank === 1) ||
-                                (i.group === "F" && i.rank === 2)
-                            ) &&
-                            quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "E" && i.rank === 1) ||
-                                (i.group === "F" && i.rank === 2)
-                            ) &&
-                            !quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
-                          }
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "E" && i.rank === 1) ||
+                                  (i.group === "F" && i.rank === 2)
+                              ) &&
+                              quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-green-500"
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "E" && i.rank === 1) ||
+                                  (i.group === "F" && i.rank === 2)
+                              ) &&
+                              !quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-red-500"
+                              }
                           `}
                           >
                             {team.name}
@@ -527,31 +507,28 @@ export default function TournamentBrackets() {
                             )}
                             className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
+                          ${!quarterFinal.some(
                               (i) =>
                                 (i.group === "G" && i.rank === 1) ||
                                 (i.group === "H" && i.rank === 2)
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "G" && i.rank === 1) ||
-                                (i.group === "H" && i.rank === 2)
-                            ) &&
-                            quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "G" && i.rank === 1) ||
-                                (i.group === "H" && i.rank === 2)
-                            ) &&
-                            !quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
-                          }
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "G" && i.rank === 1) ||
+                                  (i.group === "H" && i.rank === 2)
+                              ) &&
+                              quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-green-500"
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "G" && i.rank === 1) ||
+                                  (i.group === "H" && i.rank === 2)
+                              ) &&
+                              !quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-red-500"
+                              }
                           `}
                           >
                             {team.name}
@@ -582,31 +559,28 @@ export default function TournamentBrackets() {
                             )}
                             className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
+                          ${!quarterFinal.some(
                               (i) =>
                                 (i.group === "G" && i.rank === 1) ||
                                 (i.group === "H" && i.rank === 2)
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "G" && i.rank === 1) ||
-                                (i.group === "H" && i.rank === 2)
-                            ) &&
-                            quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "G" && i.rank === 1) ||
-                                (i.group === "H" && i.rank === 2)
-                            ) &&
-                            !quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
-                          }
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "G" && i.rank === 1) ||
+                                  (i.group === "H" && i.rank === 2)
+                              ) &&
+                              quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-green-500"
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "G" && i.rank === 1) ||
+                                  (i.group === "H" && i.rank === 2)
+                              ) &&
+                              !quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-red-500"
+                              }
                           `}
                           >
                             {team.name}
@@ -631,24 +605,21 @@ export default function TournamentBrackets() {
                         )}
                         className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !semiFinal.some(
-                              (i) => i.side === 1 || i.side === 2
-                            ) && "bg-transparent hover:opacity-70"
+                          ${!semiFinal.some(
+                          (i) => i.side === 1 || i.side === 2
+                        ) && "bg-transparent hover:opacity-70"
                           }
-                          ${
-                            semiFinal.some(
-                              (i) => i.side === 1 || i.side === 2
-                            ) &&
-                            semiFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
+                          ${semiFinal.some(
+                            (i) => i.side === 1 || i.side === 2
+                          ) &&
+                          semiFinal.some((i) => i.name === team.name) &&
+                          "bg-green-500"
                           }
-                          ${
-                            semiFinal.some(
-                              (i) => i.side === 1 || i.side === 2
-                            ) &&
-                            !semiFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
+                          ${semiFinal.some(
+                            (i) => i.side === 1 || i.side === 2
+                          ) &&
+                          !semiFinal.some((i) => i.name === team.name) &&
+                          "bg-red-500"
                           }
                           `}
                       >
@@ -669,24 +640,21 @@ export default function TournamentBrackets() {
                         )}
                         className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !semiFinal.some(
-                              (i) => i.side === 1 || i.side === 2
-                            ) && "bg-transparent hover:opacity-70"
+                          ${!semiFinal.some(
+                          (i) => i.side === 1 || i.side === 2
+                        ) && "bg-transparent hover:opacity-70"
                           }
-                          ${
-                            semiFinal.some(
-                              (i) => i.side === 1 || i.side === 2
-                            ) &&
-                            semiFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
+                          ${semiFinal.some(
+                            (i) => i.side === 1 || i.side === 2
+                          ) &&
+                          semiFinal.some((i) => i.name === team.name) &&
+                          "bg-green-500"
                           }
-                          ${
-                            semiFinal.some(
-                              (i) => i.side === 1 || i.side === 2
-                            ) &&
-                            !semiFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
+                          ${semiFinal.some(
+                            (i) => i.side === 1 || i.side === 2
+                          ) &&
+                          !semiFinal.some((i) => i.name === team.name) &&
+                          "bg-red-500"
                           }
                           `}
                       >
@@ -709,24 +677,21 @@ export default function TournamentBrackets() {
                         )}
                         className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !semiFinal.some(
-                              (i) => i.side === 3 || i.side === 4
-                            ) && "bg-transparent hover:opacity-70"
+                          ${!semiFinal.some(
+                          (i) => i.side === 3 || i.side === 4
+                        ) && "bg-transparent hover:opacity-70"
                           }
-                          ${
-                            semiFinal.some(
-                              (i) => i.side === 3 || i.side === 4
-                            ) &&
-                            semiFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
+                          ${semiFinal.some(
+                            (i) => i.side === 3 || i.side === 4
+                          ) &&
+                          semiFinal.some((i) => i.name === team.name) &&
+                          "bg-green-500"
                           }
-                          ${
-                            semiFinal.some(
-                              (i) => i.side === 3 || i.side === 4
-                            ) &&
-                            !semiFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
+                          ${semiFinal.some(
+                            (i) => i.side === 3 || i.side === 4
+                          ) &&
+                          !semiFinal.some((i) => i.name === team.name) &&
+                          "bg-red-500"
                           }
                           `}
                       >
@@ -747,24 +712,21 @@ export default function TournamentBrackets() {
                         )}
                         className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !semiFinal.some(
-                              (i) => i.side === 3 || i.side === 4
-                            ) && "bg-transparent hover:opacity-70"
+                          ${!semiFinal.some(
+                          (i) => i.side === 3 || i.side === 4
+                        ) && "bg-transparent hover:opacity-70"
                           }
-                          ${
-                            semiFinal.some(
-                              (i) => i.side === 3 || i.side === 4
-                            ) &&
-                            semiFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
+                          ${semiFinal.some(
+                            (i) => i.side === 3 || i.side === 4
+                          ) &&
+                          semiFinal.some((i) => i.name === team.name) &&
+                          "bg-green-500"
                           }
-                          ${
-                            semiFinal.some(
-                              (i) => i.side === 3 || i.side === 4
-                            ) &&
-                            !semiFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
+                          ${semiFinal.some(
+                            (i) => i.side === 3 || i.side === 4
+                          ) &&
+                          !semiFinal.some((i) => i.name === team.name) &&
+                          "bg-red-500"
                           }
                           `}
                       >
@@ -787,24 +749,21 @@ export default function TournamentBrackets() {
                         )}
                         className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !final.some(
-                              (i) => i.semiSide === 1 || i.semiSide === 2
-                            ) && "bg-transparent hover:opacity-70"
+                          ${!final.some(
+                          (i) => i.semiSide === 1 || i.semiSide === 2
+                        ) && "bg-transparent hover:opacity-70"
                           }
-                          ${
-                            final.some(
-                              (i) => i.semiSide === 1 || i.semiSide === 2
-                            ) &&
-                            final.some((i) => i.name === team.name) &&
-                            "bg-green-500"
+                          ${final.some(
+                            (i) => i.semiSide === 1 || i.semiSide === 2
+                          ) &&
+                          final.some((i) => i.name === team.name) &&
+                          "bg-green-500"
                           }
-                          ${
-                            final.some(
-                              (i) => i.semiSide === 1 || i.semiSide === 2
-                            ) &&
-                            !final.some((i) => i.name === team.name) &&
-                            "bg-red-500"
+                          ${final.some(
+                            (i) => i.semiSide === 1 || i.semiSide === 2
+                          ) &&
+                          !final.some((i) => i.name === team.name) &&
+                          "bg-red-500"
                           }
                           `}
                         onClick={() => setFinalTeams(team, 1)}
@@ -825,24 +784,21 @@ export default function TournamentBrackets() {
                         )}
                         className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !final.some(
-                              (i) => i.semiSide === 1 || i.semiSide === 2
-                            ) && "bg-transparent hover:opacity-70"
+                          ${!final.some(
+                          (i) => i.semiSide === 1 || i.semiSide === 2
+                        ) && "bg-transparent hover:opacity-70"
                           }
-                          ${
-                            final.some(
-                              (i) => i.semiSide === 1 || i.semiSide === 2
-                            ) &&
-                            final.some((i) => i.name === team.name) &&
-                            "bg-green-500"
+                          ${final.some(
+                            (i) => i.semiSide === 1 || i.semiSide === 2
+                          ) &&
+                          final.some((i) => i.name === team.name) &&
+                          "bg-green-500"
                           }
-                          ${
-                            final.some(
-                              (i) => i.semiSide === 1 || i.semiSide === 2
-                            ) &&
-                            !final.some((i) => i.name === team.name) &&
-                            "bg-red-500"
+                          ${final.some(
+                            (i) => i.semiSide === 1 || i.semiSide === 2
+                          ) &&
+                          !final.some((i) => i.name === team.name) &&
+                          "bg-red-500"
                           }
                           `}
                         onClick={() => setFinalTeams(team, 1)}
@@ -856,8 +812,8 @@ export default function TournamentBrackets() {
 
             <div className="md:col-span-2 text-center flex items-center" id="heroMobile">
               <div className="flex flex-col w-full h-full md:justify-around justify-between">
-                <div className=" text-[14px] lg:text-lg lg:h-20">
-                  FIFA World Cup Qatar 2022
+                <div className="font-bold text-[14px] lg:text-[30px] lg:h-20">
+                  TURNUVA AĞACI
                 </div>
                 <div className="flex  items-center gap-1 mx-auto h-80">
                   <div className="hexagon">
@@ -870,23 +826,20 @@ export default function TournamentBrackets() {
                             winner.finalSide === 1 || winner.finalSide === 2
                           }
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
-                          ${
-                            !(
+                          ${!(
                               winner.finalSide === 1 || winner.finalSide === 2
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            (winner.finalSide === 1 ||
+                            }
+                          ${(winner.finalSide === 1 ||
                               winner.finalSide === 2) &&
                             winner.name === team.name &&
                             "bg-green-500"
-                          }
-                          ${
-                            (winner.finalSide === 1 ||
+                            }
+                          ${(winner.finalSide === 1 ||
                               winner.finalSide === 2) &&
                             winner.name !== team.name &&
                             "bg-red-500"
-                          }`}
+                            }`}
                           onClick={() => setWinnerTeam(team)}
                         >
                           {team.name}
@@ -904,23 +857,20 @@ export default function TournamentBrackets() {
                             winner.finalSide === 1 || winner.finalSide === 2
                           }
                           className={`relative flex cursor-pointer items-center w-full justify-center h-full 
-                          ${
-                            !(
+                          ${!(
                               winner.finalSide === 1 || winner.finalSide === 2
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            (winner.finalSide === 1 ||
+                            }
+                          ${(winner.finalSide === 1 ||
                               winner.finalSide === 2) &&
                             winner.name === team.name &&
                             "bg-green-500"
-                          }
-                          ${
-                            (winner.finalSide === 1 ||
+                            }
+                          ${(winner.finalSide === 1 ||
                               winner.finalSide === 2) &&
                             winner.name !== team.name &&
                             "bg-red-500"
-                          }`}
+                            }`}
                           onClick={() => setWinnerTeam(team)}
                         >
                           {team.name}
@@ -953,24 +903,21 @@ export default function TournamentBrackets() {
                         )}
                         className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !final.some(
-                              (i) => i.semiSide === 3 || i.semiSide === 4
-                            ) && "bg-transparent hover:opacity-70"
+                          ${!final.some(
+                          (i) => i.semiSide === 3 || i.semiSide === 4
+                        ) && "bg-transparent hover:opacity-70"
                           }
-                          ${
-                            final.some(
-                              (i) => i.semiSide === 3 || i.semiSide === 4
-                            ) &&
-                            final.some((i) => i.name === team.name) &&
-                            "bg-green-500"
+                          ${final.some(
+                            (i) => i.semiSide === 3 || i.semiSide === 4
+                          ) &&
+                          final.some((i) => i.name === team.name) &&
+                          "bg-green-500"
                           }
-                          ${
-                            final.some(
-                              (i) => i.semiSide === 3 || i.semiSide === 4
-                            ) &&
-                            !final.some((i) => i.name === team.name) &&
-                            "bg-red-500"
+                          ${final.some(
+                            (i) => i.semiSide === 3 || i.semiSide === 4
+                          ) &&
+                          !final.some((i) => i.name === team.name) &&
+                          "bg-red-500"
                           }
                           `}
                         onClick={() => setFinalTeams(team, 2)}
@@ -991,24 +938,21 @@ export default function TournamentBrackets() {
                         )}
                         className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !final.some(
-                              (i) => i.semiSide === 3 || i.semiSide === 4
-                            ) && "bg-transparent hover:opacity-70"
+                          ${!final.some(
+                          (i) => i.semiSide === 3 || i.semiSide === 4
+                        ) && "bg-transparent hover:opacity-70"
                           }
-                          ${
-                            final.some(
-                              (i) => i.semiSide === 3 || i.semiSide === 4
-                            ) &&
-                            final.some((i) => i.name === team.name) &&
-                            "bg-green-500"
+                          ${final.some(
+                            (i) => i.semiSide === 3 || i.semiSide === 4
+                          ) &&
+                          final.some((i) => i.name === team.name) &&
+                          "bg-green-500"
                           }
-                          ${
-                            final.some(
-                              (i) => i.semiSide === 3 || i.semiSide === 4
-                            ) &&
-                            !final.some((i) => i.name === team.name) &&
-                            "bg-red-500"
+                          ${final.some(
+                            (i) => i.semiSide === 3 || i.semiSide === 4
+                          ) &&
+                          !final.some((i) => i.name === team.name) &&
+                          "bg-red-500"
                           }
                           `}
                         onClick={() => setFinalTeams(team, 2)}
@@ -1033,24 +977,21 @@ export default function TournamentBrackets() {
                         )}
                         className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !semiFinal.some(
-                              (i) => i.side === 5 || i.side === 6
-                            ) && "bg-transparent hover:opacity-70"
+                          ${!semiFinal.some(
+                          (i) => i.side === 5 || i.side === 6
+                        ) && "bg-transparent hover:opacity-70"
                           }
-                          ${
-                            semiFinal.some(
-                              (i) => i.side === 5 || i.side === 6
-                            ) &&
-                            semiFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
+                          ${semiFinal.some(
+                            (i) => i.side === 5 || i.side === 6
+                          ) &&
+                          semiFinal.some((i) => i.name === team.name) &&
+                          "bg-green-500"
                           }
-                          ${
-                            semiFinal.some(
-                              (i) => i.side === 5 || i.side === 6
-                            ) &&
-                            !semiFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
+                          ${semiFinal.some(
+                            (i) => i.side === 5 || i.side === 6
+                          ) &&
+                          !semiFinal.some((i) => i.name === team.name) &&
+                          "bg-red-500"
                           }
                           `}
                       >
@@ -1071,24 +1012,21 @@ export default function TournamentBrackets() {
                         )}
                         className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !semiFinal.some(
-                              (i) => i.side === 5 || i.side === 6
-                            ) && "bg-transparent hover:opacity-70"
+                          ${!semiFinal.some(
+                          (i) => i.side === 5 || i.side === 6
+                        ) && "bg-transparent hover:opacity-70"
                           }
-                          ${
-                            semiFinal.some(
-                              (i) => i.side === 5 || i.side === 6
-                            ) &&
-                            semiFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
+                          ${semiFinal.some(
+                            (i) => i.side === 5 || i.side === 6
+                          ) &&
+                          semiFinal.some((i) => i.name === team.name) &&
+                          "bg-green-500"
                           }
-                          ${
-                            semiFinal.some(
-                              (i) => i.side === 5 || i.side === 6
-                            ) &&
-                            !semiFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
+                          ${semiFinal.some(
+                            (i) => i.side === 5 || i.side === 6
+                          ) &&
+                          !semiFinal.some((i) => i.name === team.name) &&
+                          "bg-red-500"
                           }
                           `}
                       >
@@ -1111,24 +1049,21 @@ export default function TournamentBrackets() {
                         )}
                         className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !semiFinal.some(
-                              (i) => i.side === 7 || i.side === 8
-                            ) && "bg-transparent hover:opacity-70"
+                          ${!semiFinal.some(
+                          (i) => i.side === 7 || i.side === 8
+                        ) && "bg-transparent hover:opacity-70"
                           }
-                          ${
-                            semiFinal.some(
-                              (i) => i.side === 7 || i.side === 8
-                            ) &&
-                            semiFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
+                          ${semiFinal.some(
+                            (i) => i.side === 7 || i.side === 8
+                          ) &&
+                          semiFinal.some((i) => i.name === team.name) &&
+                          "bg-green-500"
                           }
-                          ${
-                            semiFinal.some(
-                              (i) => i.side === 7 || i.side === 8
-                            ) &&
-                            !semiFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
+                          ${semiFinal.some(
+                            (i) => i.side === 7 || i.side === 8
+                          ) &&
+                          !semiFinal.some((i) => i.name === team.name) &&
+                          "bg-red-500"
                           }
                           `}
                       >
@@ -1149,24 +1084,21 @@ export default function TournamentBrackets() {
                         )}
                         className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !semiFinal.some(
-                              (i) => i.side === 7 || i.side === 8
-                            ) && "bg-transparent hover:opacity-70"
+                          ${!semiFinal.some(
+                          (i) => i.side === 7 || i.side === 8
+                        ) && "bg-transparent hover:opacity-70"
                           }
-                          ${
-                            semiFinal.some(
-                              (i) => i.side === 7 || i.side === 8
-                            ) &&
-                            semiFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
+                          ${semiFinal.some(
+                            (i) => i.side === 7 || i.side === 8
+                          ) &&
+                          semiFinal.some((i) => i.name === team.name) &&
+                          "bg-green-500"
                           }
-                          ${
-                            semiFinal.some(
-                              (i) => i.side === 7 || i.side === 8
-                            ) &&
-                            !semiFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
+                          ${semiFinal.some(
+                            (i) => i.side === 7 || i.side === 8
+                          ) &&
+                          !semiFinal.some((i) => i.name === team.name) &&
+                          "bg-red-500"
                           }
                           `}
                       >
@@ -1201,31 +1133,28 @@ export default function TournamentBrackets() {
                             )}
                             className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
+                          ${!quarterFinal.some(
                               (i) =>
                                 (i.group === "B" && i.rank === 1) ||
                                 (i.group === "A" && i.rank === 2)
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "B" && i.rank === 1) ||
-                                (i.group === "A" && i.rank === 2)
-                            ) &&
-                            quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "B" && i.rank === 1) ||
-                                (i.group === "A" && i.rank === 2)
-                            ) &&
-                            !quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
-                          }
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "B" && i.rank === 1) ||
+                                  (i.group === "A" && i.rank === 2)
+                              ) &&
+                              quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-green-500"
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "B" && i.rank === 1) ||
+                                  (i.group === "A" && i.rank === 2)
+                              ) &&
+                              !quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-red-500"
+                              }
                           `}
                           >
                             {team.name}
@@ -1256,31 +1185,28 @@ export default function TournamentBrackets() {
                             )}
                             className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
+                          ${!quarterFinal.some(
                               (i) =>
                                 (i.group === "B" && i.rank === 1) ||
                                 (i.group === "A" && i.rank === 2)
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "B" && i.rank === 1) ||
-                                (i.group === "A" && i.rank === 2)
-                            ) &&
-                            quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "B" && i.rank === 1) ||
-                                (i.group === "A" && i.rank === 2)
-                            ) &&
-                            !quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
-                          }
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "B" && i.rank === 1) ||
+                                  (i.group === "A" && i.rank === 2)
+                              ) &&
+                              quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-green-500"
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "B" && i.rank === 1) ||
+                                  (i.group === "A" && i.rank === 2)
+                              ) &&
+                              !quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-red-500"
+                              }
                           `}
                           >
                             {team.name}
@@ -1313,31 +1239,28 @@ export default function TournamentBrackets() {
                             )}
                             className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
+                          ${!quarterFinal.some(
                               (i) =>
                                 (i.group === "D" && i.rank === 1) ||
                                 (i.group === "C" && i.rank === 2)
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "D" && i.rank === 1) ||
-                                (i.group === "C" && i.rank === 2)
-                            ) &&
-                            quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "D" && i.rank === 1) ||
-                                (i.group === "C" && i.rank === 2)
-                            ) &&
-                            !quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
-                          }
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "D" && i.rank === 1) ||
+                                  (i.group === "C" && i.rank === 2)
+                              ) &&
+                              quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-green-500"
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "D" && i.rank === 1) ||
+                                  (i.group === "C" && i.rank === 2)
+                              ) &&
+                              !quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-red-500"
+                              }
                           `}
                           >
                             {team.name}
@@ -1368,31 +1291,28 @@ export default function TournamentBrackets() {
                             )}
                             className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
+                          ${!quarterFinal.some(
                               (i) =>
                                 (i.group === "D" && i.rank === 1) ||
                                 (i.group === "C" && i.rank === 2)
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "D" && i.rank === 1) ||
-                                (i.group === "C" && i.rank === 2)
-                            ) &&
-                            quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "D" && i.rank === 1) ||
-                                (i.group === "C" && i.rank === 2)
-                            ) &&
-                            !quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
-                          }
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "D" && i.rank === 1) ||
+                                  (i.group === "C" && i.rank === 2)
+                              ) &&
+                              quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-green-500"
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "D" && i.rank === 1) ||
+                                  (i.group === "C" && i.rank === 2)
+                              ) &&
+                              !quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-red-500"
+                              }
                           `}
                           >
                             {team.name}
@@ -1425,31 +1345,28 @@ export default function TournamentBrackets() {
                             )}
                             className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
+                          ${!quarterFinal.some(
                               (i) =>
                                 (i.group === "F" && i.rank === 1) ||
                                 (i.group === "E" && i.rank === 2)
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "F" && i.rank === 1) ||
-                                (i.group === "E" && i.rank === 2)
-                            ) &&
-                            quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "F" && i.rank === 1) ||
-                                (i.group === "E" && i.rank === 2)
-                            ) &&
-                            !quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
-                          }
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "F" && i.rank === 1) ||
+                                  (i.group === "E" && i.rank === 2)
+                              ) &&
+                              quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-green-500"
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "F" && i.rank === 1) ||
+                                  (i.group === "E" && i.rank === 2)
+                              ) &&
+                              !quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-red-500"
+                              }
                           `}
                           >
                             {team.name}
@@ -1480,31 +1397,28 @@ export default function TournamentBrackets() {
                             )}
                             className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
+                          ${!quarterFinal.some(
                               (i) =>
                                 (i.group === "F" && i.rank === 1) ||
                                 (i.group === "E" && i.rank === 2)
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "F" && i.rank === 1) ||
-                                (i.group === "E" && i.rank === 2)
-                            ) &&
-                            quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "F" && i.rank === 1) ||
-                                (i.group === "E" && i.rank === 2)
-                            ) &&
-                            !quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
-                          }
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "F" && i.rank === 1) ||
+                                  (i.group === "E" && i.rank === 2)
+                              ) &&
+                              quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-green-500"
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "F" && i.rank === 1) ||
+                                  (i.group === "E" && i.rank === 2)
+                              ) &&
+                              !quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-red-500"
+                              }
                           `}
                           >
                             {team.name}
@@ -1537,31 +1451,28 @@ export default function TournamentBrackets() {
                             )}
                             className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
+                          ${!quarterFinal.some(
                               (i) =>
                                 (i.group === "H" && i.rank === 1) ||
                                 (i.group === "G" && i.rank === 2)
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "H" && i.rank === 1) ||
-                                (i.group === "G" && i.rank === 2)
-                            ) &&
-                            quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "H" && i.rank === 1) ||
-                                (i.group === "G" && i.rank === 2)
-                            ) &&
-                            !quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
-                          }
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "H" && i.rank === 1) ||
+                                  (i.group === "G" && i.rank === 2)
+                              ) &&
+                              quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-green-500"
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "H" && i.rank === 1) ||
+                                  (i.group === "G" && i.rank === 2)
+                              ) &&
+                              !quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-red-500"
+                              }
                           `}
                           >
                             {team.name}
@@ -1592,31 +1503,28 @@ export default function TournamentBrackets() {
                             )}
                             className={`relative flex cursor-pointer items-center w-full justify-center h-full 
                         
-                          ${
-                            !quarterFinal.some(
+                          ${!quarterFinal.some(
                               (i) =>
                                 (i.group === "H" && i.rank === 1) ||
                                 (i.group === "G" && i.rank === 2)
                             ) && "bg-transparent hover:opacity-70"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "H" && i.rank === 1) ||
-                                (i.group === "G" && i.rank === 2)
-                            ) &&
-                            quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-green-500"
-                          }
-                          ${
-                            quarterFinal.some(
-                              (i) =>
-                                (i.group === "H" && i.rank === 1) ||
-                                (i.group === "G" && i.rank === 2)
-                            ) &&
-                            !quarterFinal.some((i) => i.name === team.name) &&
-                            "bg-red-500"
-                          }
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "H" && i.rank === 1) ||
+                                  (i.group === "G" && i.rank === 2)
+                              ) &&
+                              quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-green-500"
+                              }
+                          ${quarterFinal.some(
+                                (i) =>
+                                  (i.group === "H" && i.rank === 1) ||
+                                  (i.group === "G" && i.rank === 2)
+                              ) &&
+                              !quarterFinal.some((i) => i.name === team.name) &&
+                              "bg-red-500"
+                              }
                           `}
                           >
                             {team.name}
