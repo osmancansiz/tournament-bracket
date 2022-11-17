@@ -88,7 +88,7 @@ export default function TournamentBrackets() {
   return (
     <>
       {winner.name && (
-        <div className="absolute bottom-32 flex w-full justify-around font-bold">
+        <div className="absolute bottom-6 lg:bottom-32 flex w-full justify-around font-bold">
           <button
             onClick={() =>
               window.open(
@@ -96,14 +96,14 @@ export default function TournamentBrackets() {
                 "_blank"
               )
             }
-            className=" bg-[#1C99E6] rounded-md w-40 h-10 text-white"
+            className=" bg-[#1C99E6] rounded-md w-40 h-10 text-white font-thin"
           >
             Twitter'da Paylaş
           </button>
 
           <button
             type="button"
-            className=" bg-black text-white rounded-md w-40 h-10"
+            className=" bg-black text-white rounded-md w-40 h-10 font-thin"
             onClick={() => downloadImage()}
           >
             Görseli İndir
@@ -880,8 +880,17 @@ export default function TournamentBrackets() {
                 </div>
                 <div className=" text-[14px] lg:text-lg lg:h-20">
                   {winner.name ? (
-                    <div className={`text-[14px] lg:text-lg text-center`}>
+                    <div className={`text-[14px] lg:text-lg text-center flex flex-col items-center`}>
                       Şampiyon: {winner.name}
+                      <div className="w-14">
+                        <img
+                          src={`../assets/flags/${winner.flag}`}
+                          alt={winner.name}
+                          className="h-full py-1 w-full"
+                        />
+
+                      </div>
+
                     </div>
                   ) : (
                     <div className="h-8 md:h-12 "></div>
