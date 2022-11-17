@@ -85,9 +85,12 @@ export default function TournamentBrackets() {
                       <div
                         key={team.id}
                         onClick={() => handleClick(team)}
-                        className="pt-1 cursor-pointer hover:opacity-70 text-[8px] lg:text-base"
+                        className="pt-1 cursor-pointer hover:opacity-70 text-[8px] lg:text-base lg:flex lg:justify-between lg:px-4"
                       >
                         {team.name}
+                        <div className="hidden lg:flex  w-6 h-6  justify-center items-center">
+                          <img src={`../assets/flags/${team.flag}`} alt={team.name} />
+                        </div>
                       </div>
                     );
                   })}
@@ -735,9 +738,12 @@ export default function TournamentBrackets() {
                       <div
                         key={team.id}
                         onClick={() => handleClick(team)}
-                        className="pt-1 cursor-pointer hover:opacity-70 text-[8px] lg:text-base"
+                        className="pt-1 cursor-pointer hover:opacity-70 text-[8px] lg:text-base lg:flex lg:justify-between lg:px-4"
                       >
                         {team.name}
+                        <div className="hidden lg:flex  w-6 h-6  justify-center items-center">
+                          <img src={`../assets/flags/${team.flag}`} alt={team.name} />
+                        </div>
                       </div>
                     );
                   })}

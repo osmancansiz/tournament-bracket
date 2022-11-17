@@ -5,7 +5,8 @@
     "group": "A",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "qatar.png"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "group": "A",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "ecuador.png"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "group": "A",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "senegal.png"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "group": "A",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "holland.png"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "group": "B",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "england.png"
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "group": "B",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "iran.png"
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "group": "B",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "usa.png"
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "group": "B",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "wales.png"
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@
     "group": "C",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "argentina.png"
   },
   {
     "id": 10,
@@ -77,7 +86,8 @@
     "group": "C",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "s-arabia.png"
   },
   {
     "id": 11,
@@ -85,7 +95,8 @@
     "group": "C",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "mexico.png"
   },
   {
     "id": 12,
@@ -93,7 +104,8 @@
     "group": "C",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "poland.png"
   },
   {
     "id": 13,
@@ -101,7 +113,8 @@
     "group": "D",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "france.png"
   },
   {
     "id": 14,
@@ -109,7 +122,8 @@
     "group": "D",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "australia.png"
   },
   {
     "id": 15,
@@ -117,7 +131,8 @@
     "group": "D",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "denmark.png"
   },
   {
     "id": 16,
@@ -125,7 +140,8 @@
     "group": "D",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "tunisia.png"
   },
   {
     "id": 17,
@@ -133,7 +149,8 @@
     "group": "E",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "spain.png"
   },
   {
     "id": 18,
@@ -141,7 +158,8 @@
     "group": "E",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "costarica.png"
   },
   {
     "id": 19,
@@ -149,7 +167,8 @@
     "group": "E",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "germany.png"
   },
   {
     "id": 20,
@@ -157,7 +176,8 @@
     "group": "E",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "japan.png"
   },
   {
     "id": 21,
@@ -165,7 +185,8 @@
     "group": "F",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "belgium.png"
   },
   {
     "id": 22,
@@ -173,7 +194,8 @@
     "group": "F",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "canada.png"
   },
   {
     "id": 23,
@@ -181,7 +203,8 @@
     "group": "F",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "morocco.png"
   },
   {
     "id": 24,
@@ -189,7 +212,8 @@
     "group": "F",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "croatia.png"
   },
   {
     "id": 25,
@@ -197,7 +221,8 @@
     "group": "G",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "brazil.png"
   },
   {
     "id": 26,
@@ -205,7 +230,8 @@
     "group": "G",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "serbia.png"
   },
   {
     "id": 27,
@@ -213,7 +239,8 @@
     "group": "G",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "switzerland.png"
   },
   {
     "id": 28,
@@ -221,7 +248,8 @@
     "group": "G",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "cameroon.png"
   },
   {
     "id": 29,
@@ -229,7 +257,8 @@
     "group": "H",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "portugal.png"
   },
   {
     "id": 30,
@@ -237,7 +266,8 @@
     "group": "H",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "ghana.png"
   },
   {
     "id": 31,
@@ -245,7 +275,8 @@
     "group": "H",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "uruguay.png"
   },
   {
     "id": 32,
@@ -253,6 +284,7 @@
     "group": "H",
     "rank": 0,
     "status": "top32",
-    "stage": 32
+    "stage": 32,
+    "flag": "south-korea.png"
   }
 ]

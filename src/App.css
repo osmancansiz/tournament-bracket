@@ -6,6 +6,9 @@ body {
 .group-box {
   border-radius: 10% 10% 10% 10% / 50% 50% 50% 50%;
 }
+.bg-hero-pattern {
+  background-image: url('/public/assets/bg.jpeg');
+}
 
 .hexagon {
   width: 110px;
