@@ -93,10 +93,11 @@ export default function TournamentBrackets() {
                     /*eslint-disable-next-line*/
                     if (team.group !== group.name) return;
                     return (
-                      <div
+                      <button
                         key={team.id}
+                        disabled={team.rank !== 0}
                         onClick={() => handleClick(team)}
-                        className={`pt-1 cursor-pointer  text-[8px] lg:text-base lg:flex lg:justify-between lg:px-4 
+                        className={`block w-full pt-1 cursor-pointer  text-[8px] lg:text-base lg:flex lg:justify-between lg:px-4 
                         ${team.rank === 0 && "bg-transparent hover:opacity-70"}
                         ${
                           (team.rank === 1 || team.rank === 2) && "bg-green-500"
@@ -113,7 +114,7 @@ export default function TournamentBrackets() {
                             className="h-full py-1 w-full"
                           />
                         </div>
-                      </div>
+                      </button>
                     );
                   })}
                 </div>
@@ -879,10 +880,11 @@ export default function TournamentBrackets() {
                     /*eslint-disable-next-line*/
                     if (team.group !== group.name) return;
                     return (
-                      <div
+                      <button
                         key={team.id}
                         onClick={() => handleClick(team)}
-                        className={`pt-1 cursor-pointer text-[8px] lg:text-base lg:flex lg:justify-between lg:px-4 
+                        disabled={team.rank !== 0}
+                        className={`block w-full pt-1 cursor-pointer text-[8px] lg:text-base lg:flex lg:justify-between lg:px-4 
                         ${team.rank === 0 && "bg-transparent hover:opacity-70"}
                         ${
                           (team.rank === 1 || team.rank === 2) && "bg-green-500"
@@ -899,7 +901,7 @@ export default function TournamentBrackets() {
                             className="h-full py-1 w-full"
                           />
                         </div>
-                      </div>
+                      </button>
                     );
                   })}
                 </div>
