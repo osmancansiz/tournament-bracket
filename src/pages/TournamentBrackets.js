@@ -3,7 +3,7 @@ import initialTeams from "../data/teams.json";
 import initialGroups from "../data/groups.json";
 
 export default function TournamentBrackets() {
-  const [teams] = useState(initialTeams);
+  const [teams, setTeams] = useState(initialTeams);
   const [groups] = useState(initialGroups);
   const [selectedTeams, setSelectedTeams] = useState([]);
   const [quarterFinal, setQuarterFinal] = useState([]);
@@ -21,7 +21,18 @@ export default function TournamentBrackets() {
     } else if (groupMember.length === 1) {
       team.rank = groupMember[0].rank + 1;
       setSelectedTeams([...selectedTeams, team]);
+    } else {
+      const teamsClone = teams;
+      const highestRank = calculateHighestRankByGroup(team.group);
+      const index = teamsClone.findIndex((i) => i.name === team.name);
+      teamsClone[index].rank = highestRank + 1;
+      setTeams([...teamsClone]);
     }
+  };
+
+  const calculateHighestRankByGroup = (group) => {
+    const filteredGroup = teams.filter((i) => i.group === group);
+    return Math.max(...filteredGroup.map((i) => i.rank));
   };
 
   const setQuarterFinalTeams = (team, side) => {
@@ -85,11 +96,22 @@ export default function TournamentBrackets() {
                       <div
                         key={team.id}
                         onClick={() => handleClick(team)}
-                        className="pt-1 cursor-pointer hover:opacity-70 text-[8px] lg:text-base lg:flex lg:justify-between lg:px-4"
+                        className={`pt-1 cursor-pointer  text-[8px] lg:text-base lg:flex lg:justify-between lg:px-4 
+                        ${team.rank === 0 && "bg-transparent hover:opacity-70"}
+                        ${
+                          (team.rank === 1 || team.rank === 2) && "bg-green-500"
+                        }
+                        ${
+                          (team.rank === 3 || team.rank === 4) && "bg-red-500"
+                        } `}
                       >
                         {team.name}
                         <div className="hidden lg:flex w-6 h-6 justify-center items-center">
-                          <img src={`../assets/flags/${team.flag}`} alt={team.name} className='h-full py-1 w-full' />
+                          <img
+                            src={`../assets/flags/${team.flag}`}
+                            alt={team.name}
+                            className="h-full py-1 w-full"
+                          />
                         </div>
                       </div>
                     );
@@ -116,7 +138,11 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 1)}
-                          className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                            quarterFinal.some((i) => i.name === team.name)
+                              ? "bg-green-500"
+                              : "bg-transparent hover:opacity-70"
+                          }`}
                         >
                           {team.name}
                         </div>
@@ -141,7 +167,11 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 1)}
-                          className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                            quarterFinal.some((i) => i.name === team.name)
+                              ? "bg-green-500"
+                              : "bg-transparent hover:opacity-70"
+                          }`}
                         >
                           {team.name}
                         </div>
@@ -166,7 +196,11 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 2)}
-                          className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                            quarterFinal.some((i) => i.name === team.name)
+                              ? "bg-green-500"
+                              : "bg-transparent hover:opacity-70"
+                          }`}
                         >
                           {team.name}
                         </div>
@@ -189,7 +223,11 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 2)}
-                          className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                            quarterFinal.some((i) => i.name === team.name)
+                              ? "bg-green-500"
+                              : "bg-transparent hover:opacity-70"
+                          }`}
                         >
                           {team.name}
                         </div>
@@ -214,7 +252,11 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 3)}
-                          className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                            quarterFinal.some((i) => i.name === team.name)
+                              ? "bg-green-500"
+                              : "bg-transparent hover:opacity-70"
+                          }`}
                         >
                           {team.name}
                         </div>
@@ -237,7 +279,11 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 3)}
-                          className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                            quarterFinal.some((i) => i.name === team.name)
+                              ? "bg-green-500"
+                              : "bg-transparent hover:opacity-70"
+                          }`}
                         >
                           {team.name}
                         </div>
@@ -262,7 +308,11 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 4)}
-                          className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                            quarterFinal.some((i) => i.name === team.name)
+                              ? "bg-green-500"
+                              : "bg-transparent hover:opacity-70"
+                          }`}
                         >
                           {team.name}
                         </div>
@@ -285,7 +335,11 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 4)}
-                          className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                            quarterFinal.some((i) => i.name === team.name)
+                              ? "bg-green-500"
+                              : "bg-transparent hover:opacity-70"
+                          }`}
                         >
                           {team.name}
                         </div>
@@ -304,7 +358,11 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 1)}
-                      className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                        semiFinal.some((i) => i.name === team.name)
+                          ? "bg-green-500"
+                          : "bg-transparent hover:opacity-70"
+                      }`}
                     >
                       {team.name}
                     </div>
@@ -318,7 +376,11 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 1)}
-                      className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                        semiFinal.some((i) => i.name === team.name)
+                          ? "bg-green-500"
+                          : "bg-transparent hover:opacity-70"
+                      }`}
                     >
                       {team.name}
                     </div>
@@ -334,7 +396,11 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 2)}
-                      className="relative flex items-center justify-center w-full h-full"
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                        semiFinal.some((i) => i.name === team.name)
+                          ? "bg-green-500"
+                          : "bg-transparent hover:opacity-70"
+                      }`}
                     >
                       {team.name}
                     </div>
@@ -348,7 +414,11 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 2)}
-                      className="relative flex items-center justify-center w-full h-full"
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                        semiFinal.some((i) => i.name === team.name)
+                          ? "bg-green-500"
+                          : "bg-transparent hover:opacity-70"
+                      }`}
                     >
                       {team.name}
                     </div>
@@ -364,7 +434,11 @@ export default function TournamentBrackets() {
                   .map((team, index) => (
                     <div
                       key={index}
-                      className="relative flex items-center justify-center w-full h-full"
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                        final.some((i) => i.name === team.name)
+                          ? "bg-green-500"
+                          : "bg-transparent hover:opacity-70"
+                      }`}
                       onClick={() => setFinalTeams(team, 1)}
                     >
                       {team.name}
@@ -378,7 +452,11 @@ export default function TournamentBrackets() {
                   .map((team, index) => (
                     <div
                       key={index}
-                      className="relative flex items-center justify-center w-full h-full"
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                        final.some((i) => i.name === team.name)
+                          ? "bg-green-500"
+                          : "bg-transparent hover:opacity-70"
+                      }`}
                       onClick={() => setFinalTeams(team, 1)}
                     >
                       {team.name}
@@ -390,7 +468,8 @@ export default function TournamentBrackets() {
 
           <div className="col-span-2 text-center flex items-center h-full">
             <div className="flex flex-col w-full h-full md:justify-around justify-between">
-              <div className=" text-[14px] lg:text-lg">Final
+              <div className=" text-[14px] lg:text-lg">
+                Final
                 <div className="h-4 hidden"></div>
               </div>
 
@@ -401,7 +480,11 @@ export default function TournamentBrackets() {
                     .map((team, index) => (
                       <div
                         key={index}
-                        className="w-full h-full relative flex items-center justify-center"
+                        className={`w-full h-full relative flex items-center justify-center ${
+                          winner.name === team.name
+                            ? "bg-green-500"
+                            : "bg-transparent hover:opacity-70"
+                        }`}
                         onClick={() => setWinnerTeam(team)}
                       >
                         {team.name}
@@ -415,7 +498,11 @@ export default function TournamentBrackets() {
                     .map((team, index) => (
                       <div
                         key={index}
-                        className="relative flex items-center justify-center w-full h-full"
+                        className={`w-full h-full relative flex items-center justify-center ${
+                          winner.name === team.name
+                            ? "bg-green-500"
+                            : "bg-transparent hover:opacity-70"
+                        }`}
                         onClick={() => setWinnerTeam(team)}
                       >
                         {team.name}
@@ -423,12 +510,13 @@ export default function TournamentBrackets() {
                     ))}
                 </div>
               </div>
-              {winner.name ? <div
-                className={`text-[14px] lg:text-lg text-center`}
-              >
-                Winner: {winner.name}
-              </div> : <div className="h-8"></div>}
-
+              {winner.name ? (
+                <div className={`text-[14px] lg:text-lg text-center`}>
+                  Winner: {winner.name}
+                </div>
+              ) : (
+                <div className="h-8"></div>
+              )}
             </div>
           </div>
 
@@ -440,7 +528,11 @@ export default function TournamentBrackets() {
                   .map((team, index) => (
                     <div
                       key={index}
-                      className="relative flex items-center justify-center w-full h-full"
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                        final.some((i) => i.name === team.name)
+                          ? "bg-green-500"
+                          : "bg-transparent hover:opacity-70"
+                      }`}
                       onClick={() => setFinalTeams(team, 2)}
                     >
                       {team.name}
@@ -454,7 +546,11 @@ export default function TournamentBrackets() {
                   .map((team, index) => (
                     <div
                       key={index}
-                      className="relative flex items-center justify-center w-full h-full"
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                        final.some((i) => i.name === team.name)
+                          ? "bg-green-500"
+                          : "bg-transparent hover:opacity-70"
+                      }`}
                       onClick={() => setFinalTeams(team, 2)}
                     >
                       {team.name}
@@ -472,7 +568,11 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 3)}
-                      className="relative flex items-center justify-center w-full h-full"
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                        semiFinal.some((i) => i.name === team.name)
+                          ? "bg-green-500"
+                          : "bg-transparent hover:opacity-70"
+                      }`}
                     >
                       {team.name}
                     </div>
@@ -486,7 +586,11 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 3)}
-                      className="relative flex items-center justify-center w-full h-full"
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                        semiFinal.some((i) => i.name === team.name)
+                          ? "bg-green-500"
+                          : "bg-transparent hover:opacity-70"
+                      }`}
                     >
                       {team.name}
                     </div>
@@ -502,7 +606,11 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 4)}
-                      className="relative flex items-center justify-center w-full h-full"
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                        semiFinal.some((i) => i.name === team.name)
+                          ? "bg-green-500"
+                          : "bg-transparent hover:opacity-70"
+                      }`}
                     >
                       {team.name}
                     </div>
@@ -516,7 +624,11 @@ export default function TournamentBrackets() {
                     <div
                       key={index}
                       onClick={() => setSemiFinalTeams(team, 4)}
-                      className="relative flex items-center justify-center w-full h-full"
+                      className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                        semiFinal.some((i) => i.name === team.name)
+                          ? "bg-green-500"
+                          : "bg-transparent hover:opacity-70"
+                      }`}
                     >
                       {team.name}
                     </div>
@@ -542,7 +654,11 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 5)}
-                          className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                            quarterFinal.some((i) => i.name === team.name)
+                              ? "bg-green-500"
+                              : "bg-transparent hover:opacity-70"
+                          }`}
                         >
                           {team.name}
                         </div>
@@ -565,7 +681,11 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 5)}
-                          className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                            quarterFinal.some((i) => i.name === team.name)
+                              ? "bg-green-500"
+                              : "bg-transparent hover:opacity-70"
+                          }`}
                         >
                           {team.name}
                         </div>
@@ -590,7 +710,11 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 6)}
-                          className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                            quarterFinal.some((i) => i.name === team.name)
+                              ? "bg-green-500"
+                              : "bg-transparent hover:opacity-70"
+                          }`}
                         >
                           {team.name}
                         </div>
@@ -613,7 +737,11 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 6)}
-                          className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                            quarterFinal.some((i) => i.name === team.name)
+                              ? "bg-green-500"
+                              : "bg-transparent hover:opacity-70"
+                          }`}
                         >
                           {team.name}
                         </div>
@@ -638,7 +766,11 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 7)}
-                          className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                            quarterFinal.some((i) => i.name === team.name)
+                              ? "bg-green-500"
+                              : "bg-transparent hover:opacity-70"
+                          }`}
                         >
                           {team.name}
                         </div>
@@ -661,7 +793,11 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 7)}
-                          className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                            quarterFinal.some((i) => i.name === team.name)
+                              ? "bg-green-500"
+                              : "bg-transparent hover:opacity-70"
+                          }`}
                         >
                           {team.name}
                         </div>
@@ -686,7 +822,11 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 8)}
-                          className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                            quarterFinal.some((i) => i.name === team.name)
+                              ? "bg-green-500"
+                              : "bg-transparent hover:opacity-70"
+                          }`}
                         >
                           {team.name}
                         </div>
@@ -709,7 +849,11 @@ export default function TournamentBrackets() {
                         <div
                           key={index}
                           onClick={() => setQuarterFinalTeams(team, 8)}
-                          className="relative flex cursor-pointer items-center w-full justify-center h-full"
+                          className={`relative flex cursor-pointer items-center w-full justify-center h-full ${
+                            quarterFinal.some((i) => i.name === team.name)
+                              ? "bg-green-500"
+                              : "bg-transparent hover:opacity-70"
+                          }`}
                         >
                           {team.name}
                         </div>
@@ -738,11 +882,22 @@ export default function TournamentBrackets() {
                       <div
                         key={team.id}
                         onClick={() => handleClick(team)}
-                        className="pt-1 cursor-pointer hover:opacity-70 text-[8px] lg:text-base lg:flex lg:justify-between lg:px-4"
+                        className={`pt-1 cursor-pointer text-[8px] lg:text-base lg:flex lg:justify-between lg:px-4 
+                        ${team.rank === 0 && "bg-transparent hover:opacity-70"}
+                        ${
+                          (team.rank === 1 || team.rank === 2) && "bg-green-500"
+                        }
+                        ${
+                          (team.rank === 3 || team.rank === 4) && "bg-red-500"
+                        } `}
                       >
                         {team.name}
                         <div className="hidden lg:flex w-6 h-6 justify-center items-center">
-                          <img src={`../assets/flags/${team.flag}`} alt={team.name} className='h-full py-1 w-full' />
+                          <img
+                            src={`../assets/flags/${team.flag}`}
+                            alt={team.name}
+                            className="h-full py-1 w-full"
+                          />
                         </div>
                       </div>
                     );
